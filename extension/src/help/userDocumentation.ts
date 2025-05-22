@@ -6,7 +6,7 @@ import { LispContainer } from '../astObjects/lispContainer';
 
 const localize = nls.loadMessageBundle();
 
-// This file exists to support the 'autolisp.generateDocumentation' command, which is register in:
+// This file exists to support the 'icad.generateDocumentation' command, which is register in:
 // 		/extension/src/commands.ts
 
 // locates the nearest defun(s) from a position and prompts the user to choose if ambiguity exists

@@ -36,7 +36,7 @@ const languages = [
 ];
 
 const cleanTask = function () {
-	return del(['out/**', 'package.nls.*.json', ' Autodesk.autolispext*.vsix']);
+	return del(['out/**', 'package.nls.*.json', ' IntelliCAD.icad-lisp*.vsix']);
 }
 
 const internalCompileTask = function () {

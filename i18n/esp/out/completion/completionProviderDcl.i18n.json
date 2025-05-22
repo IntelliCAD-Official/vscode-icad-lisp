@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Primitiva",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Cierra la cadena."
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Primitiva",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Cierra la cadena."
 }

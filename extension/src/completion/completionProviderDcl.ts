@@ -4,7 +4,7 @@ import {DclAttribute} from "../astObjects/dclAttribute";
 import {DclTile} from "../astObjects/dclTile";
 import {IDclContainer, IDclFragment} from "../astObjects/dclInterfaces";
 import {CompletionItemDcl} from "./completionItemDcl";
-import {AutoLispExt} from "../context";
+import {IcadExt} from "../context";
 import {CompletionLibraryDcl, SnippetKeys} from "./completionLibraryDcl";
 import {Kinds} from './completionItemDcl';
 import * as nls from 'vscode-nls';
@@ -83,7 +83,7 @@ function getApplicableAttributes(tile: DclTile, pos: Position) : Array<string> {
     }
     const posNormal = getPositionRank(pos);
     const lowerKey = tile.tileTypeAtom.symbol.toLowerCase();
-    const helpLib = AutoLispExt.WebHelpLibrary;
+    const helpLib = IcadExt.WebHelpLibrary;
     const attributes = helpLib.dclTiles.get(lowerKey)?.attributes ?? [];
     const existing: Array<string> = [];
 
@@ -109,8 +109,8 @@ function getApplicableAttributes(tile: DclTile, pos: Position) : Array<string> {
 function stringProcessing(atom: IDclFragment, directParent: IDclContainer, pos: Position, context: CompletionContext): Array<CompletionItemDcl> {
     const index = directParent.atoms.indexOf(atom);
     if (directParent.atoms[index + 1]?.symbol !== ';' && pos.character === atom.range.end.character - 1) {
-        const localPrimitive = localize("autolispext.commands.dclcompletion.provider.Primitive", "Primitive");
-        const localClosesStr = localize("autolispext.commands.dclcompletion.provider.ClosesString", "Closes the string");
+        const localPrimitive = localize("icad-lisp.commands.dclcompletion.provider.Primitive", "Primitive");
+        const localClosesStr = localize("icad-lisp.commands.dclcompletion.provider.ClosesString", "Closes the string");
         const result = new CompletionItemDcl(`${atom.symbol};`);
         result.insertText = `${atom.symbol};`;
         result.detail = localPrimitive;
@@ -177,7 +177,7 @@ function malformedTileHandlerNoAtom(pos: Position, directParent: DclAttribute, t
 
     if (directParent.length === 2) {
         const key = directParent.atoms[1].symbol.toLowerCase();
-        const attSource = AutoLispExt.WebHelpLibrary.dclTiles.get(key)?.attributes;
+        const attSource = IcadExt.WebHelpLibrary.dclTiles.get(key)?.attributes;
         if (attSource?.some(x => x.toLowerCase().includes('children'))) {
             return [lib.dclSnippets.get(SnippetKeys.BRACKETLF), lib.dclSnippets.get(SnippetKeys.BRACKET)];
         }

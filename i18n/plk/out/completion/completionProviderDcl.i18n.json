@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Typ prosty",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Kończy ciąg"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Typ prosty",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Kończy ciąg"
 }

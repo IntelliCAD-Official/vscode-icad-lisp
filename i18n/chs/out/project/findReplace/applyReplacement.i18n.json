@@ -1,4 +1,4 @@
 {
-  "autolispext.project.findreplace.applyreplacement.filenotexist": "文件不存在。",
-  "autolispext.project.findreplace.applyreplacement.replacetextfailed": "无法替换文字: "
+  "icad-lisp.project.findreplace.applyreplacement.filenotexist": "文件不存在。",
+  "icad-lisp.project.findreplace.applyreplacement.replacetextfailed": "无法替换文字: "
 }

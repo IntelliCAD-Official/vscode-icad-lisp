@@ -1,8 +1,8 @@
 {
-  "autolispext.project.addfile.openproject": "Projekt musi być otwarty, aby można było dodać plik.",
-  "autolispext.project.addfile.onlylspallowed": "Dozwolone są tylko pliki LSP.",
-  "autolispext.project.addfile.filealreadyexist": "Plik już istnieje w tym projekcie: ",
-  "autolispext.project.addfile.samenameexist": "Plik o tej samej nazwie już istnieje w tym projekcie: ",
-  "autolispext.project.addfile.openlabel": "Dodaj do projektu",
-  "autolispext.project.addfile.sourcefilefilter": "Pliki źródłowe AutoLISP"
+  "icad-lisp.project.addfile.openproject": "Projekt musi być otwarty, aby można było dodać plik.",
+  "icad-lisp.project.addfile.onlylspallowed": "Dozwolone są tylko pliki LSP.",
+  "icad-lisp.project.addfile.filealreadyexist": "Plik już istnieje w tym projekcie: ",
+  "icad-lisp.project.addfile.samenameexist": "Plik o tej samej nazwie już istnieje w tym projekcie: ",
+  "icad-lisp.project.addfile.openlabel": "Dodaj do projektu",
+  "icad-lisp.project.addfile.sourcefilefilter": "Pliki źródłowe LISP"
 }

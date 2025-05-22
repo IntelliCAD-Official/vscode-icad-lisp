@@ -19,7 +19,7 @@ export class IconUris {
 
     public static initialize() {
         if (!IconUris.extRootDir) {
-            IconUris.extRootDir = vscode.extensions.getExtension("Autodesk.autolispext").extensionPath;
+            IconUris.extRootDir = vscode.extensions.getExtension("IntelliCAD.icad-lisp").extensionPath;
         }
 
         return IconUris.extRootDir;

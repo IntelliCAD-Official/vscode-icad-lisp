@@ -26,7 +26,7 @@
 	        "\t$2",
 			")"
 		],
-		"description":"define a lisp function as AutoCAD command"
+		"description":"define a lisp function as IntelliCAD command"
 	},
 	"(defun c":
 	{
@@ -35,14 +35,14 @@
 			"(defun c:${1:foo} ()",
 	        "\t${2:}\r"
 		],
-		"description":"define a lisp function as AutoCAD command"
+		"description":"define a lisp function as IntelliCAD command"
 	},
 	"getvar": {
 		"prefix": "getvar",
 		"body": [
 			"(getvar \"${1:sysvar}\")"
 		],
-		"description": "Retrieves the value of an AutoCAD system variable"
+		"description": "Retrieves the value of an IntelliCAD system variable"
 	},
 	"princ": {
 		"prefix": "princ",
@@ -91,7 +91,7 @@
 		"body": [
 			"(setvar \"${1:varname}\" ${2:value})"
 		],
-		"description": "Sets an AutoCAD system variable to a specified value"
+		"description": "Sets an IntelliCAD system variable to a specified value"
 	},
 	"strcat": {
 		"prefix": "strcat",

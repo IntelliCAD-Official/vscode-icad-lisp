@@ -1,6 +1,6 @@
 {
-  "autolispext.urihandler.invaid": "Недопустимый вызов AutoCAD AutoLISP Extension.",
-  "autolispext.urihandler.activeddebugcfg": "Текущая конфигурация отладки: ",
-  "autolispext.urihandler.debug.start": "В строке меню выберите «Выполнить» > «Начать отладку» для отладки текущего файла исходного кода AutoLISP.",
-  "autolispext.urihandler.debug.openfile": "Откройте файл исходного кода AutoLISP и выберите «Выполнить» > «Начать отладку» в строке меню, чтобы выполнить отладку файла."
+  "icad-lisp.urihandler.invaid": "Недопустимый вызов IntelliCAD Lisp Debugger.",
+  "icad-lisp.urihandler.activeddebugcfg": "Текущая конфигурация отладки: ",
+  "icad-lisp.urihandler.debug.start": "В строке меню выберите «Выполнить» > «Начать отладку» для отладки текущего файла исходного кода LISP.",
+  "icad-lisp.urihandler.debug.openfile": "Откройте файл исходного кода LISP и выберите «Выполнить» > «Начать отладку» в строке меню, чтобы выполнить отладку файла."
 }

@@ -43,11 +43,11 @@ export function getProcesses(one: (pid: number, ppid: number, command: string, a
 			if(ProcessPathCache.globalAcadNameInUserAttachConfig)
 				acadExeName = ProcessPathCache.globalAcadNameInUserAttachConfig;
 			else
-				acadExeName = 'acad';
+				acadExeName = 'icad';
 
 			const CMD_PAT = /^(.*)\s+([0-9]+)\.[0-9]+[+-][0-9]+\s+(.*)\s+([0-9]+)\s+([0-9]+)$/;
 			//const CMD_PAT = /^(.*)\s+([0-9]+)\.[0-9]+[+-][0-9]+\s+([0-9]+)\s+([0-9]+)$/;
-			const acadProcFinder = join(__dirname, 'acadProcessFinder.exe');
+			const acadProcFinder = join(__dirname, 'icadProcessFinder.exe');
 			proc = spawn(acadProcFinder, [ acadExeName ]);
 			proc.stdout.setEncoding('utf8');
 			proc.stdout.on('data', lines(line => {

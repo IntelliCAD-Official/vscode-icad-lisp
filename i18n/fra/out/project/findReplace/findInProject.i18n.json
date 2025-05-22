@@ -1,13 +1,13 @@
 {
-  "autolispext.project.find.openproject": "Un projet doit être ouvert pour que vous puissiez rechercher une chaîne de texte.",
-  "autolispext.project.find.title": "Rechercher dans le projet",
-  "autolispext.project.find.hint": "Entrez une chaîne de texte à rechercher, puis appuyez sur la touche Entrée.",
-  "autolispext.project.find.supportos": "La fonction Rechercher et remplacer n'est prise en charge que sur les systèmes 64 bits.",
-  "autolispext.project.find.inprogress": "En cours... ",
-  "autolispext.project.find.found": "Détection de ",
-  "autolispext.project.find.results": " résultat(s) dans ",
-  "autolispext.project.find.files": " fichier(s):",
-  "autolispext.project.find.stopped": "Recherche arrêtée. ",
-  "autolispext.project.find.noresults": "Aucun résultat.",
-  "autolispext.project.find.exceedmaxresults": "Limite des résultats de recherche dépassée. Affinez votre recherche pour limiter les résultats. "
+  "icad-lisp.project.find.openproject": "Un projet doit être ouvert pour que vous puissiez rechercher une chaîne de texte.",
+  "icad-lisp.project.find.title": "Rechercher dans le projet",
+  "icad-lisp.project.find.hint": "Entrez une chaîne de texte à rechercher, puis appuyez sur la touche Entrée.",
+  "icad-lisp.project.find.supportos": "La fonction Rechercher et remplacer n'est prise en charge que sur les systèmes 64 bits.",
+  "icad-lisp.project.find.inprogress": "En cours... ",
+  "icad-lisp.project.find.found": "Détection de ",
+  "icad-lisp.project.find.results": " résultat(s) dans ",
+  "icad-lisp.project.find.files": " fichier(s):",
+  "icad-lisp.project.find.stopped": "Recherche arrêtée. ",
+  "icad-lisp.project.find.noresults": "Aucun résultat.",
+  "icad-lisp.project.find.exceedmaxresults": "Limite des résultats de recherche dépassée. Affinez votre recherche pour limiter les résultats. "
 }

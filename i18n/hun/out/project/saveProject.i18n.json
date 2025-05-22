@@ -1,4 +1,4 @@
 {
-  "autolispext.project.saveproject.noprojecttosave": "Nincs menthető projekt.",
-  "autolispext.project.saveproject.generateprjcontentfailed": "Nem sikerült létrehozni a projekt tartalmát."
+  "icad-lisp.project.saveproject.noprojecttosave": "Nincs menthető projekt.",
+  "icad-lisp.project.saveproject.generateprjcontentfailed": "Nem sikerült létrehozni a projekt tartalmát."
 }

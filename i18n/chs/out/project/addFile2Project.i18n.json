@@ -1,8 +1,8 @@
 {
-  "autolispext.project.addfile.openproject": "必须先打开项目，然后才能添加文件。",
-  "autolispext.project.addfile.onlylspallowed": "仅允许 LSP 文件。",
-  "autolispext.project.addfile.filealreadyexist": "此项目中已存在文件: ",
-  "autolispext.project.addfile.samenameexist": "此项目中已存在同名文件: ",
-  "autolispext.project.addfile.openlabel": "添加到项目",
-  "autolispext.project.addfile.sourcefilefilter": "AutoLISP 源文件"
+  "icad-lisp.project.addfile.openproject": "必须先打开项目，然后才能添加文件。",
+  "icad-lisp.project.addfile.onlylspallowed": "仅允许 LSP 文件。",
+  "icad-lisp.project.addfile.filealreadyexist": "此项目中已存在文件: ",
+  "icad-lisp.project.addfile.samenameexist": "此项目中已存在同名文件: ",
+  "icad-lisp.project.addfile.openlabel": "添加到项目",
+  "icad-lisp.project.addfile.sourcefilefilter": "LISP 源文件"
 }

@@ -9,8 +9,8 @@ import * as nls from 'vscode-nls';
 const localize = nls.loadMessageBundle();
 
 export async function getNewProjectFilePath() {
-    let label = localize("autolispext.project.createproject.createlabel", "Create");
-    const filterDesc = localize("autolispext.project.createproject.projectfilter", "AutoLISP Project Files");
+    let label = localize("icad-lisp.project.createproject.createlabel", "Create");
+    const filterDesc = localize("icad-lisp.project.createproject.projectfilter", "LISP Project Files");
     const options: vscode.SaveDialogOptions = {
         saveLabel: label,
         filters: {}
@@ -22,7 +22,7 @@ export async function getNewProjectFilePath() {
         if (path.basename(fileUri.fsPath).indexOf(' ') === -1) {
             return Promise.resolve(fileUri);
         } else {
-            let msg = localize("autolispext.project.createproject.nospaces", "Legacy PRJ naming rules do not allow spaces");
+            let msg = localize("icad-lisp.project.createproject.nospaces", "Legacy PRJ naming rules do not allow spaces");
             return Promise.reject(msg);
         }
     } else {
@@ -33,7 +33,7 @@ export async function getNewProjectFilePath() {
 export async function createProject(prjFilePath: string) {
     let prjPathUpper = prjFilePath.toUpperCase();
     if (prjPathUpper.endsWith(".PRJ") == false) {
-        let msg = localize("autolispext.project.createproject.onlyprjallowed", "Only PRJ files are allowed.");
+        let msg = localize("icad-lisp.project.createproject.onlyprjallowed", "Only PRJ files are allowed.");
         return Promise.reject(msg)
     }
 

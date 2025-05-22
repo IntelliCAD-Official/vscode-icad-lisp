@@ -38,7 +38,7 @@ suite("Analysis Support: SymbolServices Tests", function () {
 			expect(SymbolServices.isNative('xyz')).to.equal(false);
 		}
 		catch (err) {
-			assert.fail("Values known to be or not be native AutoLisp symbols returned unexpected results");
+			assert.fail("Values known to be or not be native Lisp symbols returned unexpected results");
 		}
 	});
 

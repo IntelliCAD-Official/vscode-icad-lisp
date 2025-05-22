@@ -1,13 +1,13 @@
 {
-	"autolispext.project.find.openproject": "A project must be open before you can search for a text string.",
-	"autolispext.project.find.title": "Find in Project",
-	"autolispext.project.find.hint": "Type a text string to find, and press Enter.",
-	"autolispext.project.find.supportos": "Find & Replace is supported only on 64-bit systems.",
-	"autolispext.project.find.inprogress": "In progress... ",
-	"autolispext.project.find.found": "Found ",
-	"autolispext.project.find.results": " result(s) in ",
-	"autolispext.project.find.files": " file(s):",
-	"autolispext.project.find.stopped": "Find stopped. ",
-	"autolispext.project.find.noresults": "No results found.",
-	"autolispext.project.find.exceedmaxresults": "Limit of search results exceeded. Refine your search to narrow down the results. "
+	"icad-lisp.project.find.openproject": "A project must be open before you can search for a text string.",
+	"icad-lisp.project.find.title": "Find in Project",
+	"icad-lisp.project.find.hint": "Type a text string to find, and press Enter.",
+	"icad-lisp.project.find.supportos": "Find & Replace is supported only on 64-bit systems.",
+	"icad-lisp.project.find.inprogress": "In progress... ",
+	"icad-lisp.project.find.found": "Found ",
+	"icad-lisp.project.find.results": " result(s) in ",
+	"icad-lisp.project.find.files": " file(s):",
+	"icad-lisp.project.find.stopped": "Find stopped. ",
+	"icad-lisp.project.find.noresults": "No results found.",
+	"icad-lisp.project.find.exceedmaxresults": "Limit of search results exceeded. Refine your search to narrow down the results. "
 }

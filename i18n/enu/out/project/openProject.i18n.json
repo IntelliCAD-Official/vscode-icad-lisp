@@ -1,8 +1,8 @@
 {
-  "autolispext.project.openproject.onlyprjallowed": "Only PRJ files are allowed.",
-  "autolispext.project.openproject.readfailed": "Can't read project file: ",
-  "autolispext.project.openproject.malformedfile": "Malformed project file: ",
-  "autolispext.project.openproject.label": "Open Project",
-  "autolispext.project.openproject.nospaces": "Legacy PRJ naming rules do not allow spaces",
-  "autolispext.project.openproject.projectfilter": "AutoLISP Project Files"
+  "icad-lisp.project.openproject.onlyprjallowed": "Only PRJ files are allowed.",
+  "icad-lisp.project.openproject.readfailed": "Can't read project file: ",
+  "icad-lisp.project.openproject.malformedfile": "Malformed project file: ",
+  "icad-lisp.project.openproject.label": "Open Project",
+  "icad-lisp.project.openproject.nospaces": "Legacy PRJ naming rules do not allow spaces",
+  "icad-lisp.project.openproject.projectfilter": "LISP Project Files"
 }

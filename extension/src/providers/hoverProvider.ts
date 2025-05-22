@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { IDclContainer, IDclFragment } from '../astObjects/dclInterfaces';
-import { AutoLispExt } from '../context';
+import { IcadExt } from '../context';
 import { ReadonlyDocument } from '../project/readOnlyDocument';
 import {DocumentServices} from "../services/documentServices";
 import {ISymbolReference, SymbolManager} from "../symbols";
@@ -10,9 +10,9 @@ import {AnnoIcon, Annotation} from "../help/documentationPresenter";
 import {parseDocumentation} from "../parsing/comments";
 
 const localize = nls.loadMessageBundle();
-const ambiguityError = localize("autolispext.hoverProvider.ambiguous", "Multiple definitions containing the @Global flag");
+const ambiguityError = localize("icad-lisp.hoverProvider.ambiguous", "Multiple definitions containing the @Global flag");
 
-export function AutoLispExtProvideHover(doc: ReadonlyDocument, position: vscode.Position) : vscode.ProviderResult<vscode.Hover>
+export function IcadExtProvideHover(doc: ReadonlyDocument, position: vscode.Position) : vscode.ProviderResult<vscode.Hover>
 {
     if (doc.documentDclContainer) {
         return handlersDCL.getHoverResults(doc, position);
@@ -38,7 +38,7 @@ namespace handlersDCL {
 
 
     function processAttributeAtom(parent: IDclContainer, atom: IDclFragment): vscode.Hover {
-        const def = AutoLispExt.WebHelpLibrary.dclAttributes.get(atom.symbol.toLowerCase());
+        const def = IcadExt.WebHelpLibrary.dclAttributes.get(atom.symbol.toLowerCase());
         if (!def || parent.firstAtom.flatIndex !== atom.flatIndex) {
             return null;
         }
@@ -46,7 +46,7 @@ namespace handlersDCL {
     }
 
     function processTileAtom(parent: IDclContainer, atom: IDclFragment): vscode.Hover {
-        const def = AutoLispExt.WebHelpLibrary.dclTiles.get(atom.symbol.toLowerCase());
+        const def = IcadExt.WebHelpLibrary.dclTiles.get(atom.symbol.toLowerCase());
         if (def) {
             return new vscode.Hover(Annotation.asMarkdown(def));
         }
@@ -73,7 +73,7 @@ namespace handlersLSP {
 
 
     function getNativeResource(lowerKey: string) : vscode.MarkdownString|Array<vscode.MarkdownString> {
-        const webHelp = AutoLispExt.WebHelpLibrary;
+        const webHelp = IcadExt.WebHelpLibrary;
 
         if (webHelp.ambiguousFunctions.has(lowerKey)) {
             return webHelp.ambiguousFunctions.get(lowerKey).map(x => Annotation.asMarkdown(x));

@@ -32,7 +32,7 @@ def init():
     print("===============================================")
     print("\n\n")
 
-    copyAcadProcFinder()
+    copyIcadProcFinder()
     copyWebHelpAbstraction()
 
     copyRipGrep()
@@ -51,12 +51,12 @@ def copyRipGrep():
     copyFile(srcOSX, dst, 'copied rg for OS X')
 
 
-def copyAcadProcFinder():
+def copyIcadProcFinder():
     src = os.path.join(os.path.curdir, 'utils',
-                       'acadProcessFinder', 'bin', 'acadProcessFinder.exe')
+                       'icadProcessFinder', 'bin', 'icadProcessFinder.exe')
     dst = os.path.join(os.path.curdir, 'out', 'process')
 
-    copyFile(src, dst, 'copied acadProcessFinder.exe')
+    copyFile(src, dst, 'copied icadProcessFinder.exe')
 
 def copyWebHelpAbstraction():
     src = os.path.join(os.path.curdir, 'extension', 'src', 'help', 'webHelpAbstraction.json')
@@ -84,13 +84,13 @@ def makepackage_vsix():
     print("===============================================")
     print("start to make vsix package")
     vsce = os.path.join(os.path.curdir, 'node_modules', '.bin', 'vsce')
-    output_opt = " -o " + os.path.join(os.path.curdir, 'autolispext.vsix')
+    output_opt = " -o " + os.path.join(os.path.curdir, 'icad-lisp.vsix')
     os.system(vsce + " package" + output_opt) # nosec
-    if (os.path.exists('autolispext.vsix')):
-        print("It created autolispext.vsix file sucessfully")
+    if (os.path.exists('icad-lisp.vsix')):
+        print("It created icad-lisp.vsix file sucessfully")
         ret = 0
     else:
-        print("It failed to create autolispext.vsix file")
+        print("It failed to create icad-lisp.vsix file")
         ret = 1
     print("end tp make visx file")
     print("===============================================")

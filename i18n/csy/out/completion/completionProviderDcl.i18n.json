@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Primitivum",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Zavře řetězec"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Primitivum",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Zavře řetězec"
 }

@@ -1,5 +1,5 @@
 {
-  "autolispext.project.checkunsavedchanges.message": "Nem mentett módosítások találhatók a projektben vagy a projekt fájljaiban.\nMenti a módosításokat?",
-  "autolispext.project.checkunsavedchanges.save": "Mentés",
-  "autolispext.project.checkunsavedchanges.dontsave": "Nincs mentés"
+  "icad-lisp.project.checkunsavedchanges.message": "Nem mentett módosítások találhatók a projektben vagy a projekt fájljaiban.\nMenti a módosításokat?",
+  "icad-lisp.project.checkunsavedchanges.save": "Mentés",
+  "icad-lisp.project.checkunsavedchanges.dontsave": "Nincs mentés"
 }

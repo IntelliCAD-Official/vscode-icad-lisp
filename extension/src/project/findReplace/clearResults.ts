@@ -31,7 +31,7 @@ let isSearching: boolean = false;
 //this method is expected to never throw error, as it will be the first method to call in many use cases
 export function getWarnIsSearching(): boolean {
     if (isSearching) {
-        let msg = localize("autolispext.project.findReplace.clearresults.issearching", "A search is in progress, wait until the current search has completed and try again.");
+        let msg = localize("icad-lisp.project.findReplace.clearresults.issearching", "A search is in progress, wait until the current search has completed and try again.");
         vscode.window.showInformationMessage(msg);
         return true;
     }

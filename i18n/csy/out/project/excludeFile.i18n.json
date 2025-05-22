@@ -1,4 +1,4 @@
 {
-  "autolispext.project.excludefile.openproject": "Aby bylo možné vyloučit soubor, musí být projekt otevřen.",
-  "autolispext.project.excludefile.filenotexist": "Soubor, který chcete vyloučit, v aktuálním projektu neexistuje."
+  "icad-lisp.project.excludefile.openproject": "Aby bylo možné vyloučit soubor, musí být projekt otevřen.",
+  "icad-lisp.project.excludefile.filenotexist": "Soubor, který chcete vyloučit, v aktuálním projektu neexistuje."
 }

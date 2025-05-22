@@ -1,5 +1,5 @@
 import { closeParenStyle, indentSpaces, longListFormatStyle, maximumLineChars } from '../format/fmtconfig';
-import { isInternalAutoLispOp } from '../completion/autocompletionProvider';
+import { isInternalLispOp } from '../completion/autocompletionProvider';
 import { Position } from 'vscode';
 import { LispAtom } from './lispAtom';
 
@@ -628,7 +628,7 @@ export class Sexpression extends LispAtom {
     }
 
     // wide style formatting only applies to the case which fit the conditions:
-    // 1. The operator is public autolisp APIs
+    // 1. The operator is public lisp APIs
     // 2. The operator and its first operand are in the same line before formatting
     //
     shouldFormatWideStyle(startColumn: number): boolean {
@@ -647,7 +647,7 @@ export class Sexpression extends LispAtom {
 
         let op = this.getLispOperator();
         let opName = op.symbol.toLowerCase();
-        if (!isInternalAutoLispOp(opName))
+        if (!isInternalLispOp(opName))
             return false;
 
         if (this.canBeFormatAsPlain(startColumn))
@@ -755,7 +755,7 @@ export class Sexpression extends LispAtom {
     //
     // For the second phase it is a recursive algorithm. It layouts the astObjects from top to bottom,
     // from left to right. And it follows the bellow rules to handle the individual cases:
-    // 1. For the Autolisp builtin APIs if the operator and the first operand are in the same
+    // 1. For the Lisp builtin APIs if the operator and the first operand are in the same
     //    before formatting, it will use "wide format style". For other cases it uses the "Narrow
     //    format style".
     // 2. function parameters and the pure long list can be layout single column or fit to margin

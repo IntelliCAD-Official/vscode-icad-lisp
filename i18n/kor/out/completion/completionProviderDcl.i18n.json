@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "기본체",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "문자열 닫기"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "기본체",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "문자열 닫기"
 }

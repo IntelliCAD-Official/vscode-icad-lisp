@@ -1,10 +1,10 @@
 {
-  "autolispext.commands.dclcompletion.primitive": "Primitiva",
-  "autolispext.commands.dclcompletion.primitive.dialog": "Genera una estructura de cuadro de diálogo",
-  "autolispext.commands.dclcompletion.primitive.structure": "primitiva estructural",
-  "autolispext.commands.dclcompletion.primitive.string": "estructura de cadena",
-  "autolispext.commands.dclcompletion.primitive.boolean": "estructura booleana",
-  "autolispext.commands.dclcompletion.primitive.Enum": "Enum.",
-  "autolispext.commands.dclcompletion.primitive.Attribute": "Atributo",
-  "autolispext.commands.dclcompletion.primitive.Tile": "Mosaico"
+  "icad-lisp.commands.dclcompletion.primitive": "Primitiva",
+  "icad-lisp.commands.dclcompletion.primitive.dialog": "Genera una estructura de cuadro de diálogo",
+  "icad-lisp.commands.dclcompletion.primitive.structure": "primitiva estructural",
+  "icad-lisp.commands.dclcompletion.primitive.string": "estructura de cadena",
+  "icad-lisp.commands.dclcompletion.primitive.boolean": "estructura booleana",
+  "icad-lisp.commands.dclcompletion.primitive.Enum": "Enum.",
+  "icad-lisp.commands.dclcompletion.primitive.Attribute": "Atributo",
+  "icad-lisp.commands.dclcompletion.primitive.Tile": "Mosaico"
 }

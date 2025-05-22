@@ -9,6 +9,7 @@ class ProductProcessPathPid{
 
 export class ProcessPathCache{
 	public static globalProductPath:string = "";
+	public static globalProductProcessId:number = -1;
 	public static globalProductProcessPathArr:ProductProcessPathPid[] = []; 
 	public static globalParameter:string = "";
 	public static globalLispAdapterPath:string="";
@@ -16,6 +17,7 @@ export class ProcessPathCache{
 
 	constructor(){
 		ProcessPathCache.globalProductPath = "";
+		ProcessPathCache.globalProductProcessId = -1;
 		ProcessPathCache.globalProductProcessPathArr = [];
 		ProcessPathCache.globalParameter = "";
 		ProcessPathCache.globalLispAdapterPath = "";
@@ -41,6 +43,7 @@ export class ProcessPathCache{
 		ProcessPathCache.globalProductProcessPathArr.forEach(function(item){
 			if(item.pid === pid){
 				ProcessPathCache.globalProductPath = item.path;
+				ProcessPathCache.globalProductProcessId = pid;
 			}
 		});
 	}

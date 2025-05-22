@@ -33,7 +33,7 @@ export class ProjectNode implements DisplayNode {
 
     getDisplayText(): string {
         if (this.projectModified) {
-            let unsaved = localize("autolispext.project.tree.unsaved", " (UNSAVED)");
+            let unsaved = localize("icad-lisp.project.tree.unsaved", " (UNSAVED)");
             return this.projectName + unsaved;
         } else {
             return this.projectName;
@@ -75,7 +75,7 @@ export class LspFileNode implements DisplayNode {
         if (this.fileExists) {
             return this.filePath;
         } else {
-            let msg = localize("autolispext.project.tree.filenotexist", "File doesn't exist: ");
+            let msg = localize("icad-lisp.project.tree.filenotexist", "File doesn't exist: ");
             return msg + this.filePath;
         }
     }
@@ -107,7 +107,7 @@ export class ProjectTreeProvider implements vscode.TreeDataProvider<DisplayNode>
     private constructor() {
         ProjectTreeProvider.currentInstance = this;
 
-        this.treeControl = vscode.window.createTreeView('Autolisp-ProjectView', { treeDataProvider: this });
+        this.treeControl = vscode.window.createTreeView('Icad-ProjectView', { treeDataProvider: this });
         this.treeControl.onDidCollapseElement(e => {
             e.element.setCollapsibleState(vscode.TreeItemCollapsibleState.Collapsed);
         })
@@ -123,7 +123,7 @@ export class ProjectTreeProvider implements vscode.TreeDataProvider<DisplayNode>
 
     public updateData(newRootNode: ProjectNode) {
         this.rootNode = newRootNode;
-        vscode.commands.executeCommand("setContext", "autolisp.hasProject", ProjectTreeProvider.hasProjectOpened());
+        vscode.commands.executeCommand("setContext", "icad.hasProject", ProjectTreeProvider.hasProjectOpened());
         this.refreshData(null);
     }
 
@@ -156,7 +156,7 @@ export class ProjectTreeProvider implements vscode.TreeDataProvider<DisplayNode>
     private onChanged: vscode.EventEmitter<DisplayNode> = new vscode.EventEmitter<DisplayNode>();
     public readonly onDidChangeTreeData?: vscode.Event<DisplayNode> = this.onChanged.event;
 
-    public static TreeItemClicked = 'LispProjectNodeClicked';
+    public static TreeItemClicked = 'icad.LispProjectNodeClicked';
     public getTreeItem(element: DisplayNode): vscode.TreeItem | Thenable<import("vscode").TreeItem> {
         try {
             let treeNode = new vscode.TreeItem(element.getDisplayText());

@@ -1,10 +1,8 @@
 {
-  "autolispext.pickprocess.acad.win": "Seleccione el proceso que enlazar. Asegúrese de que AutoCAD o uno de los conjuntos de herramientas especializadas se esté ejecutando. Escriba acad y selecciónelo en la lista.",
-  "autolispext.pickprocess.acad.osx": "Seleccione el proceso que enlazar. Asegúrese de que AutoCAD se esté ejecutando. Escriba AutoCAD y selecciónelo en la lista.",
-  "autolispext.pickprocess.acad.other": "Seleccione el proceso que enlazar",
-  "autolispext.pickprocess.pickfailed": "Error del selector de procesos ({0})",
-  "autolispext.pickprocess.process.id.port": "ID de proceso: {0}, puerto de depuración: {1}",
-  "autolispext.pickprocess.process.id.legacy": "ID de proceso: {0}, puerto de depuración: {1} (protocolo heredado)",
-  "autolispext.pickprocess.process.port.singal": "ID de proceso: {0}, puerto de depuración: {1} ({2})",
-  "autolispext.pickprocess.process.id.singal": "ID de proceso: {0} ({1})"
+  "icad-lisp.pickprocess.win": "Seleccione el proceso que enlazar. Asegúrese de que IntelliCAD o uno de los conjuntos de herramientas especializadas se esté ejecutando. Escriba icad y selecciónelo en la lista.",
+  "icad-lisp.pickprocess.pickfailed": "Error del selector de procesos ({0})",
+  "icad-lisp.pickprocess.process.id.port": "ID de proceso: {0}, puerto de depuración: {1}",
+  "icad-lisp.pickprocess.process.id.legacy": "ID de proceso: {0}, puerto de depuración: {1} (protocolo heredado)",
+  "icad-lisp.pickprocess.process.port.singal": "ID de proceso: {0}, puerto de depuración: {1} ({2})",
+  "icad-lisp.pickprocess.process.id.singal": "ID de proceso: {0} ({1})"
 }

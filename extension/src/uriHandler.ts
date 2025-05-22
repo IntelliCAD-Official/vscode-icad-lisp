@@ -6,7 +6,7 @@ import * as vscode from 'vscode';
 import {
     acitiveDocHasValidLanguageId
 } from './utils'
-import { setDefaultAcadPid } from "./debug"
+import { setDefaultProcessPid } from "./debug"
 import * as nls from 'vscode-nls';
 const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
 
@@ -24,15 +24,15 @@ export function onUriRequested(uri: vscode.Uri) {
 
     let pidStr = qs["pid"];
     if (pidStr === undefined) {
-        let msg = localize("autolispext.urihandler.invaid", "Invalid call to AutoCAD AutoLISP Extension.");
+        let msg = localize("icad-lisp.urihandler.invaid", "Invalid call to IntelliCAD Lisp Debugger.");
         vscode.window.showInformationMessage(msg);
         return;
     }
 
-    setDefaultAcadPid(parseInt(pidStr));
+    setDefaultProcessPid(parseInt(pidStr));
 
     if (vscode.debug.activeDebugSession) {
-        let msg = localize("autolispext.urihandler.activeddebugcfg", "Current debug configuration: ");
+        let msg = localize("icad-lisp.urihandler.activeddebugcfg", "Current debug configuration: ");
         vscode.window.showInformationMessage(msg + vscode.debug.activeDebugSession.name,
             modalMsgOption);
         return;
@@ -40,21 +40,21 @@ export function onUriRequested(uri: vscode.Uri) {
 
     if (vscode.window.activeTextEditor) {
         if (acitiveDocHasValidLanguageId()) {
-            let msg = localize("autolispext.urihandler.debug.start",
-                "From the menu bar, click Run > Start Debugging to debug the current AutoLISP source file.");
+            let msg = localize("icad-lisp.urihandler.debug.start",
+                "From the menu bar, click Run > Start Debugging to debug the current LISP source file.");
             vscode.window.showInformationMessage(msg, modalMsgOption);
         }
         else {
-            let msg = localize("autolispext.urihandler.debug.openfile",
-                "Open an AutoLISP source file and click Run > Start Debugging from the menu bar to debug the file.");
+            let msg = localize("icad-lisp.urihandler.debug.openfile",
+                "Open a LISP source file and click Run > Start Debugging from the menu bar to debug the file.");
             vscode.window.showInformationMessage(msg, modalMsgOption);
         }
 
         return;
     }
 
-    let msg = localize("autolispext.urihandler.debug.openfile",
-        "Open an AutoLISP source file and click Run > Start Debugging from the menu bar to debug the file.");
+    let msg = localize("icad-lisp.urihandler.debug.openfile",
+        "Open a LISP source file and click Run > Start Debugging from the menu bar to debug the file.");
     vscode.window.showInformationMessage(msg, modalMsgOption);
 
     return;

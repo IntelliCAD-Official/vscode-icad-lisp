@@ -1,6 +1,6 @@
 {
-	"name": "autolispdcl",
-	"scopeName": "source.autolispdcl",
+	"name": "icad-dcl",
+	"scopeName": "source.icad-dcl",
 	"patterns": [
 		{
 			"include": "#comment"

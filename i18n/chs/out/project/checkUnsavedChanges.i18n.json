@@ -1,5 +1,5 @@
 {
-  "autolispext.project.checkunsavedchanges.message": "发现项目或项目中的文件有未保存的更改。\n是否要保存这些更改？",
-  "autolispext.project.checkunsavedchanges.save": "保存",
-  "autolispext.project.checkunsavedchanges.dontsave": "不保存"
+  "icad-lisp.project.checkunsavedchanges.message": "发现项目或项目中的文件有未保存的更改。\n是否要保存这些更改？",
+  "icad-lisp.project.checkunsavedchanges.save": "保存",
+  "icad-lisp.project.checkunsavedchanges.dontsave": "不保存"
 }

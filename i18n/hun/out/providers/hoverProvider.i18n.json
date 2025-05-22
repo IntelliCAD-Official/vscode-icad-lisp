@@ -1,3 +1,3 @@
 {
-  "autolispext.hoverProvider.ambiguous": "Több definíció tartalmazza a @Global jelzőt"
+  "icad-lisp.hoverProvider.ambiguous": "Több definíció tartalmazza a @Global jelzőt"
 }

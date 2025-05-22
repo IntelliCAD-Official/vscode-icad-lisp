@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Primitive",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Closes the string"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Primitive",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Closes the string"
 }

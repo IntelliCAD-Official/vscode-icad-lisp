@@ -1,4 +1,4 @@
 {
-  "autolispext.project.saveproject.noprojecttosave": "Kein zu speicherndes Projekt vorhanden.",
-  "autolispext.project.saveproject.generateprjcontentfailed": "Projektinhalt konnte nicht erstellt werden."
+  "icad-lisp.project.saveproject.noprojecttosave": "Kein zu speicherndes Projekt vorhanden.",
+  "icad-lisp.project.saveproject.generateprjcontentfailed": "Projektinhalt konnte nicht erstellt werden."
 }

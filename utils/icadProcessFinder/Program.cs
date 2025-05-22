@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Text;
 
-namespace Autodesk.AutoLispExt
+namespace IntelliCAD.IcadExt
 {
     class Program
     {
@@ -10,12 +10,12 @@ namespace Autodesk.AutoLispExt
         {
             try
             {
-                string acadExeName = "acad";
+                string acadExeName = "icad";
 
                 if ((args != null) && (args.Length == 1))
                     acadExeName = args[0];
 
-                FindAcadProcesses(acadExeName);
+                FindIcadProcesses(acadExeName);
             }
             catch (Exception ex)
             {
@@ -23,7 +23,7 @@ namespace Autodesk.AutoLispExt
             }
         }
 
-        private static void FindAcadProcesses(string acadExeName)
+        private static void FindIcadProcesses(string acadExeName)
         {
             Console.OutputEncoding = Encoding.UTF8;
 

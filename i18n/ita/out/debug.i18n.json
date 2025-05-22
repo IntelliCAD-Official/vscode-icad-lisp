@@ -1,10 +1,10 @@
 {
-  "autolispext.debug.nodap": "non esiste. Utilizzare una release successiva ad AutoCAD 2020. Verificare che il file esista nella stessa cartella del prodotto di cui eseguire il debug.",
-  "autolispext.debug.noacad": "non esiste. Verificare e correggere il percorso della cartella del file eseguibile del prodotto.",
-  "autolispext.debug.acad.nosupport": "Questa istanza di AutoCAD non supporta il debug di file AutoLISP. Utilizzare una release successiva ad AutoCAD 2020.",
-  "autolispext.debug.launchjson.path": "Specificare il percorso assoluto del prodotto con l'attributo Path del file launch.json.",
-  "autolispext.debug.prod.path.win": "Specificare il percorso assoluto del prodotto. Ad esempio, C://Programmi//Autodesk//AutoCAD//acad.exe.",
-  "autolispext.debug.prod.path.osx": "Specificare il percorso assoluto del prodotto. Ad esempio, /Applications/Autodesk/AutoCAD.app/Contents/MacOS/AutoCAD.",
-  "autolispext.debug.prod.path.other": "Specificare il percorso assoluto del prodotto.",
-  "autolispext.debug.noprocess.eror": "Impossibile trovare un processo da associare."
+  "icad-lisp.debug.nodap": "non esiste. Utilizzare una release successiva ad IntelliCAD 14. Verificare che il file esista nella stessa cartella del prodotto di cui eseguire il debug.",
+  "icad-lisp.debug.nofile": "non esiste. Verificare e correggere il percorso della cartella del file eseguibile del prodotto.",
+  "icad-lisp.debug.product.nosupport": "Questa istanza di IntelliCAD non supporta il debug di file LISP. Utilizzare una release successiva ad IntelliCAD 14.",
+  "icad-lisp.debug.prod.path.win": "Specificare il percorso assoluto del prodotto. Ad esempio, C://Programmi//ITC//IntelliCAD//Icad.exe.",
+  "icad-lisp.debug.noprocess.eror": "Impossibile trovare un processo da associare.",
+  "icad-lisp.debug.start.error": "Couldn't start the product.",
+  "icad-lisp.debug.nodap2": "Couldn't start the product. Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout."
+
 }

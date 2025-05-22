@@ -12,7 +12,7 @@ import * as os from 'os';
 import { basename } from 'path';
 import { getProcesses } from './processTree';
 import {ProcessPathCache} from "./processCache";
-import { calculateACADProcessName } from '../platform';
+import { calculateICADProcessName } from '../platform';
 import { acitiveDocHasValidLanguageId } from '../utils';
 
 
@@ -24,14 +24,7 @@ interface ProcessItem extends vscode.QuickPickItem{
 }
 
 function getProcesspickerPlaceHolderStr(){
-	let platform = os.type();
-	if(platform === 'Windows_NT'){
-		return localize('autolispext.pickprocess.acad.win', "Pick the process to attach. Make sure AutoCAD, or one of the specialized toolsets, is running. Type acad and select it from the list.");
-	}else if(platform === 'Darwin'){
-		return localize('autolispext.pickprocess.acad.osx', "Pick the process to attach. Make sure AutoCAD is running. Type AutoCAD and select it from the list.");
-	}else{
-		return localize('autolispext.pickprocess.acad.other', "Pick the process to attach");
-	}
+	return localize('icad-lisp.pickprocess.win', "Pick the process to attach. Make sure IntelliCAD, or one of the specialized toolsets, is running. Type icad and select it from the list.");
 }
 
 /**
@@ -56,7 +49,7 @@ export function pickProcess(ports:any, defaultPid: number): Promise<string | nul
 		let choosedItem =  vscode.window.showQuickPick(items, options).then(item => item ? item.pidOrPort : null);
 		return choosedItem;
 	}).catch(err => {
-		let chooseItem = vscode.window.showErrorMessage(localize('autolispext.pickprocess.pickfailed', "Process picker failed ({0})", err.message), { modal: true }).then(_ => null);
+		let chooseItem = vscode.window.showErrorMessage(localize('icad-lisp.pickprocess.pickfailed', "Process picker failed ({0})", err.message), { modal: true }).then(_ => null);
 		return chooseItem;
 	});
 }
@@ -81,7 +74,7 @@ function listProcesses(ports: boolean): Promise<ProcessItem[]> {
 			let configurations:[] = vscode.workspace.getConfiguration("launch", vscode.window.activeTextEditor.document.uri).get("configurations");
 			let attachLispConfig;
 			configurations.forEach(function(item){
-				if(item["type"] === "attachlisp"){
+				if(item["type"] === "attach-icad"){
 					attachLispConfig = item;
 				}
 			});
@@ -90,7 +83,7 @@ function listProcesses(ports: boolean): Promise<ProcessItem[]> {
 			}
 		}
 		
-		ProcessFilter = new RegExp('^(?:' + calculateACADProcessName(processName) + '|iojs)$', 'i');
+		ProcessFilter = new RegExp('^(?:' + calculateICADProcessName(processName) + '|iojs)$', 'i');
 
 		if (process.platform === 'win32' && executablePath.indexOf('\\??\\') === 0) {
 			// remove leading device specifier
@@ -115,14 +108,14 @@ function listProcesses(ports: boolean): Promise<ProcessItem[]> {
 
 		if (usePort) {
 			if (protocol === 'inspector') {
-				description = localize('autolispext.pickprocess.process.id.port', "process id: {0}, debug port: {1}", pid, port);
+				description = localize('icad-lisp.pickprocess.process.id.port', "process id: {0}, debug port: {1}", pid, port);
 			} else {
-				description = localize('autolispext.pickprocess.process.id.legacy', "process id: {0}, debug port: {1} (legacy protocol)", pid, port);
+				description = localize('icad-lisp.pickprocess.process.id.legacy', "process id: {0}, debug port: {1} (legacy protocol)", pid, port);
 			}
 			pidOrPort = `${protocol}${port}`;
 		} else {
 			if (protocol && port > 0) {
-				description = localize('autolispext.pickprocess.process.port.singal', "process id: {0}, debug port: {1} ({2})", pid, port, 'SIGUSR1');
+				description = localize('icad-lisp.pickprocess.process.port.singal', "process id: {0}, debug port: {1} ({2})", pid, port, 'SIGUSR1');
 				pidOrPort = `${pid}${protocol}${port}`;
 			} else {
 				// no port given
@@ -138,7 +131,7 @@ function listProcesses(ports: boolean): Promise<ProcessItem[]> {
 
 				if(addintolist){
 					ProcessPathCache.addGlobalProductProcessPathArr(executablePath, pid);
-					description = localize('autolispext.pickprocess.process.id.singal', "process id: {0} ({1})", pid, 'SIGUSR1');
+					description = localize('icad-lisp.pickprocess.process.id.singal', "process id: {0} ({1})", pid, 'SIGUSR1');
 					pidOrPort = pid.toString();
 				}
 			}

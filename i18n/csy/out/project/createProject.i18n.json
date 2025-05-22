@@ -1,6 +1,6 @@
 {
-  "autolispext.project.createproject.createlabel": "Vytvořit",
-  "autolispext.project.createproject.onlyprjallowed": "Povoleny jsou pouze soubory PRJ.",
-  "autolispext.project.createproject.nospaces": "Starší pravidla pojmenování PRJ nepovolují prostory",
-  "autolispext.project.createproject.projectfilter": "Soubory projektů jazyka AutoLISP"
+  "icad-lisp.project.createproject.createlabel": "Vytvořit",
+  "icad-lisp.project.createproject.onlyprjallowed": "Povoleny jsou pouze soubory PRJ.",
+  "icad-lisp.project.createproject.nospaces": "Starší pravidla pojmenování PRJ nepovolují prostory",
+  "icad-lisp.project.createproject.projectfilter": "Soubory projektů jazyka LISP"
 }

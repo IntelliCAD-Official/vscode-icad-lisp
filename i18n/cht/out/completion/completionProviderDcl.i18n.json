@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "基元",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "結束字串"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "基元",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "結束字串"
 }

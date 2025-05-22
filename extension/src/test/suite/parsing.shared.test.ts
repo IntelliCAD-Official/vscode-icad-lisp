@@ -12,8 +12,8 @@ suite("Parsing: Shared Tests", function () {
 
 	suiteSetup(() => {
 		try {			
-			windowsDoc = ReadonlyDocument.createMemoryDocument('(defun someFunc ()\r\n\t(command ".line" pause pause)\r\n\t(princ)\r\n)', 'autolisp');
-			linuxDoc = ReadonlyDocument.createMemoryDocument('(defun someFunc ()\n\t(command ".line" pause pause)\n\t(princ)\n)', 'autolisp');
+			windowsDoc = ReadonlyDocument.createMemoryDocument('(defun someFunc ()\r\n\t(command ".line" pause pause)\r\n\t(princ)\r\n)', 'icad-lisp');
+			linuxDoc = ReadonlyDocument.createMemoryDocument('(defun someFunc ()\n\t(command ".line" pause pause)\n\t(princ)\n)', 'icad-lisp');
 		} catch (error) {
 			assert.fail("Failed to initialize shared suite data sources");
 		}

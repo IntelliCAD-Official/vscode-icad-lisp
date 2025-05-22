@@ -1,7 +1,7 @@
 import {WebHelpDclAtt, WebHelpEntity, WebHelpDclTile, WebHelpFunction, WebHelpObject, WebHelpValueType} from './documentationObjects';
 import {ILispDocs} from '../parsing/comments';
 import * as vscode from "vscode";
-import {AutoLispExt} from "../context";
+import {IcadExt} from "../context";
 import {LispAtom} from "../astObjects/lispAtom";
 import * as path from 'path';
 
@@ -68,10 +68,10 @@ namespace MarkdownHelpers {
 		const types = item.typeNames.split(/,| /g).filter(x => x.length > 0);
 		if (types.length >= 1) {
 			const last = types.length - 1;
-			const year = AutoLispExt.WebHelpLibrary.year;
+			const year = IcadExt.WebHelpLibrary.year;
 			for (let i = 0; i < types.length; i++) {
 				const name = types[i];
-				const def = AutoLispExt.WebHelpLibrary.objects.get(name.toLowerCase());
+				const def = IcadExt.WebHelpLibrary.objects.get(name.toLowerCase());
 				if (!def) {
 					typeString += name;
 				} else {
@@ -139,7 +139,7 @@ export namespace Annotation {
 
 	function FunctionMarkdown(source: WebHelpFunction, paramIndex: number): vscode.MarkdownString {
 		const lines = [];
-		let year = AutoLispExt.WebHelpLibrary.year;
+		let year = IcadExt.WebHelpLibrary.year;
 		let url = source.getHelpLink(year);
 		lines.push(`${AnnoIcon.METHOD} ${MarkdownHelpers.webLink(MarkdownHelpers.bold(source.id), url)} [${source.platforms}]\n`);
 		lines.push(source.description);
@@ -163,7 +163,7 @@ export namespace Annotation {
 
 	function DclAttMarkdown(source: WebHelpDclAtt) : vscode.MarkdownString {
 		const lines = [];
-		let year = AutoLispExt.WebHelpLibrary.year;
+		let year = IcadExt.WebHelpLibrary.year;
 		let url = source.getHelpLink(year);		
 		lines.push(`${AnnoIcon.ATTRIBUTE} ${MarkdownHelpers.webLink(MarkdownHelpers.bold(source.id), url)} [${source.platforms}]\n`);
 		lines.push(source.description);
@@ -185,7 +185,7 @@ export namespace Annotation {
 
 	function DclTileMarkdown(source: WebHelpDclTile) : vscode.MarkdownString {
 		const lines = [];
-		let year = AutoLispExt.WebHelpLibrary.year;
+		let year = IcadExt.WebHelpLibrary.year;
 		let url = source.getHelpLink(year);
 
 		lines.push(`${AnnoIcon.STRUCT} ${MarkdownHelpers.webLink(MarkdownHelpers.bold(source.id), url)} [${source.platforms}]\n`);
@@ -208,7 +208,7 @@ export namespace Annotation {
 			const last = source.attributes.length - 1;
 			for (let i = 0; i < source.attributes.length; i++) {
 				const att = source.attributes[i];
-				const libItem = AutoLispExt.WebHelpLibrary.dclAttributes.get(att.toLowerCase());
+				const libItem = IcadExt.WebHelpLibrary.dclAttributes.get(att.toLowerCase());
 				const itemLink = !libItem ? libItem : MarkdownHelpers.webLink(att, libItem.getHelpLink(year));
 				text += i === last ? itemLink : `${itemLink}, `;
 			}

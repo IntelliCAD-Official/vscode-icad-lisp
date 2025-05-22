@@ -1,6 +1,6 @@
 {
-  "autolispext.project.createproject.createlabel": "Создать",
-  "autolispext.project.createproject.onlyprjallowed": "Разрешены только файлы PRJ.",
-  "autolispext.project.createproject.nospaces": "В прошлых версиях правилами именования файлов PRJ не допускалось использование пробелов",
-  "autolispext.project.createproject.projectfilter": "Файлы проектов AutoLISP"
+  "icad-lisp.project.createproject.createlabel": "Создать",
+  "icad-lisp.project.createproject.onlyprjallowed": "Разрешены только файлы PRJ.",
+  "icad-lisp.project.createproject.nospaces": "В прошлых версиях правилами именования файлов PRJ не допускалось использование пробелов",
+  "icad-lisp.project.createproject.projectfilter": "Файлы проектов LISP"
 }

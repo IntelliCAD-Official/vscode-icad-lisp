@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Grundbaustein",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Schließt die Zeichenfolge ab"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Grundbaustein",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Schließt die Zeichenfolge ab"
 }

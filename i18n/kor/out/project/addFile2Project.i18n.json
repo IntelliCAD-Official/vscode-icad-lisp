@@ -1,8 +1,8 @@
 {
-  "autolispext.project.addfile.openproject": "파일을 추가하기 전에 프로젝트가 열려 있어야 합니다.",
-  "autolispext.project.addfile.onlylspallowed": "LSP 파일만 허용됩니다.",
-  "autolispext.project.addfile.filealreadyexist": "파일이 이 프로젝트에 이미 있습니다. ",
-  "autolispext.project.addfile.samenameexist": "같은 이름의 파일이 이 프로젝트에 이미 있습니다. ",
-  "autolispext.project.addfile.openlabel": "프로젝트에 추가",
-  "autolispext.project.addfile.sourcefilefilter": "AutoLISP 원본 파일"
+  "icad-lisp.project.addfile.openproject": "파일을 추가하기 전에 프로젝트가 열려 있어야 합니다.",
+  "icad-lisp.project.addfile.onlylspallowed": "LSP 파일만 허용됩니다.",
+  "icad-lisp.project.addfile.filealreadyexist": "파일이 이 프로젝트에 이미 있습니다. ",
+  "icad-lisp.project.addfile.samenameexist": "같은 이름의 파일이 이 프로젝트에 이미 있습니다. ",
+  "icad-lisp.project.addfile.openlabel": "프로젝트에 추가",
+  "icad-lisp.project.addfile.sourcefilefilter": "LISP 원본 파일"
 }

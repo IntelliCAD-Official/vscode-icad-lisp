@@ -1,4 +1,4 @@
 {
-  "autolispext.format.notsupport.dcl": "O comando não suporta arquivos DCL.",
-  "autolispext.format.selectionlines": "Primeiro, selecione as linhas de código para formatar."
+  "icad-lisp.format.notsupport.dcl": "O comando não suporta arquivos DCL.",
+  "icad-lisp.format.selectionlines": "Primeiro, selecione as linhas de código para formatar."
 }

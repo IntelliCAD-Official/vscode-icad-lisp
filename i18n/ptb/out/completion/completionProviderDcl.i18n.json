@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Primitivo",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Termina a sequência de caracteres"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Primitivo",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Termina a sequência de caracteres"
 }

@@ -1,14 +1,14 @@
 import * as vscode from 'vscode';
-import { AutoLispExtPrepareRename, AutoLispExtProvideRenameEdits } from './renameProvider';
+import { IcadExtPrepareRename, IcadExtProvideRenameEdits } from './renameProvider';
 
 
-export function AutoLispExtProvideReferences(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Location[]> {
-	const initValidator = AutoLispExtPrepareRename(document, position);
+export function IcadExtProvideReferences(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Location[]> {
+	const initValidator = IcadExtPrepareRename(document, position);
 	if (!initValidator) {
 		return null;
 	}
 	// The arbitrary '-ANY' addition and the initValidator check should mean the 'context' variable is never null
-	const context = AutoLispExtProvideRenameEdits(document, position, `${initValidator.placeholder}-ANY`);
+	const context = IcadExtProvideRenameEdits(document, position, `${initValidator.placeholder}-ANY`);
 	return convertEditsToLocations(context);
 }
 

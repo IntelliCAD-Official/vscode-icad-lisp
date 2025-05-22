@@ -1,4 +1,4 @@
 {
-  "autolispext.project.saveproject.noprojecttosave": "Нет проекта для сохранения.",
-  "autolispext.project.saveproject.generateprjcontentfailed": "Не удалось создать содержимое проекта."
+  "icad-lisp.project.saveproject.noprojecttosave": "Нет проекта для сохранения.",
+  "icad-lisp.project.saveproject.generateprjcontentfailed": "Не удалось создать содержимое проекта."
 }

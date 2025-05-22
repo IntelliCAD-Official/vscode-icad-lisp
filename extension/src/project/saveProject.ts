@@ -16,7 +16,7 @@ import * as vscode from 'vscode';
 export async function SaveProject(refresh: boolean) {
     try {
         if (ProjectTreeProvider.hasProjectOpened() == false) {
-            let msg = localize("autolispext.project.saveproject.noprojecttosave", "No project to save.");
+            let msg = localize("icad-lisp.project.saveproject.noprojecttosave", "No project to save.");
             return Promise.reject(msg);
         }
 
@@ -25,12 +25,12 @@ export async function SaveProject(refresh: boolean) {
         //work out the correct project file text
         let prjFileText = generateProjectText(root);
         if (!prjFileText) {
-            let msg = localize("autolispext.project.saveproject.generateprjcontentfailed", "Failed to generate project content.");
+            let msg = localize("icad-lisp.project.saveproject.generateprjcontentfailed", "Failed to generate project content.");
             return Promise.reject(msg);
         }
 
         //format the text before writing to file
-        let doc = ReadonlyDocument.createMemoryDocument(prjFileText, 'autolispprj');
+        let doc = ReadonlyDocument.createMemoryDocument(prjFileText, 'icad-prj');
         longListFormatAsSingleColum();
         let formatedText = LispFormatter.format(doc, null);
         resetLongListFormatAsSingleColum();
@@ -59,7 +59,7 @@ export async function SaveProject(refresh: boolean) {
 export async function SaveAll() {
     const root = ProjectTreeProvider.instance().projectNode;
     if (!root) {
-        let msg = localize("autolispext.project.saveproject.noprojecttosave", "No project to save.");
+        let msg = localize("icad-lisp.project.saveproject.noprojecttosave", "No project to save.");
         return Promise.reject(msg);
     }
 

@@ -1,4 +1,4 @@
 {
-  "autolispext.format.notsupport.dcl": "Polecenie nie obsługuje plików DCL.",
-  "autolispext.format.selectionlines": "Najpierw wybierz linie kodu do sformatowania."
+  "icad-lisp.format.notsupport.dcl": "Polecenie nie obsługuje plików DCL.",
+  "icad-lisp.format.selectionlines": "Najpierw wybierz linie kodu do sformatowania."
 }

@@ -1,8 +1,8 @@
 {
-  "autolispext.project.openproject.onlyprjallowed": "PRJ 파일만 허용됩니다.",
-  "autolispext.project.openproject.readfailed": "프로젝트 파일을 읽을 수 없음: ",
-  "autolispext.project.openproject.malformedfile": "잘못된 프로젝트 파일: ",
-  "autolispext.project.openproject.label": "프로젝트 열기",
-  "autolispext.project.openproject.nospaces": "기존 PRJ 명명 규칙에서는 공백이 허용되지 않습니다.",
-  "autolispext.project.openproject.projectfilter": "AutoLISP 프로젝트 파일"
+  "icad-lisp.project.openproject.onlyprjallowed": "PRJ 파일만 허용됩니다.",
+  "icad-lisp.project.openproject.readfailed": "프로젝트 파일을 읽을 수 없음: ",
+  "icad-lisp.project.openproject.malformedfile": "잘못된 프로젝트 파일: ",
+  "icad-lisp.project.openproject.label": "프로젝트 열기",
+  "icad-lisp.project.openproject.nospaces": "기존 PRJ 명명 규칙에서는 공백이 허용되지 않습니다.",
+  "icad-lisp.project.openproject.projectfilter": "LISP 프로젝트 파일"
 }

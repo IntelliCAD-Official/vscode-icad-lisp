@@ -5,7 +5,7 @@ import { LispFormatter } from "../../format/formatter";
 import { ReadonlyDocument } from "../../project/readOnlyDocument";
 import * as fmtConfig from "../../format/fmtconfig";
 import { ImportMock } from "ts-mock-imports";
-import { AutoLispExt } from "../../context";
+import { IcadExt } from "../../context";
 import * as vscode from 'vscode';
 
 let assert = chai.assert;
@@ -68,7 +68,7 @@ suite("Lisp Formatter mock Tests", function () {
     );
     internalOperators = fs.readFileSync(keyFile).toString().split("\r\n");
     internalLispFuncsStub = ImportMock.mockOther(
-      AutoLispExt.Resources,
+      IcadExt.Resources,
       "internalLispFuncs",
       internalOperators
     );

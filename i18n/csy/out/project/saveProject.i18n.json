@@ -1,4 +1,4 @@
 {
-  "autolispext.project.saveproject.noprojecttosave": "Žádný projekt k uložení.",
-  "autolispext.project.saveproject.generateprjcontentfailed": "Nepodařilo se vytvořit obsah projektu."
+  "icad-lisp.project.saveproject.noprojecttosave": "Žádný projekt k uložení.",
+  "icad-lisp.project.saveproject.generateprjcontentfailed": "Nepodařilo se vytvořit obsah projektu."
 }

@@ -1,10 +1,10 @@
 {
-  "autolispext.commands.dclcompletion.primitive": "Primitivo",
-  "autolispext.commands.dclcompletion.primitive.dialog": "Gera uma estrutura de diálogo",
-  "autolispext.commands.dclcompletion.primitive.structure": "primitivo estrutural",
-  "autolispext.commands.dclcompletion.primitive.string": "estrutura de sequência",
-  "autolispext.commands.dclcompletion.primitive.boolean": "estrutura booleana",
-  "autolispext.commands.dclcompletion.primitive.Enum": "Enum.",
-  "autolispext.commands.dclcompletion.primitive.Attribute": "Atributo",
-  "autolispext.commands.dclcompletion.primitive.Tile": "Bloco"
+  "icad-lisp.commands.dclcompletion.primitive": "Primitivo",
+  "icad-lisp.commands.dclcompletion.primitive.dialog": "Gera uma estrutura de diálogo",
+  "icad-lisp.commands.dclcompletion.primitive.structure": "primitivo estrutural",
+  "icad-lisp.commands.dclcompletion.primitive.string": "estrutura de sequência",
+  "icad-lisp.commands.dclcompletion.primitive.boolean": "estrutura booleana",
+  "icad-lisp.commands.dclcompletion.primitive.Enum": "Enum.",
+  "icad-lisp.commands.dclcompletion.primitive.Attribute": "Atributo",
+  "icad-lisp.commands.dclcompletion.primitive.Tile": "Bloco"
 }

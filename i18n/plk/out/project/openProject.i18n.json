@@ -1,8 +1,8 @@
 {
-  "autolispext.project.openproject.onlyprjallowed": "Dozwolone są tylko pliki PRJ.",
-  "autolispext.project.openproject.readfailed": "Nie można odczytać pliku projektu: ",
-  "autolispext.project.openproject.malformedfile": "Błędny plik projektu: ",
-  "autolispext.project.openproject.label": "Otwórz projekt",
-  "autolispext.project.openproject.nospaces": "Starsze reguły nazewnictwa plików PRJ nie zezwalają na używanie spacji",
-  "autolispext.project.openproject.projectfilter": "Pliki projektu AutoLISP"
+  "icad-lisp.project.openproject.onlyprjallowed": "Dozwolone są tylko pliki PRJ.",
+  "icad-lisp.project.openproject.readfailed": "Nie można odczytać pliku projektu: ",
+  "icad-lisp.project.openproject.malformedfile": "Błędny plik projektu: ",
+  "icad-lisp.project.openproject.label": "Otwórz projekt",
+  "icad-lisp.project.openproject.nospaces": "Starsze reguły nazewnictwa plików PRJ nie zezwalają na używanie spacji",
+  "icad-lisp.project.openproject.projectfilter": "Pliki projektu LISP"
 }

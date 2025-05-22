@@ -1,8 +1,8 @@
 {
-  "autolispext.project.openproject.onlyprjallowed": "Somente arquivos PRJ são permitidos.",
-  "autolispext.project.openproject.readfailed": "Não é possível ler o arquivo de projeto: ",
-  "autolispext.project.openproject.malformedfile": "Arquivo de projeto malformado: ",
-  "autolispext.project.openproject.label": "Abrir projeto",
-  "autolispext.project.openproject.nospaces": "As regras de nomenclatura PRJ herdadas não permitem espaços",
-  "autolispext.project.openproject.projectfilter": "Arquivos de projeto do AutoLISP"
+  "icad-lisp.project.openproject.onlyprjallowed": "Somente arquivos PRJ são permitidos.",
+  "icad-lisp.project.openproject.readfailed": "Não é possível ler o arquivo de projeto: ",
+  "icad-lisp.project.openproject.malformedfile": "Arquivo de projeto malformado: ",
+  "icad-lisp.project.openproject.label": "Abrir projeto",
+  "icad-lisp.project.openproject.nospaces": "As regras de nomenclatura PRJ herdadas não permitem espaços",
+  "icad-lisp.project.openproject.projectfilter": "Arquivos de projeto do LISP"
 }

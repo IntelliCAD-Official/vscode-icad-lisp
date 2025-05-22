@@ -1,4 +1,4 @@
 {
-  "autolispext.project.findreplace.opensearchresult.filenotexist": "O arquivo não existe: ",
-  "autolispext.project.findreplace.opensearchresult.openfailed": "Não foi possível abrir o arquivo: "
+  "icad-lisp.project.findreplace.opensearchresult.filenotexist": "O arquivo não existe: ",
+  "icad-lisp.project.findreplace.opensearchresult.openfailed": "Não foi possível abrir o arquivo: "
 }

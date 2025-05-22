@@ -20,8 +20,8 @@ export function calculateABSPathForDAP(productPath){
 	}
 }
 
-//calculate the process name for AutoCAD process picker
-export function calculateACADProcessName(pName){
+//calculate the process name for IntelliCAD process picker
+export function calculateICADProcessName(pName){
 	let processName = pName ? pName.replace(".exe", "") : "";
 	if(processName !== "")
 		return processName;
@@ -29,9 +29,9 @@ export function calculateACADProcessName(pName){
 	let platform = os.type();						//reference - https://nodejs.org/api/os.html#os_os_type
 	
 	if(platform === 'Windows_NT'){
-		return "acad";
+		return "icad";
 	}else if(platform === 'Darwin'){
-		return "AutoCAD";
+		return "IntelliCAD";
 	}else{
 		return "";
 	}
@@ -41,7 +41,7 @@ export function isSupportedLispFile(path){
 	let ext = path.substring(path.length - 3, path.length).toUpperCase();
 	let platform = os.type();
 	if(platform === 'Windows_NT'){
-		return ext === "LSP" || ext === "MNL" || ext === "DCL";
+		return ext === "LSP" || ext === "MNL" || ext === "DCL" || ext === "SCR";
 	}else if(platform === 'Darwin'){
 		return ext === "LSP" || ext === "DCL";
 	}else{

@@ -9,7 +9,7 @@ const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
 export async function applyReplacementInFile(filePlan: FileNode) {
     try {
         if (fs.existsSync(filePlan.filePath) == false) {
-            filePlan.errorInReplace = localize("autolispext.project.findreplace.applyreplacement.filenotexist", "File doesn't exist.");
+            filePlan.errorInReplace = localize("icad-lisp.project.findreplace.applyreplacement.filenotexist", "File doesn't exist.");
             return;
         }
 
@@ -81,7 +81,7 @@ async function applyChangeInEditor(filePath: string, fileContent: string) {
 
         let succ = await vscode.workspace.applyEdit(edit);
         if (!succ) {
-            let msg = localize("autolispext.project.findreplace.applyreplacement.replacetextfailed", "Failed to replace text: ");
+            let msg = localize("icad-lisp.project.findreplace.applyreplacement.replacetextfailed", "Failed to replace text: ");
             throw new Error(msg + filePath);
         }
 

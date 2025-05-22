@@ -1,4 +1,4 @@
 {
-  "autolispext.project.excludefile.openproject": "Перед исключением файла необходимо открыть проект.",
-  "autolispext.project.excludefile.filenotexist": "Файл, который необходимо исключить, не существует в текущем проекте."
+  "icad-lisp.project.excludefile.openproject": "Перед исключением файла необходимо открыть проект.",
+  "icad-lisp.project.excludefile.filenotexist": "Файл, который необходимо исключить, не существует в текущем проекте."
 }

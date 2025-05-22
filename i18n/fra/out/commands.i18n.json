@@ -1,6 +1,6 @@
 {
-  "autolispext.help.commands.openWebHelp": "Échec de chargement du fichier webHelpAbstraction.json",
-  "autolispext.commands.addFoldingRegion": "Échec d'insertion de l'extrait de code",
-  "autolispext.help.commands.generateDocumentation": "Impossible de localiser un nom de fichier defun valide",
-  "autolispext.providers.rename.failed": "Le symbole n'était pas valide pour les opérations de changement de nom"
+  "icad-lisp.help.commands.openWebHelp": "Échec de chargement du fichier webHelpAbstraction.json",
+  "icad-lisp.commands.addFoldingRegion": "Échec d'insertion de l'extrait de code",
+  "icad-lisp.help.commands.generateDocumentation": "Impossible de localiser un nom de fichier defun valide",
+  "icad-lisp.providers.rename.failed": "Le symbole n'était pas valide pour les opérations de changement de nom"
 }

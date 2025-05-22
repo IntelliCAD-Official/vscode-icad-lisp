@@ -1,4 +1,4 @@
 {
-  "autolispext.project.findreplace.applyreplacement.filenotexist": "Soubor neexistuje.",
-  "autolispext.project.findreplace.applyreplacement.replacetextfailed": "Nepodařilo se nahradit text: "
+  "icad-lisp.project.findreplace.applyreplacement.filenotexist": "Soubor neexistuje.",
+  "icad-lisp.project.findreplace.applyreplacement.replacetextfailed": "Nepodařilo se nahradit text: "
 }

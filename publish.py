@@ -14,12 +14,12 @@ def download_artifactory_vsix():
 
     os.system("curl -k -O " + vsixUri) # nosec
 
-    fileSize = os.path.getsize('autolispext.vsix')
+    fileSize = os.path.getsize('icad-lisp.vsix')
 
     print ("executed; file size: " + str(fileSize))
 
     if fileSize < 102400:
-        print ("ERROR: file size of autolispext.vsix is too small; the downloading failed.")
+        print ("ERROR: file size of icad-lisp.vsix is too small; the downloading failed.")
         sys.exit(3)
 
 if __name__ == "__main__":

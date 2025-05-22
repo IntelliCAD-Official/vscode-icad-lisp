@@ -1,7 +1,7 @@
 
 import * as vscode from 'vscode';
 import { ReadonlyDocument } from "./project/readOnlyDocument";
-import { AutoLispExt } from './context';
+import { IcadExt } from './context';
 import { ProjectTreeProvider  } from "./project/projectTree";
 import * as fs from	'fs-extra';
 import { glob } from 'glob';
@@ -111,7 +111,7 @@ export class DocumentManager{
 	// This function is called once on startup, but again by relevant workspace events using the bind(this) to maintain proper context
 	private updateExcludes() {
 		this._excludes = [];
-		const wsExcludes = AutoLispExt.Resources.getWorkspaceExcludeGlobs();
+		const wsExcludes = IcadExt.Resources.getWorkspaceExcludeGlobs();
 		wsExcludes.forEach(entry => {
 			if (entry.excluded) {
 				glob(entry.glob, { cwd: entry.root, nocase: true, realpath: true }, (err, mlst) => {
@@ -291,7 +291,7 @@ export class DocumentManager{
 			const pattern = new vscode.RelativePattern(folder, "**");
 			const watcher = vscode.workspace.createFileSystemWatcher(pattern, false, false, false);
 
-			AutoLispExt.Subscriptions.push(watcher.onDidDelete((e: vscode.Uri) => {
+			IcadExt.Subscriptions.push(watcher.onDidDelete((e: vscode.Uri) => {
 				const key = DocumentServices.normalizeFilePath(e.fsPath);
 				const prjs = this.projectKeys;
 				if (this._cached.has(key)){
@@ -305,7 +305,7 @@ export class DocumentManager{
 			}));
 		
 	
-			AutoLispExt.Subscriptions.push(watcher.onDidCreate((e: vscode.Uri) => {
+			IcadExt.Subscriptions.push(watcher.onDidCreate((e: vscode.Uri) => {
 				const key = DocumentServices.normalizeFilePath(e.fsPath);
 				this.pathConsumeOrValidate(key, Origins.WSPACE);
 				// New files require the file.exclude & search.exclude settings to be re-evaluated
@@ -315,7 +315,7 @@ export class DocumentManager{
 				}
 			}));
 	
-			AutoLispExt.Subscriptions.push(watcher.onDidChange((e: vscode.Uri) => {
+			IcadExt.Subscriptions.push(watcher.onDidChange((e: vscode.Uri) => {
 				const key = DocumentServices.normalizeFilePath(e.fsPath);
 				this.pathConsumeOrValidate(key, Origins.WSPACE);
 				if (e.fsPath.toUpperCase().endsWith('SETTINGS.JSON') && this._delayedGlobEvent === null) {	
@@ -418,24 +418,24 @@ export class DocumentManager{
 		//		The onDidCloseTextDocument event will delete the OLD TextDocument object from the _opened Map
 
 		/////////////////////// The extension appears to reset after every workspace change and this wasn't doing anything ///////////////////////
-		// AutoLispExt.Subscriptions.push(vscode.workspace.onDidChangeWorkspaceFolders(async (e: vscode.WorkspaceFoldersChangeEvent) => {
+		// IcadExt.Subscriptions.push(vscode.workspace.onDidChangeWorkspaceFolders(async (e: vscode.WorkspaceFoldersChangeEvent) => {
 		// 	this.initialize();
 		// }));
 		
 		// Create FileSystemWatcher's & build the workspace blueprint
 		this.initialize();
 
-		AutoLispExt.Subscriptions.push(vscode.workspace.onDidCloseTextDocument((e: vscode.TextDocument) => {
+		IcadExt.Subscriptions.push(vscode.workspace.onDidCloseTextDocument((e: vscode.TextDocument) => {
 			const source = this._cached.get(DocumentServices.normalizeFilePath(e.fileName));
 			source?.flags.delete(Origins.OPENED);
 		}));
 	
-		AutoLispExt.Subscriptions.push(vscode.workspace.onDidOpenTextDocument((e: vscode.TextDocument) => {
+		IcadExt.Subscriptions.push(vscode.workspace.onDidOpenTextDocument((e: vscode.TextDocument) => {
 			this.documentConsumeOrValidate(e, Origins.OPENED);
 		}));
 
 		// Note: if the file is already opened and deleted through the workspace, it is deleted AND closed.
-		AutoLispExt.Subscriptions.push(vscode.workspace.onDidDeleteFiles((e: vscode.FileDeleteEvent) => {
+		IcadExt.Subscriptions.push(vscode.workspace.onDidDeleteFiles((e: vscode.FileDeleteEvent) => {
 			e.files.forEach(file => {
 				const key = DocumentServices.normalizeFilePath(file.fsPath);
 				if (this._cached.has(key)) {

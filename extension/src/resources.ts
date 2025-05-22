@@ -86,7 +86,7 @@ function readDataFileByDelimiter(datafile: string, delimiter: string, action: (i
 
 
 export function getExtensionSettingString(settingName: string): string {
-    let settingGroup = vscode.workspace.getConfiguration('autolispext');
+    let settingGroup = vscode.workspace.getConfiguration('icad-lisp');
     if (!settingGroup) {
         return null;
 	}
@@ -101,7 +101,7 @@ export function getExtensionSettingString(settingName: string): string {
 
 
 export function getExtensionSettingBoolean(settingName: string): boolean {
-    let settingGroup = vscode.workspace.getConfiguration('autolispext');
+    let settingGroup = vscode.workspace.getConfiguration('icad-lisp');
     if (!settingGroup) {
         return null;
 	}

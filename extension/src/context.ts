@@ -67,4 +67,4 @@ export class ContextManager{
 	}
 }
 
-export const AutoLispExt: ContextManager = ContextManager.Instance;
+export const IcadExt: ContextManager = ContextManager.Instance;

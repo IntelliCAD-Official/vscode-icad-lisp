@@ -1,6 +1,6 @@
 {
-  "autolispext.urihandler.invaid": "Llamada no válida a AutoCAD AutoLISP Extension.",
-  "autolispext.urihandler.activeddebugcfg": "Configuración de depuración actual: ",
-  "autolispext.urihandler.debug.start": "En la barra de menús, haga clic en Ejecutar > Iniciar depuración para depurar el archivo de origen de AutoLISP actual.",
-  "autolispext.urihandler.debug.openfile": "Abra un archivo de origen de AutoLISP y haga clic en Ejecutar > Iniciar depuración en la barra de menús para depurar el archivo."
+  "icad-lisp.urihandler.invaid": "Llamada no válida a IntelliCAD Lisp Debugger.",
+  "icad-lisp.urihandler.activeddebugcfg": "Configuración de depuración actual: ",
+  "icad-lisp.urihandler.debug.start": "En la barra de menús, haga clic en Ejecutar > Iniciar depuración para depurar el archivo de origen de LISP actual.",
+  "icad-lisp.urihandler.debug.openfile": "Abra un archivo de origen de LISP y haga clic en Ejecutar > Iniciar depuración en la barra de menús para depurar el archivo."
 }

@@ -5,13 +5,13 @@ import * as path from 'path';
 var assert = require('chai').assert;
 
 suite("Global Setup", function () {	
-	test("Artificial Invoke of AutoLispExt", async function () {	
+	test("Artificial Invoke of icad-lisp", async function () {	
 		try {
 			this.timeout(10000);
 			// For some reason, activating our extension from within a test is "better" than
 			// activating it passively by using arguments to auto-open an LSP file. The side
 			// effects of not doing it this way cause incomplete NYC code coverage.
-			await vscode.extensions.getExtension('Autodesk.autolispext').activate();
+			await vscode.extensions.getExtension('IntelliCAD.icad-lisp').activate();
 			chai.assert(true);
 		}
 		catch (err) {

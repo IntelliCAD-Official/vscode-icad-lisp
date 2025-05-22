@@ -1,4 +1,4 @@
 {
-  "autolispext.project.findreplace.opensearchresult.filenotexist": "Soubor neexistuje: ",
-  "autolispext.project.findreplace.opensearchresult.openfailed": "Soubor nelze otevřít: "
+  "icad-lisp.project.findreplace.opensearchresult.filenotexist": "Soubor neexistuje: ",
+  "icad-lisp.project.findreplace.opensearchresult.openfailed": "Soubor nelze otevřít: "
 }

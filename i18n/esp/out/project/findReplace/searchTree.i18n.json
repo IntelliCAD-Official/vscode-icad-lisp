@@ -1,10 +1,10 @@
 {
-  "autolispext.project.findreplace.searchtree.in": " en ",
-  "autolispext.project.findreplace.searchtree.prjfile": "\r\nArchivo de proyecto: ",
-  "autolispext.project.findreplace.searchtree.replace": "Reemplazar",
-  "autolispext.project.findreplace.searchtree.with": " por ",
-  "autolispext.project.findreplace.searchtree.find": "Buscar ",
-  "autolispext.project.findreplace.searchtree.matchcaseon": "\r\nCoincidir mayúsculas/minúsculas: ACT",
-  "autolispext.project.findreplace.searchtree.matchwholewordon": "\r\nCoincidir palabra completa: ACT",
-  "autolispext.project.findreplace.searchtree.regexpon": "\r\nUtilizar expresión regular: ACT"
+  "icad-lisp.project.findreplace.searchtree.in": " en ",
+  "icad-lisp.project.findreplace.searchtree.prjfile": "\r\nArchivo de proyecto: ",
+  "icad-lisp.project.findreplace.searchtree.replace": "Reemplazar",
+  "icad-lisp.project.findreplace.searchtree.with": " por ",
+  "icad-lisp.project.findreplace.searchtree.find": "Buscar ",
+  "icad-lisp.project.findreplace.searchtree.matchcaseon": "\r\nCoincidir mayúsculas/minúsculas: ACT",
+  "icad-lisp.project.findreplace.searchtree.matchwholewordon": "\r\nCoincidir palabra completa: ACT",
+  "icad-lisp.project.findreplace.searchtree.regexpon": "\r\nUtilizar expresión regular: ACT"
 }

@@ -1,4 +1,4 @@
 {
-  "autolispext.project.excludefile.openproject": "Projekt musi być otwarty, aby można było wykluczyć plik.",
-  "autolispext.project.excludefile.filenotexist": "Plik, który chcesz wykluczyć, nie istnieje w bieżącym projekcie."
+  "icad-lisp.project.excludefile.openproject": "Projekt musi być otwarty, aby można było wykluczyć plik.",
+  "icad-lisp.project.excludefile.filenotexist": "Plik, który chcesz wykluczyć, nie istnieje w bieżącym projekcie."
 }

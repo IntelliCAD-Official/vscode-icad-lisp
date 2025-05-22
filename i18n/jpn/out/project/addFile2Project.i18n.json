@@ -1,8 +1,8 @@
 {
-  "autolispext.project.addfile.openproject": "ファイルを追加するには、プロジェクトを開く必要があります。",
-  "autolispext.project.addfile.onlylspallowed": "LSP ファイルのみが許可されます。",
-  "autolispext.project.addfile.filealreadyexist": "ファイルは既に次のプロジェクトに存在します: ",
-  "autolispext.project.addfile.samenameexist": "同じ名前のファイルが既に次のプロジェクトに存在します: ",
-  "autolispext.project.addfile.openlabel": "プロジェクトに追加",
-  "autolispext.project.addfile.sourcefilefilter": "AutoLISP ソース ファイル"
+  "icad-lisp.project.addfile.openproject": "ファイルを追加するには、プロジェクトを開く必要があります。",
+  "icad-lisp.project.addfile.onlylspallowed": "LSP ファイルのみが許可されます。",
+  "icad-lisp.project.addfile.filealreadyexist": "ファイルは既に次のプロジェクトに存在します: ",
+  "icad-lisp.project.addfile.samenameexist": "同じ名前のファイルが既に次のプロジェクトに存在します: ",
+  "icad-lisp.project.addfile.openlabel": "プロジェクトに追加",
+  "icad-lisp.project.addfile.sourcefilefilter": "LISP ソース ファイル"
 }

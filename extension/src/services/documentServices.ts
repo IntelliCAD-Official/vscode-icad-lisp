@@ -1,4 +1,4 @@
-import { AutoLispExt } from '../context';
+import { IcadExt } from '../context';
 import { ReadonlyDocument } from '../project/readOnlyDocument';
 import { SymbolManager } from '../symbols';
 import { ILispFragment } from '../astObjects/ILispFragment';
@@ -6,9 +6,9 @@ import { ILispFragment } from '../astObjects/ILispFragment';
 
 export namespace DocumentServices {
 	export enum Selectors {
-		LSP = "autolisp",
-		DCL = "autolispdcl",
-		PRJ = "autolispprj"
+		LSP = "icad-lisp",
+		DCL = "icad-dcl",
+		PRJ = "icad-prj"
 	}
 
 	export function getSelectorType(fspath: string): string {
@@ -17,6 +17,7 @@ export namespace DocumentServices {
 			switch (ext) {
 				case ".LSP": return Selectors.LSP;
 				case ".MNL": return Selectors.LSP;
+				case ".SCR": return Selectors.LSP;
 				case ".PRJ": return Selectors.PRJ;
 				case ".DCL": return Selectors.DCL;
 				default: return "";
@@ -39,12 +40,12 @@ export namespace DocumentServices {
 		// can happen because a document could contextually be "open", in a "PRJ" and in the "workspace"
 		const collected = [];
 		// this should be very fast since LispContainer constructors now aggrigates foreign symbols
-		const docs = AutoLispExt.Documents;
+		const docs = IcadExt.Documents;
 		return docs.OpenedDocuments.filter(roDoc => {
 			return testDocumentKeysAndCollectIfUnused(roDoc, lowerKey, collected);
-		}).concat(AutoLispExt.Documents.ProjectDocuments.filter(roDoc => {
+		}).concat(IcadExt.Documents.ProjectDocuments.filter(roDoc => {
 			return testDocumentKeysAndCollectIfUnused(roDoc, lowerKey, collected);
-		})).concat(AutoLispExt.Documents.WorkspaceDocuments.filter(roDoc => {
+		})).concat(IcadExt.Documents.WorkspaceDocuments.filter(roDoc => {
 			return testDocumentKeysAndCollectIfUnused(roDoc, lowerKey, collected);
 		}));
 	}

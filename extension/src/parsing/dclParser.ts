@@ -4,7 +4,7 @@ import { StringBuilder, } from '../utils';
 import { DclTile } from '../astObjects/dclTile';
 import { DclAtom } from '../astObjects/dclAtom';
 import { DclAttribute } from '../astObjects/dclAttribute';
-import { AutoLispExt } from '../context';
+import { IcadExt } from '../context';
 
 
 const lf = '\n'.charCodeAt(0); 
@@ -168,7 +168,7 @@ class DclDocContext implements vscode.Disposable {
 
 		if (this.fragments.length === 2 
 			&& this.fragments[1].symbol === ';' 
-			&& AutoLispExt.WebHelpLibrary.dclTiles.has(this.fragments[0].symbol.toLowerCase())) {
+			&& IcadExt.WebHelpLibrary.dclTiles.has(this.fragments[0].symbol.toLowerCase())) {
 			this.createNewTileScopeFromFragments();
 			this.closeActiveTileScope();
 		} else {

@@ -19,7 +19,7 @@ export async function openLspFile(clickedTreeItem: DisplayNode) {
         }
 
         if (exists == false) {
-            let msg = localize("autolispext.project.openlspfile.filenotexist", "File doesn't exist: ");
+            let msg = localize("icad-lisp.project.openlspfile.filenotexist", "File doesn't exist: ");
             return Promise.reject(msg + lspNode.filePath);
         }
 

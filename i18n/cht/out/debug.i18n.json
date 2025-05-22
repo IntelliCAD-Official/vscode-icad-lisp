@@ -1,10 +1,9 @@
 {
-  "autolispext.debug.nodap": "不存在。請使用高於 AutoCAD 2020 的版本。確認檔案與要偵錯的產品在同一個資料夾。",
-  "autolispext.debug.noacad": "不存在。請確認並更正產品可執行檔的資料夾路徑。",
-  "autolispext.debug.acad.nosupport": "此 AutoCAD 例證不支援偵錯 AutoLISP 檔，請使用比 AutoCAD 2020 更高的版本。",
-  "autolispext.debug.launchjson.path": "請使用 launch.json 檔的 Path 屬性指定產品的絕對路徑。",
-  "autolispext.debug.prod.path.win": "請指定產品的絕對路徑。例如，C://Program Files//Autodesk//AutoCAD//acad.exe。",
-  "autolispext.debug.prod.path.osx": "請指定產品的絕對路徑。例如，/Applications/Autodesk/AutoCAD.app/Contents/MacOS/AutoCAD。",
-  "autolispext.debug.prod.path.other": "請指定產品的絕對路徑。",
-  "autolispext.debug.noprocess.eror": "找不到要連接的程序。"
+  "icad-lisp.debug.nodap": "不存在。請使用高於 IntelliCAD 14 的版本。確認檔案與要偵錯的產品在同一個資料夾。",
+  "icad-lisp.debug.nofile": "不存在。請確認並更正產品可執行檔的資料夾路徑。",
+  "icad-lisp.debug.product.nosupport": "此 IntelliCAD 例證不支援偵錯 LISP 檔，請使用比 IntelliCAD 14 更高的版本。",
+  "icad-lisp.debug.prod.path.win": "請指定產品的絕對路徑。例如，C://Program Files//ITC//IntelliCAD//Icad.exe。",
+  "icad-lisp.debug.noprocess.eror": "找不到要連接的程序。",
+  "icad-lisp.debug.start.error": "Couldn't start the product.",
+  "icad-lisp.debug.nodap2": "Couldn't start the product. Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout."
 }

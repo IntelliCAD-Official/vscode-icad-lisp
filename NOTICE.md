@@ -1,3 +1,14 @@
+# IntelliCAD Lisp Debugger
+Copyright © 2025 The IntelliCAD Technology Consortium. All rights reserved.
+
+IntelliCAD Lisp Debugger is licensed under the Apache License, Version 2.0.
+
+This is a fork of the [AutoCAD AutoLISP Extension](https://github.com/Autodesk-AutoCAD/AutoLispExt) containing modifications to support usage with [IntelliCAD](https://www.intellicad.org/). This repository contains changes to the AutoCAD AutoLISP Extension source code and configuration that may not be supported by Autodesk, Inc. and may not be consistent with the original design intent of the AutoCAD AutoLISP Extension. All modifications in this repository are licensed under the same Apache License 2.0 as the AutoCAD AutoLISP Extension and all modifications of the source code made will be marked as such in accordance with the terms of the Apache License 2.0. For a list of modifications and their descriptions, please refer to the project's commit history. Content created prior to this fork is proprietary to Autodesk, Inc. Content created after this fork is proprietary to The IntelliCAD Technology Consortium.
+
+Unless required by applicable law or agreed to in writing, software distributed under the Apache 2.0 License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations.
+
+There are third-party components used by and shipped with this project with different licenses.
+
 # https://github.com/sindresorhus/execa
 MIT License
 

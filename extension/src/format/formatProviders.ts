@@ -5,7 +5,7 @@ import * as nls from 'vscode-nls';
 const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
 
 export function registerDocumentFormatter() {
-    vscode.languages.registerDocumentFormattingEditProvider(['autolisp', 'lisp'], {
+    vscode.languages.registerDocumentFormattingEditProvider(['icad-lisp', 'lisp'], {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
             let activeTextEditor = vscode.window.activeTextEditor;
             if (activeTextEditor == undefined)
@@ -13,7 +13,7 @@ export function registerDocumentFormatter() {
             let currentLSPDoc = activeTextEditor.document.fileName;
             let ext = currentLSPDoc.substring(currentLSPDoc.length - 4, currentLSPDoc.length).toUpperCase();
             if (ext === ".DCL") {
-                let msg = localize("autolispext.format.notsupport.dcl", "Command doesn't support DCL files.");
+                let msg = localize("icad-lisp.format.notsupport.dcl", "Command doesn't support DCL files.");
                 vscode.window.showInformationMessage(msg);
                 return [];
             }
@@ -25,7 +25,7 @@ export function registerDocumentFormatter() {
 }
 
 export function registeSelectionFormatter() {
-    vscode.languages.registerDocumentRangeFormattingEditProvider(['autolisp', 'lisp'], {
+    vscode.languages.registerDocumentRangeFormattingEditProvider(['icad-lisp', 'lisp'], {
         provideDocumentRangeFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
             let activeTextEditor = vscode.window.activeTextEditor;
             if (activeTextEditor == undefined)
@@ -33,12 +33,12 @@ export function registeSelectionFormatter() {
             let currentLSPDoc = activeTextEditor.document.fileName;
             let ext = currentLSPDoc.substring(currentLSPDoc.length - 4, currentLSPDoc.length).toUpperCase();
             if (ext === ".DCL") {
-                let msg = localize("autolispext.format.notsupport.dcl", "Command doesn't support DCL files.");
+                let msg = localize("icad-lisp.format.notsupport.dcl", "Command doesn't support DCL files.");
                 vscode.window.showInformationMessage(msg);
                 return [];
             }
             if (activeTextEditor.selection.isEmpty) {
-                let msg = localize("autolispext.format.selectionlines", "First, select the lines of code to format.");
+                let msg = localize("icad-lisp.format.selectionlines", "First, select the lines of code to format.");
                 vscode.window.showInformationMessage(msg);
             }
 

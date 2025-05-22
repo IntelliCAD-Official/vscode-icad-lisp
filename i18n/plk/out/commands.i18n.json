@@ -1,6 +1,6 @@
 {
-  "autolispext.help.commands.openWebHelp": "Wczytanie pliku webHelpAbstraction.json nie powiodło się",
-  "autolispext.commands.addFoldingRegion": "Wstawienie fragmentu nie powiodło się",
-  "autolispext.help.commands.generateDocumentation": "Nie można znaleźć prawidłowej nazwy defun",
-  "autolispext.providers.rename.failed": "Wystąpił nieprawidłowy symbol w operacjach zmiany nazwy"
+  "icad-lisp.help.commands.openWebHelp": "Wczytanie pliku webHelpAbstraction.json nie powiodło się",
+  "icad-lisp.commands.addFoldingRegion": "Wstawienie fragmentu nie powiodło się",
+  "icad-lisp.help.commands.generateDocumentation": "Nie można znaleźć prawidłowej nazwy defun",
+  "icad-lisp.providers.rename.failed": "Wystąpił nieprawidłowy symbol w operacjach zmiany nazwy"
 }

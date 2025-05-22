@@ -1,10 +1,10 @@
 {
-  "autolispext.commands.dclcompletion.primitive": "Typ prosty",
-  "autolispext.commands.dclcompletion.primitive.dialog": "Generuje strukturę okna dialogowego",
-  "autolispext.commands.dclcompletion.primitive.structure": "strukturalny typ prosty",
-  "autolispext.commands.dclcompletion.primitive.string": "struktura ciągu",
-  "autolispext.commands.dclcompletion.primitive.boolean": "struktura logiczna",
-  "autolispext.commands.dclcompletion.primitive.Enum": "Wyliczenie",
-  "autolispext.commands.dclcompletion.primitive.Attribute": "Atrybut",
-  "autolispext.commands.dclcompletion.primitive.Tile": "Blok"
+  "icad-lisp.commands.dclcompletion.primitive": "Typ prosty",
+  "icad-lisp.commands.dclcompletion.primitive.dialog": "Generuje strukturę okna dialogowego",
+  "icad-lisp.commands.dclcompletion.primitive.structure": "strukturalny typ prosty",
+  "icad-lisp.commands.dclcompletion.primitive.string": "struktura ciągu",
+  "icad-lisp.commands.dclcompletion.primitive.boolean": "struktura logiczna",
+  "icad-lisp.commands.dclcompletion.primitive.Enum": "Wyliczenie",
+  "icad-lisp.commands.dclcompletion.primitive.Attribute": "Atrybut",
+  "icad-lisp.commands.dclcompletion.primitive.Tile": "Blok"
 }

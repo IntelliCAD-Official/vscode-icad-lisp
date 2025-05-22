@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { AutoLispExt } from '../context';
+import { IcadExt } from '../context';
 import { ReadonlyDocument } from '../project/readOnlyDocument';
 import { DocumentServices } from '../services/documentServices';
 import { FlatContainerServices } from '../services/flatContainerServices';
@@ -9,8 +9,8 @@ import { SharedAtomic } from './providerShared';
 import { ILispFragment } from '../astObjects/ILispFragment';
 
 
-export function AutoLispExtProvideDefinition(document: vscode.TextDocument|ReadonlyDocument, position: vscode.Position) : vscode.Location[] {
-	const roDoc = document instanceof ReadonlyDocument ? document : AutoLispExt.Documents.getDocument(document);
+export function IcadExtProvideDefinition(document: vscode.TextDocument|ReadonlyDocument, position: vscode.Position) : vscode.Location[] {
+	const roDoc = document instanceof ReadonlyDocument ? document : IcadExt.Documents.getDocument(document);
 	let selectedAtom = SharedAtomic.getNonPrimitiveAtomFromPosition(roDoc, position);
 	if (!selectedAtom || SymbolServices.isNative(selectedAtom.symbol.toLowerCase())){
 		return null;

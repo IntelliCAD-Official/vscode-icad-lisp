@@ -24,19 +24,19 @@ export class ReadonlyLine implements vscode.TextLine {
     text: string;
 
     get rangeIncludingLineBreak(): vscode.Range {
-        throw new Error("Method not implemented");//not used in AutolispExt
+        throw new Error("Method not implemented");//not used in IcadExt
     }
 
     get range(): vscode.Range {
-        throw new Error("Method not implemented");//not used in AutolispExt
+        throw new Error("Method not implemented");//not used in IcadExt
     }
 
     get firstNonWhitespaceCharacterIndex(): number {
-        throw new Error("Method not implemented");//not used in AutolispExt
+        throw new Error("Method not implemented");//not used in IcadExt
     }
 
     get isEmptyOrWhitespace(): boolean {
-        throw new Error("Method not implemented");//not used in AutolispExt
+        throw new Error("Method not implemented");//not used in IcadExt
     }
 }
 
@@ -64,7 +64,7 @@ export class ReadonlyDocument implements vscode.TextDocument {
     }
 
     // Example Use Cases
-    //      Identify global variables from fragments of AutoLisp code
+    //      Identify global variables from fragments of Lisp code
     //      Currently in use to save/create PRJ files
     static createMemoryDocument(fileContent: string, languageId: string): ReadonlyDocument {        
         let ret = new ReadonlyDocument('');
@@ -199,7 +199,7 @@ export class ReadonlyDocument implements vscode.TextDocument {
         }
 
         //the code shouldn't get here because it should have returned in the for loop when line == this.lineCount - 1
-        let msg = localize("autolispext.project.readonlydocument.convertoffsettopositionfailed", "Failed to convert offset to position.");
+        let msg = localize("icad-lisp.project.readonlydocument.convertoffsettopositionfailed", "Failed to convert offset to position.");
         throw new Error(msg);
     }
 
@@ -233,7 +233,7 @@ export class ReadonlyDocument implements vscode.TextDocument {
     }
 
     validatePosition(position: vscode.Position): vscode.Position {
-        throw new Error('Method not implemented.'); //not used in AutolispExt
+        throw new Error('Method not implemented.'); //not used in IcadExt
     }
     //#endregion
 

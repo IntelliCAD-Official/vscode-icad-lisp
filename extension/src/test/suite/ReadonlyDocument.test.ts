@@ -12,7 +12,7 @@ suite("ReadonlyDocument Tests", function () {
 	test("Creating with: open()", function () {		
 		try {
 			doc = ReadonlyDocument.open(lispFileTest); 			
-			assert.equal(doc.languageId, 'autolisp');
+			assert.equal(doc.languageId, 'icad-lisp');
 		}
 		catch (err) {
 			assert.fail("Could not create document");
@@ -23,7 +23,7 @@ suite("ReadonlyDocument Tests", function () {
 	test("Creating with: getMemoryDocument()", function () {
 		try { 
 			doc = ReadonlyDocument.getMemoryDocument(doc as TextDocument); 
-			assert.equal(doc.languageId, 'autolisp');
+			assert.equal(doc.languageId, 'icad-lisp');
 		}
 		catch (err) {
 			assert.fail("Could not create document");
@@ -33,7 +33,7 @@ suite("ReadonlyDocument Tests", function () {
 
 	test("Creating with: createMemoryDocument()", function () {
 		try { 
-			doc = ReadonlyDocument.createMemoryDocument(doc.getText(), 'autolisp'); 
+			doc = ReadonlyDocument.createMemoryDocument(doc.getText(), 'icad-lisp'); 
 			assert.notEqual(doc.lines, 0);
 			doc.fileName = lispFileTest;
 		}

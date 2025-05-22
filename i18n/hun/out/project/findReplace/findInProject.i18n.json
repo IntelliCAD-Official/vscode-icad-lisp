@@ -1,13 +1,13 @@
 {
-  "autolispext.project.find.openproject": "A szöveges karakterlánc kereséséhez meg kell nyitnia egy projektet.",
-  "autolispext.project.find.title": "Keresés a projektben",
-  "autolispext.project.find.hint": "Adja meg a keresett karakterláncot, majd nyomja le az Enter billentyűt.",
-  "autolispext.project.find.supportos": "A Keresés és csere funkciót csak a 64 bites rendszerek támogatják.",
-  "autolispext.project.find.inprogress": "Folyamatban... ",
-  "autolispext.project.find.found": " ",
-  "autolispext.project.find.results": " találat ",
-  "autolispext.project.find.files": " fájlban:",
-  "autolispext.project.find.stopped": "Keresés leállítva. ",
-  "autolispext.project.find.noresults": "Nincs találat.",
-  "autolispext.project.find.exceedmaxresults": "Túllépte a keresési eredmények korlátját. Finomítsa a keresést az eredmények szűkítése érdekében. "
+  "icad-lisp.project.find.openproject": "A szöveges karakterlánc kereséséhez meg kell nyitnia egy projektet.",
+  "icad-lisp.project.find.title": "Keresés a projektben",
+  "icad-lisp.project.find.hint": "Adja meg a keresett karakterláncot, majd nyomja le az Enter billentyűt.",
+  "icad-lisp.project.find.supportos": "A Keresés és csere funkciót csak a 64 bites rendszerek támogatják.",
+  "icad-lisp.project.find.inprogress": "Folyamatban... ",
+  "icad-lisp.project.find.found": " ",
+  "icad-lisp.project.find.results": " találat ",
+  "icad-lisp.project.find.files": " fájlban:",
+  "icad-lisp.project.find.stopped": "Keresés leállítva. ",
+  "icad-lisp.project.find.noresults": "Nincs találat.",
+  "icad-lisp.project.find.exceedmaxresults": "Túllépte a keresési eredmények korlátját. Finomítsa a keresést az eredmények szűkítése érdekében. "
 }

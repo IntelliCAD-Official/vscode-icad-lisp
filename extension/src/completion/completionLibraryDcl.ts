@@ -1,5 +1,5 @@
 import {CompletionItemKind, SnippetString} from "vscode";
-import {AutoLispExt} from "../context";
+import {IcadExt} from "../context";
 import {Annotation} from '../help/documentationPresenter';
 import {CompletionItemDcl, Kinds} from "./completionItemDcl";
 import * as nls from 'vscode-nls';
@@ -54,7 +54,7 @@ export class CompletionLibraryDcl {
 
 
 	private getOrInit() : CompletionLibraryDcl {
-		if (!this.isLoaded && AutoLispExt.Resources.isLoaded) {
+		if (!this.isLoaded && IcadExt.Resources.isLoaded) {
 			this.generateDynamics();
 			this.generateTiles();
 			this.generateAttributes();
@@ -76,14 +76,14 @@ export class CompletionLibraryDcl {
 
 
 	private generateDynamics() : void {
-		const localDialogStruct = localize("autolispext.commands.dclcompletion.primitive.dialog", "Generates a dialog structure");
-		const localTile = localize("autolispext.commands.dclcompletion.primitive.Tile", "Tile");
+		const localDialogStruct = localize("icad-lisp.commands.dclcompletion.primitive.dialog", "Generates a dialog structure");
+		const localTile = localize("icad-lisp.commands.dclcompletion.primitive.Tile", "Tile");
 		this.dclSnippets.set(SnippetKeys.DIALOG,
 			this.makeSnippet('dialog', localDialogStruct, localTile, `\${1:NAME} : dialog {\n\t$0\n}`, Kinds.TILE)
 		);
 
-		const localPrimitive = localize("autolispext.commands.dclcompletion.primitive", "Primitive");
-		const localPrimStruct = localize("autolispext.commands.dclcompletion.primitive.structure", "structural primitive");
+		const localPrimitive = localize("icad-lisp.commands.dclcompletion.primitive", "Primitive");
+		const localPrimStruct = localize("icad-lisp.commands.dclcompletion.primitive.structure", "structural primitive");
 
 		this.dclSnippets.set(SnippetKeys.EQUAL,
 			this.makeSnippet('=', localPrimStruct, localPrimitive, '=', Kinds.STRUCTURE)
@@ -99,12 +99,12 @@ export class CompletionLibraryDcl {
 		);
 
 
-		const localPrimString = localize("autolispext.commands.dclcompletion.primitive.string", "string structure");
+		const localPrimString = localize("icad-lisp.commands.dclcompletion.primitive.string", "string structure");
 		this.dclSnippets.set(SnippetKeys.STRING,
 			this.makeSnippet('"?"', localPrimString, localPrimitive, '"$0"', Kinds.PRIMITIVE)
 		);		
 
-		const localPrimBool = localize("autolispext.commands.dclcompletion.primitive.boolean", "boolean structure");
+		const localPrimBool = localize("icad-lisp.commands.dclcompletion.primitive.boolean", "boolean structure");
 		this.dclSnippets.set(SnippetKeys.TRUE,
 			this.makeSnippet('True', localPrimBool, localPrimitive, 'true', Kinds.PRIMITIVE)
 		);
@@ -114,15 +114,15 @@ export class CompletionLibraryDcl {
 	}
 
     private generateTiles() : void {
-        const localTile = localize("autolispext.commands.dclcompletion.primitive.Tile", "Tile");
+        const localTile = localize("icad-lisp.commands.dclcompletion.primitive.Tile", "Tile");
 
-        for (const key of AutoLispExt.WebHelpLibrary.dclTiles.keys()) {
+        for (const key of IcadExt.WebHelpLibrary.dclTiles.keys()) {
 			const lowerKey = key.toLowerCase();
 			if (lowerKey === 'dialog') {
 				continue;
 			}
 
-            const def = AutoLispExt.WebHelpLibrary.dclTiles.get(key);
+            const def = IcadExt.WebHelpLibrary.dclTiles.get(key);
             const item = new CompletionItemDcl(def.id);
             item.kind = Kinds.TILE;
 			item.detail = localTile;
@@ -143,10 +143,10 @@ export class CompletionLibraryDcl {
 		// TODO: OS Filtering Technical debt
 		//       After the Lisp AutoComplete gets updated, then we can turn on the new setting for both document types.
 
-        const localAttr = localize("autolispext.commands.dclcompletion.primitive.Attribute", "Attribute");
+        const localAttr = localize("icad-lisp.commands.dclcompletion.primitive.Attribute", "Attribute");
 
-        for (const key of AutoLispExt.WebHelpLibrary.dclAttributes.keys()) {
-            const def = AutoLispExt.WebHelpLibrary.dclAttributes.get(key);
+        for (const key of IcadExt.WebHelpLibrary.dclAttributes.keys()) {
+            const def = IcadExt.WebHelpLibrary.dclAttributes.get(key);
             const lowerKey = key.toLowerCase();
             const item = new CompletionItemDcl(def.id);
             item.kind = Kinds.ATTRIBUTE;
@@ -159,10 +159,10 @@ export class CompletionLibraryDcl {
     }
 
 	private generateEnums() : void {
-		const localEnum = localize("autolispext.commands.dclcompletion.primitive.Enum", "Enum");
+		const localEnum = localize("icad-lisp.commands.dclcompletion.primitive.Enum", "Enum");
 
-		for (const key of AutoLispExt.WebHelpLibrary.dclAttributes.keys()) {
-			const def = AutoLispExt.WebHelpLibrary.dclAttributes.get(key);
+		for (const key of IcadExt.WebHelpLibrary.dclAttributes.keys()) {
+			const def = IcadExt.WebHelpLibrary.dclAttributes.get(key);
 			const lowerKey = key.toLowerCase();
 			const types: Array<CompletionItemDcl> = [];
 			const declaredTypes = def.valueType.primitive.toLowerCase();

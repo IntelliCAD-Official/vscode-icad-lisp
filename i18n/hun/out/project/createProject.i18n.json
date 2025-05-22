@@ -1,6 +1,6 @@
 {
-  "autolispext.project.createproject.createlabel": "Létrehozás",
-  "autolispext.project.createproject.onlyprjallowed": "Csak PRJ-fájlok engedélyezettek.",
-  "autolispext.project.createproject.nospaces": "A korábbi PRJ-elnevezési szabályok nem engedélyezték a szóközök használatát",
-  "autolispext.project.createproject.projectfilter": "AutoLISP-projektfájlok"
+  "icad-lisp.project.createproject.createlabel": "Létrehozás",
+  "icad-lisp.project.createproject.onlyprjallowed": "Csak PRJ-fájlok engedélyezettek.",
+  "icad-lisp.project.createproject.nospaces": "A korábbi PRJ-elnevezési szabályok nem engedélyezték a szóközök használatát",
+  "icad-lisp.project.createproject.projectfilter": "LISP-projektfájlok"
 }

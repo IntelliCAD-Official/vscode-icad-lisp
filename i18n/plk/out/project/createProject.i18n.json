@@ -1,6 +1,6 @@
 {
-  "autolispext.project.createproject.createlabel": "Utwórz",
-  "autolispext.project.createproject.onlyprjallowed": "Dozwolone są tylko pliki PRJ.",
-  "autolispext.project.createproject.nospaces": "Starsze reguły nazewnictwa plików PRJ nie zezwalają na używanie spacji",
-  "autolispext.project.createproject.projectfilter": "Pliki projektu AutoLISP"
+  "icad-lisp.project.createproject.createlabel": "Utwórz",
+  "icad-lisp.project.createproject.onlyprjallowed": "Dozwolone są tylko pliki PRJ.",
+  "icad-lisp.project.createproject.nospaces": "Starsze reguły nazewnictwa plików PRJ nie zezwalają na używanie spacji",
+  "icad-lisp.project.createproject.projectfilter": "Pliki projektu LISP"
 }

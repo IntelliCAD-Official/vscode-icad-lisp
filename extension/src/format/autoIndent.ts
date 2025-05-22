@@ -673,7 +673,7 @@ export function isCursorInDoubleQuoteExpr(document: vscode.TextDocument, positio
 
 export function subscribeOnEnterEvent() {
     vscode.languages.registerOnTypeFormattingEditProvider(
-        ['autolisp', 'lisp'],
+        ['icad-lisp', 'lisp'],
         {
             provideOnTypeFormattingEdits(document: vscode.TextDocument, position2d: Position, ch: string): vscode.TextEdit[] {
                 if (ch != '\n')

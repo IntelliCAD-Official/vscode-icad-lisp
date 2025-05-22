@@ -1,4 +1,4 @@
 {
-  "autolispext.project.saveproject.noprojecttosave": "Aucun projet à enregistrer.",
-  "autolispext.project.saveproject.generateprjcontentfailed": "Échec de la génération du contenu du projet."
+  "icad-lisp.project.saveproject.noprojecttosave": "Aucun projet à enregistrer.",
+  "icad-lisp.project.saveproject.generateprjcontentfailed": "Échec de la génération du contenu du projet."
 }

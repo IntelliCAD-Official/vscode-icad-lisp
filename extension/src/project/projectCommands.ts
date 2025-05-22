@@ -14,7 +14,7 @@ import { replaceInProject } from './findReplace/replaceInProject';
 import { CheckUnsavedChanges } from './checkUnsavedChanges';
 import { clearSearchResults, clearSearchResultWithError, stopSearching, getWarnIsSearching } from './findReplace/clearResults';
 import { RefreshProject } from './refreshProject';
-import { AutoLispExt } from '../context';
+import { IcadExt } from '../context';
 import * as fs from 'fs-extra';
 
 import * as nls from 'vscode-nls';
@@ -24,7 +24,7 @@ const localize = nls.loadMessageBundle();
 export function registerProjectCommands(context: vscode.ExtensionContext) {
     try {
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.createProject', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.createProject', async () => {
             try {
                 if (getWarnIsSearching())
                     return;
@@ -44,12 +44,12 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                 await SaveProject(false);
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.createprojectfailed", "Failed to create the new project.");
+                let msg = localize("icad-lisp.project.commands.createprojectfailed", "Failed to create the new project.");
                 showErrorMessage(msg, err);
             }
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.openProject', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.openProject', async () => {
             if (getWarnIsSearching())
                 return;
 
@@ -61,16 +61,16 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                     ProjectTreeProvider.instance().updateData(prjNode);
                 })
                 .catch(err => {
-                    let msg = localize("autolispext.project.commands.openprojectfailed", "Failed to open the specified project.");
+                    let msg = localize("icad-lisp.project.commands.openprojectfailed", "Failed to open the specified project.");
                     showErrorMessage(msg, err);
                 });
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.closeProject', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.closeProject', async () => {
             if (ProjectTreeProvider.hasProjectOpened() === true){
-                let promptmsg = localize("autolispext.project.commands.closepromptmsg", "Confirm close request on: ");
-                let responseYes = localize("autolispext.project.commands.closepromptyes", "Yes");
-                let responseNo = localize("autolispext.project.commands.closepromptno", "No");
+                let promptmsg = localize("icad-lisp.project.commands.closepromptmsg", "Confirm close request on: ");
+                let responseYes = localize("icad-lisp.project.commands.closepromptyes", "Yes");
+                let responseNo = localize("icad-lisp.project.commands.closepromptno", "No");
                 vscode.window.showWarningMessage(promptmsg + ProjectTreeProvider.instance().projectNode.projectName, responseYes, responseNo).then(result => {
                     if (result === responseYes){
                         ProjectTreeProvider.instance().updateData(null);
@@ -79,7 +79,7 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
             }
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.addFile2Project', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.addFile2Project', async () => {
             if (getWarnIsSearching())
                 return;
 
@@ -89,7 +89,7 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                     return;//it's possible that the user cancelled the operation
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.addfilefailed", "Failed to add selected files to project.");
+                let msg = localize("icad-lisp.project.commands.addfilefailed", "Failed to add selected files to project.");
                 showErrorMessage(msg, err);
                 return;
             }
@@ -98,26 +98,26 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                 await SaveProject(true);
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.saveprojectfailed", "Failed to save the project.");
+                let msg = localize("icad-lisp.project.commands.saveprojectfailed", "Failed to save the project.");
                 showErrorMessage(msg, err);
             }
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.addWorkspaceFile2Project', async (clickedFile: vscode.Uri, selectedFiles: vscode.Uri[]) => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.addWorkspaceFile2Project', async (clickedFile: vscode.Uri, selectedFiles: vscode.Uri[]) => {
             if (!selectedFiles || selectedFiles.length === 0 || getWarnIsSearching()){
                 return;
             }
             let selectedDirs = selectedFiles.filter(f => fs.statSync(f.fsPath, { bigint: false}).isDirectory());
             selectedFiles = selectedFiles.filter(f => 
                 fs.statSync(f.fsPath, { bigint: false}).isFile() &&
-                AutoLispExt.Documents.getSelectorType(f.fsPath) === AutoLispExt.Selectors.LSP
+                IcadExt.Documents.getSelectorType(f.fsPath) === IcadExt.Selectors.LSP
             );
             
             selectedDirs.forEach(dir => {
                 fs.readdirSync(dir.fsPath).forEach(name => {
                     const fspath = dir.fsPath.replace(/[\/\\]$/, '') + '\\' + name;
                     if (fs.existsSync(fspath) && fs.statSync(fspath, { bigint: false}).isFile()) {
-                        if (AutoLispExt.Documents.getSelectorType(fspath) === AutoLispExt.Selectors.LSP){
+                        if (IcadExt.Documents.getSelectorType(fspath) === IcadExt.Selectors.LSP){
                             selectedFiles.push(vscode.Uri.file(fspath));
                         }
                     }
@@ -129,12 +129,12 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                 if (!addedFiles){
                     return; //it's possible that the user cancelled the operation
                 } else {                    
-                    const msg = localize("autolispext.project.commands.addedworkspacefiles", 'lisp files have been added to');
+                    const msg = localize("icad-lisp.project.commands.addedworkspacefiles", 'lisp files have been added to');
                     vscode.window.showInformationMessage(addedFiles.length + ' ' + msg + ' ' + ProjectTreeProvider.instance().projectNode.projectName + '.prj');
                 }
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.addfilefailed", "Failed to add selected files to project.");
+                let msg = localize("icad-lisp.project.commands.addfilefailed", "Failed to add selected files to project.");
                 showErrorMessage(msg, err);
                 return;
             }
@@ -143,12 +143,12 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                 await SaveProject(true);
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.saveprojectfailed", "Failed to save the project.");
+                let msg = localize("icad-lisp.project.commands.saveprojectfailed", "Failed to save the project.");
                 showErrorMessage(msg, err);
             }
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.removeFileFromProject', async (selected) => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.removeFileFromProject', async (selected) => {
             if (getWarnIsSearching())
                 return;
 
@@ -156,7 +156,7 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                 await excludeFromProject(selected);
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.removefilefailed", "Failed to remove selected file.");
+                let msg = localize("icad-lisp.project.commands.removefilefailed", "Failed to remove selected file.");
                 showErrorMessage(msg, err);
                 return;
             }
@@ -165,46 +165,46 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                 await SaveProject(true);
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.saveprojectfailed", "Failed to save the project.");
+                let msg = localize("icad-lisp.project.commands.saveprojectfailed", "Failed to save the project.");
                 showErrorMessage(msg, err);
             }
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.SaveProject', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.SaveProject', async () => {
             if (getWarnIsSearching())
                 return;
 
             SaveProject(true)
                 .then(prjPath => {
-                    let msg = localize("autolispext.project.commands.projectsaved", "Project file saved.");
+                    let msg = localize("icad-lisp.project.commands.projectsaved", "Project file saved.");
                     vscode.window.showInformationMessage(msg);
                 })
                 .catch(err => {
-                    let msg = localize("autolispext.project.commands.saveprojectfailed", "Failed to save the project.");
+                    let msg = localize("icad-lisp.project.commands.saveprojectfailed", "Failed to save the project.");
                     showErrorMessage(msg, err);
                 });
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.SaveAll', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.SaveAll', async () => {
             if (getWarnIsSearching())
                 return;
 
             SaveAll()
                 .then(() => {
-                    let msg = localize("autolispext.project.commands.allsaved", "All files saved.");
+                    let msg = localize("icad-lisp.project.commands.allsaved", "All files saved.");
                     vscode.window.showInformationMessage(msg);
                 })
                 .catch(err => {
-                    let msg = localize("autolispext.project.commands.saveallfailed", "Failed to save all the files in the project.");
+                    let msg = localize("icad-lisp.project.commands.saveallfailed", "Failed to save all the files in the project.");
                     showErrorMessage(msg, err);
                 });
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.refresh', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.refresh', async () => {
             try {
                 RefreshProject();
             } catch (err) {
-                let msg = localize("autolispext.project.commands.refreshfailed", "Failed to refresh the project.");
+                let msg = localize("icad-lisp.project.commands.refreshfailed", "Failed to refresh the project.");
                 showErrorMessage(msg, err);
             }
         }));
@@ -212,30 +212,30 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
         context.subscriptions.push(vscode.commands.registerCommand(ProjectTreeProvider.TreeItemClicked, (treeItem) => {
             openLspFile(treeItem)
                 .catch(err => {
-                    let msg = localize("autolispext.project.commands.openfilefailed", "Failed to open the file.");
+                    let msg = localize("icad-lisp.project.commands.openfilefailed", "Failed to open the file.");
                     showErrorMessage(msg, err);
                 })
         }));
 
         //register the handler of "find in project"
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.findInProject', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.findInProject', async () => {
             if (getWarnIsSearching())
                 return;
 
             findInProject().catch(err => {
-                let msg = localize("autolispext.project.commands.findfailed", "Failed to find in project.");
+                let msg = localize("icad-lisp.project.commands.findfailed", "Failed to find in project.");
                 showErrorMessage(msg, err);
                 clearSearchResultWithError(msg + (err ? err.toString() : ''));
             });
         }));
 
         //register the handler of "replace in project"
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.replaceInProject', async () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.replaceInProject', async () => {
             if (getWarnIsSearching())
                 return;
 
             replaceInProject().catch(err => {
-                let msg = localize("autolispext.project.commands.replacefailed", "Failed to replace text string in project.");
+                let msg = localize("icad-lisp.project.commands.replacefailed", "Failed to replace text string in project.");
                 showErrorMessage(msg, err);
                 clearSearchResultWithError(msg + (err ? err.toString() : ''));
             })
@@ -244,12 +244,12 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
         context.subscriptions.push(vscode.commands.registerCommand(SearchTreeProvider.showResult, (treeItem) => {
             openSearchResult(treeItem, SearchTreeProvider.instance.lastSearchOption)
                 .catch(err => {
-                    let msg = localize("autolispext.project.commands.openresultfailed", "Failed to open search results.");
+                    let msg = localize("icad-lisp.project.commands.openresultfailed", "Failed to open search results.");
                     showErrorMessage(msg, err);
                 })
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.clearSearchResults', (treeItem) => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.clearSearchResults', (treeItem) => {
             if (getWarnIsSearching())
                 return;
 
@@ -257,12 +257,12 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
                 clearSearchResults();
             }
             catch (err) {
-                let msg = localize("autolispext.project.commands.clearresultfailed", "Failed to clear search results.");
+                let msg = localize("icad-lisp.project.commands.clearresultfailed", "Failed to clear search results.");
                 showErrorMessage(msg, err);
             }
         }));
 
-        context.subscriptions.push(vscode.commands.registerCommand('autolisp.stopSearch', () => {
+        context.subscriptions.push(vscode.commands.registerCommand('icad.stopSearch', () => {
             try {
                 stopSearching();
             }
@@ -277,7 +277,7 @@ export function registerProjectCommands(context: vscode.ExtensionContext) {
         grantExePermission();
     }
     catch (e) {
-        let msg = localize("autolispext.project.commands.initializefailed", "Failed to initalize the AutoLISP Project Manager.");
+        let msg = localize("icad-lisp.project.commands.initializefailed", "Failed to initalize the LISP Project Manager.");
         vscode.window.showErrorMessage(msg);
         console.log(e);
     }

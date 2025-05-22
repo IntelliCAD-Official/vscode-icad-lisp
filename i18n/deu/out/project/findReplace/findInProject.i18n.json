@@ -1,13 +1,13 @@
 {
-  "autolispext.project.find.openproject": "Bevor Sie nach einer Textzeichenfolge suchen können, muss ein Projekt geöffnet sein.",
-  "autolispext.project.find.title": "In Projekt suchen",
-  "autolispext.project.find.hint": "Geben Sie eine zu suchende Textzeichenfolge ein, und drücken Sie die EINGABETASTE.",
-  "autolispext.project.find.supportos": "Suchen und ersetzen wird nur auf 64-Bit-Systemen unterstützt.",
-  "autolispext.project.find.inprogress": "In Bearbeitung... ",
-  "autolispext.project.find.found": "Gefunden ",
-  "autolispext.project.find.results": " Ergebnis(e) in ",
-  "autolispext.project.find.files": " Datei(en):",
-  "autolispext.project.find.stopped": "Suche angehalten. ",
-  "autolispext.project.find.noresults": "Keine Ergebnisse gefunden.",
-  "autolispext.project.find.exceedmaxresults": "Die Höchstanzahl für Suchergebnisse wurde überschritten. Verfeinern Sie die Suche, um die Ergebnisse einzugrenzen. "
+  "icad-lisp.project.find.openproject": "Bevor Sie nach einer Textzeichenfolge suchen können, muss ein Projekt geöffnet sein.",
+  "icad-lisp.project.find.title": "In Projekt suchen",
+  "icad-lisp.project.find.hint": "Geben Sie eine zu suchende Textzeichenfolge ein, und drücken Sie die EINGABETASTE.",
+  "icad-lisp.project.find.supportos": "Suchen und ersetzen wird nur auf 64-Bit-Systemen unterstützt.",
+  "icad-lisp.project.find.inprogress": "In Bearbeitung... ",
+  "icad-lisp.project.find.found": "Gefunden ",
+  "icad-lisp.project.find.results": " Ergebnis(e) in ",
+  "icad-lisp.project.find.files": " Datei(en):",
+  "icad-lisp.project.find.stopped": "Suche angehalten. ",
+  "icad-lisp.project.find.noresults": "Keine Ergebnisse gefunden.",
+  "icad-lisp.project.find.exceedmaxresults": "Die Höchstanzahl für Suchergebnisse wurde überschritten. Verfeinern Sie die Suche, um die Ergebnisse einzugrenzen. "
 }

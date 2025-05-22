@@ -1,6 +1,6 @@
 {
-  "autolispext.help.commands.openWebHelp": "Impossibile caricare il file webHelpAbstraction.json",
-  "autolispext.commands.addFoldingRegion": "Impossibile inserire il frammento",
-  "autolispext.help.commands.generateDocumentation": "Impossibile individuare un nome di defun valido",
-  "autolispext.providers.rename.failed": "Simbolo non valido per le operazioni di ridenominazione"
+  "icad-lisp.help.commands.openWebHelp": "Impossibile caricare il file webHelpAbstraction.json",
+  "icad-lisp.commands.addFoldingRegion": "Impossibile inserire il frammento",
+  "icad-lisp.help.commands.generateDocumentation": "Impossibile individuare un nome di defun valido",
+  "icad-lisp.providers.rename.failed": "Simbolo non valido per le operazioni di ridenominazione"
 }

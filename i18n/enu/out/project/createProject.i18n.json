@@ -1,6 +1,6 @@
 {
-  "autolispext.project.createproject.createlabel": "Create",
-  "autolispext.project.createproject.onlyprjallowed": "Only PRJ files are allowed.",
-  "autolispext.project.createproject.nospaces": "Legacy PRJ naming rules do not allow spaces",
-  "autolispext.project.createproject.projectfilter": "AutoLISP Project Files"
+  "icad-lisp.project.createproject.createlabel": "Create",
+  "icad-lisp.project.createproject.onlyprjallowed": "Only PRJ files are allowed.",
+  "icad-lisp.project.createproject.nospaces": "Legacy PRJ naming rules do not allow spaces",
+  "icad-lisp.project.createproject.projectfilter": "LISP Project Files"
 }

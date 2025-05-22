@@ -1,15 +1,15 @@
 import * as vscode from 'vscode';
 import * as os from 'os';
 import { isCursorInDoubleQuoteExpr } from "../format/autoIndent";
-import { AutoLispExt} from "../context";
+import { IcadExt} from "../context";
 
 
-export function isInternalAutoLispOp(item: string): boolean {
+export function isInternalLispOp(item: string): boolean {
     if (!item)
         return false;
 
-    for (let i = 0; i < AutoLispExt.Resources.internalLispFuncs.length; i++) {
-        if (AutoLispExt.Resources.internalLispFuncs[i] === item)
+    for (let i = 0; i < IcadExt.Resources.internalLispFuncs.length; i++) {
+        if (IcadExt.Resources.internalLispFuncs[i] === item)
             return true;
     }
     return false;
@@ -39,7 +39,7 @@ export function getCmdAndVarsCompletionCandidates(allCandiates: string[], word: 
         if (candidate.startsWith(word)) {
             var label = candidate;
 
-            // The _ symbol has special mean in AutoCAD commands, so we add the prefix if it matches the command name
+            // The _ symbol has special mean in IntelliCAD commands, so we add the prefix if it matches the command name
             if (hasUnderline)
                 label = "_" + label;
 
@@ -81,7 +81,7 @@ export function getMatchingWord(document: vscode.TextDocument, position: vscode.
     let word = document.getText(document.getWordRangeAtPosition(position));
     let wordSep = " &#^()[]|;'\".";
 
-    // Autolisp has special word range rules and now VScode has some issues to check the "word" range, 
+    // LISP has special word range rules and now VScode has some issues to check the "word" range, 
     // so it needs this logic to check the REAL word range
     let pos = position.character;
     pos -= 2;
@@ -117,9 +117,9 @@ export function getMatchingWord(document: vscode.TextDocument, position: vscode.
 export function getLispAndDclCompletions(document: vscode.TextDocument, word: string, isupper: boolean): vscode.CompletionItem[] {
     let currentLSPDoc = document.fileName;
     let ext = currentLSPDoc.substring(currentLSPDoc.length - 4, currentLSPDoc.length).toUpperCase();
-    let candidatesItems = AutoLispExt.Resources.internalLispFuncs;
+    let candidatesItems = IcadExt.Resources.internalLispFuncs;
     if (ext === ".DCL") {
-        candidatesItems = AutoLispExt.Resources.internalDclKeys;
+        candidatesItems = IcadExt.Resources.internalDclKeys;
     }
     let allSuggestions: Array<vscode.CompletionItem> = [];
     allSuggestions = getCompletionCandidates(candidatesItems, word, isupper);
@@ -129,7 +129,7 @@ export function getLispAndDclCompletions(document: vscode.TextDocument, word: st
     }
     else {
         return allSuggestions.filter(function(suggestion) {
-            for (var prefix of AutoLispExt.Resources.winOnlyListFuncPrefix) {
+            for (var prefix of IcadExt.Resources.winOnlyListFuncPrefix) {
                 if (suggestion.label.toString().startsWith(prefix)) {
                     return false;
                 }
@@ -141,7 +141,7 @@ export function getLispAndDclCompletions(document: vscode.TextDocument, word: st
 }
 
 export function registerAutoCompletionProviders() {
-    vscode.languages.registerCompletionItemProvider(['autolisp', 'lsp', 'autolispdcl'], {
+    vscode.languages.registerCompletionItemProvider(['icad-lisp', 'lsp', 'icad-dcl'], {
 
         provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
@@ -158,7 +158,7 @@ export function registerAutoCompletionProviders() {
 
                 var isInDoubleQuote = isCursorInDoubleQuoteExpr(document, position);
                 if (isInDoubleQuote) {
-                    var cmds = getCmdAndVarsCompletionCandidates(AutoLispExt.Resources.allCmdsAndSysvars, inputword, userInputIsUpper);
+                    var cmds = getCmdAndVarsCompletionCandidates(IcadExt.Resources.allCmdsAndSysvars, inputword, userInputIsUpper);
                     return cmds;
                 }
 

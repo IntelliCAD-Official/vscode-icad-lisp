@@ -6,8 +6,8 @@ describe('Debug Configuration Test', () => {
   let activeInput: InputBox = null;
   let debugStarted: boolean = false;
 
-  const attachConfigText: string = 'AutoLISP Debug: Attach';
-  const launchConfigText: string = 'AutoLISP Debug: Launch';
+  const attachConfigText: string = 'IntelliCAD Lisp Debug: Attach';
+  const launchConfigText: string = 'IntelliCAD Lisp Debug: Launch';
 
   const startDebugCmd: string = 'workbench.action.debug.start';
   const stopDebugCmd: string = 'workbench.action.debug.stop';

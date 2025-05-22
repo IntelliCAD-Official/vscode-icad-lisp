@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Примитив",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Закрытие строки"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Примитив",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Закрытие строки"
 }

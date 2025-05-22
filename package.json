@@ -1,21 +1,21 @@
 {
-	"name": "autolispext",
-	"displayName": "AutoCAD AutoLISP Extension",
-	"description": "This is a vscode extension for AutoCAD AutoLISP",
-	"version": "1.6.3",
+	"name": "icad-lisp",
+	"displayName": "IntelliCAD Lisp Debugger",
+	"description": "The Visual Studio Code Extension for IntelliCAD Lisp",
+	"version": "0.1.0",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"bugs": {
-		"url": "https://github.com/Autodesk-AutoCAD/AutoLispExt/issues"
+		"url": "https://github.com/IntelliCAD-Official/vscode-icad-lisp/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Autodesk-AutoCAD/AutoLispExt"
+		"url": "https://github.com/IntelliCAD-Official/vscode-icad-lisp"
 	},
-	"homepage": "https://github.com/Autodesk-AutoCAD/AutoLispExt",
+	"homepage": "https://github.com/IntelliCAD-Official/vscode-icad-lisp",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
-	"publisher": "Autodesk",
+	"publisher": "IntelliCAD",
 	"keywords": [
 		"lisp",
 		"autolisp",
@@ -27,153 +27,153 @@
 		"Formatters",
 		"Snippets"
 	],
-	"icon": "images/adsk_lisp.png",
+	"icon": "images/logo.png",
 	"main": "./out/extension",
 	"files": [
-		"autolispext.vsix"
+		"icad-lisp.vsix"
 	],
 	"activationEvents": [
 		"onDebug",
 		"onUri",
-		"onCommand:autolisp.loadActiveFile",
-		"onLanguage:autolisp",
-		"onLanguage:autolispdcl",
-		"onView:Autolisp-ProjectView"
+		"onCommand:icad.loadActiveFile",
+		"onLanguage:icad-lisp",
+		"onLanguage:icad-dcl",
+		"onView:Icad-ProjectView"
 	],
 	"contributes": {
 		"commands": [
 			{
-				"command": "autolisp.loadActiveFile",
-				"category": "AutoLISP",
-				"title": "%autolispext.loadcurrentfile.title%"
+				"command": "icad.loadActiveFile",
+				"category": "LISP",
+				"title": "%icad-lisp.loadcurrentfile.title%"
 			},
 			{
-				"command": "autolisp.openWebHelp",
-				"category": "AutoLISP",
-				"title": "%autolispext.openwebhelp.title%"
+				"command": "icad.openWebHelp",
+				"category": "LISP",
+				"title": "%icad-lisp.openwebhelp.title%"
 			},
 			{
-				"command": "autolisp.insertFoldingRegion",
-				"category": "AutoLISP",
-				"title": "%autolispext.regionsnippet.title%"
+				"command": "icad.insertFoldingRegion",
+				"category": "LISP",
+				"title": "%icad-lisp.regionsnippet.title%"
 			},
 			{
-				"command": "autolisp.generateDocumentation",
-				"category": "AutoLISP",
-				"title": "%autolispext.commentdefun.title%"
+				"command": "icad.generateDocumentation",
+				"category": "LISP",
+				"title": "%icad-lisp.commentdefun.title%"
 			},
 			{
-				"command": "autolisp.createProject",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.createproject.title%",
+				"command": "icad.createProject",
+				"category": "LISP",
+				"title": "%icad-lisp.project.createproject.title%",
 				"icon": {
 					"dark": "images/dark/Create_Project.svg",
 					"light": "images/light/Create_Project.svg"
 				}
 			},
 			{
-				"command": "autolisp.openProject",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.openproject.title%",
+				"command": "icad.openProject",
+				"category": "LISP",
+				"title": "%icad-lisp.project.openproject.title%",
 				"icon": {
 					"dark": "images/dark/Open_Project.svg",
 					"light": "images/light/Open_Project.svg"
 				}
 			},
 			{
-				"command": "autolisp.closeProject",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.closeproject.title%",
+				"command": "icad.closeProject",
+				"category": "LISP",
+				"title": "%icad-lisp.project.closeproject.title%",
 				"icon": {
 					"dark": "images/dark/close.svg",
 					"light": "images/light/close.svg"
 				}
 			},
 			{
-				"command": "autolisp.addFile2Project",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.addfile.title%",
+				"command": "icad.addFile2Project",
+				"category": "LISP",
+				"title": "%icad-lisp.project.addfile.title%",
 				"icon": {
 					"dark": "images/dark/Add_LISP_File.svg",
 					"light": "images/light/Add_LISP_File.svg"
 				}
 			},
 			{
-				"command": "autolisp.addWorkspaceFile2Project",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.addworkspacefile.title%",
+				"command": "icad.addWorkspaceFile2Project",
+				"category": "LISP",
+				"title": "%icad-lisp.project.addworkspacefile.title%",
 				"icon": {
 					"dark": "images/dark/Add_LISP_File.svg",
 					"light": "images/light/Add_LISP_File.svg"
 				}
 			},
 			{
-				"command": "autolisp.removeFileFromProject",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.removefile.title%",
+				"command": "icad.removeFileFromProject",
+				"category": "LISP",
+				"title": "%icad-lisp.project.removefile.title%",
 				"icon": {
 					"dark": "images/dark/Remove_LISP_File.svg",
 					"light": "images/light/Remove_LISP_File.svg"
 				}
 			},
 			{
-				"command": "autolisp.SaveProject",
-				"title": "%autolispext.project.saveproject.title%",
-				"category": "AutoLISP",
+				"command": "icad.SaveProject",
+				"title": "%icad-lisp.project.saveproject.title%",
+				"category": "LISP",
 				"icon": {
 					"dark": "images/dark/Save_Project.svg",
 					"light": "images/light/Save_Project.svg"
 				}
 			},
 			{
-				"command": "autolisp.SaveAll",
-				"title": "%autolispext.project.saveall.title%",
-				"category": "AutoLISP",
+				"command": "icad.SaveAll",
+				"title": "%icad-lisp.project.saveall.title%",
+				"category": "LISP",
 				"icon": {
 					"dark": "images/dark/Save_Project.svg",
 					"light": "images/light/Save_Project.svg"
 				}
 			},
 			{
-				"command": "autolisp.refresh",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.refresh.title%",
+				"command": "icad.refresh",
+				"category": "LISP",
+				"title": "%icad-lisp.project.refresh.title%",
 				"icon": {
 					"dark": "images/dark/Refresh.svg",
 					"light": "images/light/Refresh.svg"
 				}
 			},
 			{
-				"command": "autolisp.findInProject",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.findinproject.title%",
+				"command": "icad.findInProject",
+				"category": "LISP",
+				"title": "%icad-lisp.project.findinproject.title%",
 				"icon": {
 					"dark": "images/dark/Find.svg",
 					"light": "images/light/Find.svg"
 				}
 			},
 			{
-				"command": "autolisp.replaceInProject",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.replaceinproject.title%",
+				"command": "icad.replaceInProject",
+				"category": "LISP",
+				"title": "%icad-lisp.project.replaceinproject.title%",
 				"icon": {
 					"dark": "images/dark/Replace.svg",
 					"light": "images/light/Replace.svg"
 				}
 			},
 			{
-				"command": "autolisp.stopSearch",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.stopsearch.title%",
+				"command": "icad.stopSearch",
+				"category": "LISP",
+				"title": "%icad-lisp.project.stopsearch.title%",
 				"icon": {
 					"dark": "images/dark/search-stop.svg",
 					"light": "images/light/search-stop.svg"
 				}
 			},
 			{
-				"command": "autolisp.clearSearchResults",
-				"category": "AutoLISP",
-				"title": "%autolispext.project.clearsearchresults.title%",
+				"command": "icad.clearSearchResults",
+				"category": "LISP",
+				"title": "%icad-lisp.project.clearsearchresults.title%",
 				"icon": {
 					"dark": "images/dark/Clean.svg",
 					"light": "images/light/Clean.svg"
@@ -182,52 +182,57 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "%autolispext.configuration.title%",
+			"title": "%icad-lisp.configuration.title%",
 			"properties": {
-				"autolispext.format.MaxLineChars": {
+				"icad-lisp.format.MaxLineChars": {
 					"type": "number",
 					"default": 85,
-					"description": "%autolispext.configuration.maxlinechars.desc%"
+					"description": "%icad-lisp.configuration.maxlinechars.desc%"
 				},
-				"autolispext.format.NarrowStyleIndent": {
+				"icad-lisp.format.NarrowStyleIndent": {
 					"type": "number",
 					"default": 2,
-					"description": "%autolispext.configuration.narrowstyleindent.desc%"
+					"description": "%icad-lisp.configuration.narrowstyleindent.desc%"
 				},
-				"autolispext.format.CloseParenthesisStyle": {
+				"icad-lisp.format.CloseParenthesisStyle": {
 					"type": "string",
 					"enum": [
 						"Same line",
 						"New line with outer indentation"
 					],
 					"default": "New line with outer indentation",
-					"description": "%autolispext.configuration.closeparenstyle.desc%"
+					"description": "%icad-lisp.configuration.closeparenstyle.desc%"
 				},
-				"autolispext.format.LongListFormatStyle": {
+				"icad-lisp.format.LongListFormatStyle": {
 					"type": "string",
 					"enum": [
 						"Single column",
 						"Fill to margin"
 					],
 					"default": "Fill to margin",
-					"description": "%autolispext.configuration.longlistformatstyle%"
+					"description": "%icad-lisp.configuration.longlistformatstyle%"
 				},
-				"autolispext.debug.AttachProcess": {
+				"icad-lisp.debug.AttachProcess": {
 					"type": "string",
 					"default": "",
-					"description": "%autolispext.configuration.attachprocess.desc%"
+					"description": "%icad-lisp.configuration.attachprocess.desc%"
 				},
-				"autolispext.debug.LaunchProgram": {
+				"icad-lisp.debug.LaunchProgram": {
 					"type": "string",
 					"default": "",
-					"description": "%autolispext.configuration.launchprogram.desc%"
+					"description": "%icad-lisp.configuration.launchprogram.desc%"
 				},
-				"autolispext.debug.LaunchParameters": {
+				"icad-lisp.debug.LaunchParameters": {
 					"type": "string",
 					"default": "",
-					"description": "%autolispext.configuration.launchparameters.desc%"
+					"description": "%icad-lisp.configuration.launchparameters.desc%"
 				},
-				"autolispext.help.TargetYear": {
+				"icad-lisp.debug.LaunchTimeout": {
+					"type": "number",
+					"default": 15,
+					"description": "%icad-lisp.configuration.launchtimeout.desc%"
+				},
+				"icad-lisp.help.TargetYear": {
 					"type": "string",
 					"enum": [
 						"2018",
@@ -240,7 +245,7 @@
 						"2025"
 					],
 					"default": "2025",
-					"description": "%autolispext.configuration.helptargetyear%"
+					"description": "%icad-lisp.configuration.helptargetyear%"
 				}
 			}
 		},
@@ -262,7 +267,7 @@
 				"editor.wordSeparators": "&#^()[]|;'\".",
 				"editor.suggestSelection": "recentlyUsed"
 			},
-			"[autolisp]": {
+			"[icad-lisp]": {
 				"files.autoGuessEncoding": true,
 				"editor.tabSize": 2,
 				"editor.wordBasedSuggestions": true,
@@ -279,7 +284,7 @@
 				"editor.wordSeparators": "&#^()[]|;'\".",
 				"editor.suggestSelection": "recentlyUsed"
 			},
-			"[autolispdcl]": {
+			"[icad-dcl]": {
 				"files.autoGuessEncoding": true,
 				"editor.tabSize": 2,
 				"editor.detectIndentation": false,
@@ -302,10 +307,10 @@
 		},
 		"breakpoints": [
 			{
-				"language": "autolisp"
+				"language": "icad-lisp"
 			},
 			{
-				"language": "autolispdcl"
+				"language": "icad-dcl"
 			},
 			{
 				"language": "lisp"
@@ -313,22 +318,23 @@
 		],
 		"languages": [
 			{
-				"id": "autolisp",
+				"id": "icad-lisp",
 				"aliases": [
-					"AutoLISP",
-					"autolisp"
+					"AutoLISP (icad)",
+					"autolisp (icad)"
 				],
 				"extensions": [
 					".lsp",
-					".mnl"
+					".mnl",
+					".scr"
 				],
 				"configuration": "./extension/smartBracket/language-configuration.json"
 			},
 			{
-				"id": "autolispdcl",
+				"id": "icad-dcl",
 				"aliases": [
-					"AutoLISPDCL",
-					"autolispdcl"
+					"AutoLISPDCL (icad)",
+					"autolispdcl (icad)"
 				],
 				"extensions": [
 					".dcl"
@@ -336,9 +342,9 @@
 				"configuration": "./extension/smartBracket/language-configuration-dcl.json"
 			},
 			{
-				"id": "autolispprj",
+				"id": "icad-prj",
 				"aliases": [
-					"AutoLISPPRJ"
+					"AutoLISPPRJ (icad)"
 				],
 				"extensions": [
 					".prj"
@@ -347,135 +353,71 @@
 		],
 		"grammars": [
 			{
-				"language": "autolisp",
-				"scopeName": "source.autolisp",
+				"language": "icad-lisp",
+				"scopeName": "source.icad-lisp",
 				"path": "./extension/syntaxes/autolisp.tmLanguage.json"
 			},
 			{
-				"language": "autolispdcl",
-				"scopeName": "source.autolispdcl",
+				"language": "icad-dcl",
+				"scopeName": "source.icad-dcl",
 				"path": "./extension/syntaxes/autolispdcl.tmLanguage.json"
 			}
 		],
 		"snippets": [
 			{
-				"language": "autolisp",
+				"language": "icad-lisp",
 				"path": "./snippets/snippets.json"
 			}
 		],
 		"debuggers": [
 			{
-				"type": "attachlisp",
-				"label": "AutoLISP Debug: Attach",
-				"windows": {
-					"program": "${lispadapterpath}"
-				},
+				"type": "attach-icad",
+				"label": "IntelliCAD Lisp Debug: Attach",
 				"languages": [
-					"autolisp",
-					"autolispdcl"
+					"icad-lisp",
+					"icad-dcl"
 				],
-				"configurationAttributes": {
-					"attach": {
-						"required": [
-							"attributes"
-						],
-						"properties": {
-							"attributes": {
-								"type": "object",
-								"description": "%autolispext.debug.attachconfig.desc%",
-								"default": ""
-							}
-						}
-					}
-				},
 				"initialConfigurations": [
 					{
-						"type": "attachlisp",
+						"type": "attach-icad",
 						"request": "attach",
-						"name": "AutoLISP Debug: Attach",
-						"attributes": {
-							"//": "%autolispext.packagejson.changeattachproc%"
-						}
+						"name": "IntelliCAD Lisp Debug: Attach"
 					}
 				],
 				"configurationSnippets": [
 					{
-						"label": "AutoLISP Debug: Attach",
-						"description": "%autolispext.debug.config.snippet.desc%",
+						"label": "IntelliCAD Lisp Debug: Attach",
+						"description": "%icad-lisp.debug.config.snippet.desc%",
 						"body": {
-							"type": "attachlisp",
+							"type": "attach-icad",
 							"request": "attach",
-							"name": "AutoLISP Debug: Attach",
-							"attributes": {
-								"//": "%autolispext.packagejson.changeattachproc%"
-							}
+							"name": "IntelliCAD Lisp Debug: Attach"
 						}
 					}
 				]
 			},
 			{
-				"type": "launchlisp",
-				"label": "AutoLISP Debug: Launch",
+				"type": "launch-icad",
+				"label": "IntelliCAD Lisp Debug: Launch",
 				"languages": [
-					{
-						"id": "autolisp",
-						"aliases": [
-							"AutoLISP",
-							"autolisp"
-						],
-						"extensions": [
-							".lsp",
-							".mnl"
-						],
-						"configuration": "./extension/smartBracket/language-configuration.json"
-					},
-					{
-						"id": "autolispdcl",
-						"aliases": [
-							"AutoLISPDCL",
-							"autolispdcl"
-						],
-						"extensions": [
-							".dcl"
-						],
-						"configuration": "./extension/smartBracket/language-configuration-dcl.json"
-					}
+					"icad-lisp",
+					"icad-dcl"
 				],
-				"configurationAttributes": {
-					"launch": {
-						"required": [
-							"attributes"
-						],
-						"properties": {
-							"attributes": {
-								"type": "object",
-								"description": "%autolispext.debug.launchconfig.desc%",
-								"default": ""
-							}
-						}
-					}
-				},
 				"initialConfigurations": [
 					{
-						"type": "launchlisp",
+						"type": "launch-icad",
 						"request": "launch",
-						"name": "AutoLISP Debug: Launch",
-						"attributes": {
-							"//": "%autolispext.packagejson.changelaunchprog%"
-						}
+						"name": "IntelliCAD Lisp Debug: Launch"
 					}
 				],
 				"configurationSnippets": [
 					{
-						"label": "AutoLISP Debug: Launch",
-						"description": "%autolispext.debug.config.snippet.desc%",
+						"label": "IntelliCAD Lisp Debug: Launch",
+						"description": "%icad-lisp.debug.config.snippet.desc%",
 						"body": {
-							"type": "launchlisp",
+							"type": "launch-icad",
 							"request": "launch",
-							"name": "AutoLISP Debug: Launch",
-							"attributes": {
-								"//": "%autolispext.packagejson.changelaunchprog%"
-							}
+							"name": "IntelliCAD Lisp Debug: Launch"
 						}
 					}
 				]
@@ -484,22 +426,22 @@
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "Autolisp-PMSideBar",
-					"title": "%autolispext.project.projectmanager.title%",
+					"id": "Icad-PMSideBar",
+					"title": "%icad-lisp.project.projectmanager.title%",
 					"icon": "images/Project_Management.svg"
 				}
 			]
 		},
 		"views": {
-			"Autolisp-PMSideBar": [
+			"Icad-PMSideBar": [
 				{
-					"id": "Autolisp-ProjectView",
-					"name": "%autolispext.project.projectview.name%",
+					"id": "Icad-ProjectView",
+					"name": "%icad-lisp.project.projectview.name%",
 					"when": ""
 				},
 				{
-					"id": "Autolisp-FindReplaceView",
-					"name": "%autolispext.project.findreplaceview.name%",
+					"id": "Icad-FindReplaceView",
+					"name": "%icad-lisp.project.findreplaceview.name%",
 					"when": ""
 				}
 			]
@@ -507,114 +449,114 @@
 		"menus": {
 			"view/title": [
 				{
-					"command": "autolisp.createProject",
+					"command": "icad.createProject",
 					"group": "navigation@1",
-					"when": "view == Autolisp-ProjectView"
+					"when": "view == Icad-ProjectView"
 				},
 				{
-					"command": "autolisp.openProject",
+					"command": "icad.openProject",
 					"group": "navigation@2",
-					"when": "view == Autolisp-ProjectView"
+					"when": "view == Icad-ProjectView"
 				},
 				{
-					"command": "autolisp.addFile2Project",
+					"command": "icad.addFile2Project",
 					"group": "navigation@3",
-					"when": "view == Autolisp-ProjectView && autolisp.hasProject"
+					"when": "view == Icad-ProjectView && icad.hasProject"
 				},
 				{
-					"command": "autolisp.refresh",
+					"command": "icad.refresh",
 					"group": "navigation@6",
-					"when": "view == Autolisp-ProjectView && autolisp.hasProject"
+					"when": "view == Icad-ProjectView && icad.hasProject"
 				},
 				{
-					"command": "autolisp.closeProject",
+					"command": "icad.closeProject",
 					"group": "navigation@7",
-					"when": "view == Autolisp-ProjectView && autolisp.hasProject"
+					"when": "view == Icad-ProjectView && icad.hasProject"
 				},
 				{
-					"command": "autolisp.findInProject",
+					"command": "icad.findInProject",
 					"group": "navigation@1",
-					"when": "view == Autolisp-FindReplaceView"
+					"when": "view == Icad-FindReplaceView"
 				},
 				{
-					"command": "autolisp.replaceInProject",
+					"command": "icad.replaceInProject",
 					"group": "navigation@2",
-					"when": "view == Autolisp-FindReplaceView"
+					"when": "view == Icad-FindReplaceView"
 				},
 				{
-					"command": "autolisp.stopSearch",
+					"command": "icad.stopSearch",
 					"group": "navigation@3",
-					"when": "view == Autolisp-FindReplaceView"
+					"when": "view == Icad-FindReplaceView"
 				},
 				{
-					"command": "autolisp.clearSearchResults",
+					"command": "icad.clearSearchResults",
 					"group": "navigation@4",
-					"when": "view == Autolisp-FindReplaceView"
+					"when": "view == Icad-FindReplaceView"
 				}
 			],
 			"view/item/context": [
 				{
-					"when": "view == Autolisp-ProjectView && viewItem == project",
-					"command": "autolisp.addFile2Project",
+					"when": "view == Icad-ProjectView && viewItem == project",
+					"command": "icad.addFile2Project",
 					"group": "navigation@1"
 				},
 				{
-					"when": "view == Autolisp-ProjectView && viewItem == project",
-					"command": "autolisp.refresh",
+					"when": "view == Icad-ProjectView && viewItem == project",
+					"command": "icad.refresh",
 					"group": "navigation@2"
 				},
 				{
-					"when": "view == Autolisp-ProjectView && viewItem == project",
-					"command": "autolisp.SaveProject",
+					"when": "view == Icad-ProjectView && viewItem == project",
+					"command": "icad.SaveProject",
 					"group": "navigation@3"
 				},
 				{
-					"when": "view == Autolisp-ProjectView && viewItem == project",
-					"command": "autolisp.SaveAll",
+					"when": "view == Icad-ProjectView && viewItem == project",
+					"command": "icad.SaveAll",
 					"group": "navigation@4"
 				},
 				{
-					"when": "view == Autolisp-ProjectView && viewItem == project",
-					"command": "autolisp.closeProject",
+					"when": "view == Icad-ProjectView && viewItem == project",
+					"command": "icad.closeProject",
 					"group": "navigation@5"
 				},
 				{
-					"when": "view == Autolisp-ProjectView && viewItem == lspFile",
-					"command": "autolisp.removeFileFromProject",
+					"when": "view == Icad-ProjectView && viewItem == lspFile",
+					"command": "icad.removeFileFromProject",
 					"group": "navigation@1"
 				}
 			],
 			"editor/context": [
 				{
-					"when": "resourceLangId == autolisp",
-					"command": "autolisp.loadActiveFile",
+					"when": "resourceLangId == icad-lisp",
+					"command": "icad.loadActiveFile",
 					"group": "navigation@1"
 				},
 				{
-					"when": "resourceLangId == autolisp || resourceLangId == autolispdcl",
-					"command": "autolisp.openWebHelp",
+					"when": "resourceLangId == icad-lisp || resourceLangId == icad-dcl",
+					"command": "icad.openWebHelp",
 					"group": "navigation@2"
 				},
 				{
-					"when": "resourceLangId == autolisp || resourceLangId == autolispdcl",
-					"command": "autolisp.insertFoldingRegion",
+					"when": "resourceLangId == icad-lisp || resourceLangId == icad-dcl",
+					"command": "icad.insertFoldingRegion",
 					"group": "navigation@3"
 				},
 				{
-					"when": "resourceLangId == autolisp",
-					"command": "autolisp.generateDocumentation",
+					"when": "resourceLangId == icad-lisp",
+					"command": "icad.generateDocumentation",
 					"group": "navigation@4"
 				}
 			],
 			"explorer/context": [
 				{
-					"when": "resourceLangId == autolisp && autolisp.hasProject",
-					"command": "autolisp.addWorkspaceFile2Project",
+					"when": "resourceLangId == icad-lisp && icad.hasProject",
+					"command": "icad.addWorkspaceFile2Project",
 					"group": "navigation@1"
 				},
 				{
-					"when": "explorerResourceIsFolder && autolisp.hasProject",
-					"command": "autolisp.addWorkspaceFile2Project",
+					"when": "explorerResourceIsFolder && icad.hasProject",
+					"command": "icad.addWorkspaceFile2Project",
 					"group": "navigation@1"
 				}
 			]

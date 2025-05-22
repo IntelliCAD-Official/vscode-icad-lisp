@@ -1,6 +1,6 @@
 {
-  "autolispext.help.commands.openWebHelp": "Failed to load the webHelpAbstraction.json file",
-  "autolispext.commands.addFoldingRegion": "Failed to insert snippet",
-  "autolispext.help.commands.generateDocumentation": "A valid defun name could not be located",
-  "autolispext.providers.rename.failed": "The symbol was invalid for renaming operations"
+  "icad-lisp.help.commands.openWebHelp": "Failed to load the webHelpAbstraction.json file",
+  "icad-lisp.commands.addFoldingRegion": "Failed to insert snippet",
+  "icad-lisp.help.commands.generateDocumentation": "A valid defun name could not be located",
+  "icad-lisp.providers.rename.failed": "The symbol was invalid for renaming operations"
 }

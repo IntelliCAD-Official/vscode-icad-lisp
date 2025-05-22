@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { AutoLispExt } from '../context';
+import { IcadExt } from '../context';
 import { IRootSymbolHost, ISymbolHost, ISymbolReference, SymbolManager } from '../symbols';
 import { ReadonlyDocument } from '../project/readOnlyDocument';
 import { SharedAtomic } from './providerShared';
@@ -10,9 +10,9 @@ import { ILispFragment } from '../astObjects/ILispFragment';
 import { primitiveRegex } from '../astObjects/lispAtom';
 
 
-export function AutoLispExtPrepareRename(document: vscode.TextDocument, position: vscode.Position): { range: vscode.Range; placeholder: string; } 
+export function IcadExtPrepareRename(document: vscode.TextDocument, position: vscode.Position): { range: vscode.Range; placeholder: string; } 
 {
-	const roDoc = AutoLispExt.Documents.getDocument(document);
+	const roDoc = IcadExt.Documents.getDocument(document);
 	let selectedAtom: ILispFragment = SharedAtomic.getNonPrimitiveAtomFromPosition(roDoc, position);
 	if (!selectedAtom){
 		return null;
@@ -21,9 +21,9 @@ export function AutoLispExtPrepareRename(document: vscode.TextDocument, position
 }
 
 
-export function AutoLispExtProvideRenameEdits(document: vscode.TextDocument, position: vscode.Position, newName: string): vscode.WorkspaceEdit
+export function IcadExtProvideRenameEdits(document: vscode.TextDocument, position: vscode.Position, newName: string): vscode.WorkspaceEdit
 {
-	const roDoc = AutoLispExt.Documents.getDocument(document);
+	const roDoc = IcadExt.Documents.getDocument(document);
 	const selectedAtom = SharedAtomic.getNonPrimitiveAtomFromPosition(roDoc, position);	
 	newName = RenameProviderSupport.normalizeUserProvidedValue(newName, selectedAtom.symbol);
 	if (!newName) {

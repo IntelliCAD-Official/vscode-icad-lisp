@@ -1,8 +1,8 @@
 {
-  "autolispext.project.openproject.onlyprjallowed": "Csak PRJ-fájlok engedélyezettek.",
-  "autolispext.project.openproject.readfailed": "A projektfájl nem olvasható: ",
-  "autolispext.project.openproject.malformedfile": "Hibás formátumú projektfájl: ",
-  "autolispext.project.openproject.label": "Projekt megnyitása",
-  "autolispext.project.openproject.nospaces": "A korábbi PRJ-elnevezési szabályok nem engedélyezték a szóközök használatát",
-  "autolispext.project.openproject.projectfilter": "AutoLISP-projektfájlok"
+  "icad-lisp.project.openproject.onlyprjallowed": "Csak PRJ-fájlok engedélyezettek.",
+  "icad-lisp.project.openproject.readfailed": "A projektfájl nem olvasható: ",
+  "icad-lisp.project.openproject.malformedfile": "Hibás formátumú projektfájl: ",
+  "icad-lisp.project.openproject.label": "Projekt megnyitása",
+  "icad-lisp.project.openproject.nospaces": "A korábbi PRJ-elnevezési szabályok nem engedélyezték a szóközök használatát",
+  "icad-lisp.project.openproject.projectfilter": "LISP-projektfájlok"
 }

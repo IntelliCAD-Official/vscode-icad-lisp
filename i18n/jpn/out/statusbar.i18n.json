@@ -1,7 +1,7 @@
 {
-  "autolispext.loadlisp.tooltip": "現在のファイルをロード",
-  "autolispext.loadlisp.title": "LISP をロード",
-  "autolispext.loadlisp.attach": "まず、このファイルをロードする前に、ホスト アプリケーションにアタッチするか、ホスト アプリケーションを起動してください。",
-  "autolispext.loadlisp.fileformat.win": "このファイル形式はサポートされていません。DCL、LSP、または MNL ファイルを含むウィンドウをアクティブにしてください。",
-  "autolispext.loadlisp.fileformat.mac": "このファイル形式はサポートされていません。DCL または LSP ファイルを含むウィンドウをアクティブにしてください。"
+  "icad-lisp.loadlisp.tooltip": "現在のファイルをロード",
+  "icad-lisp.loadlisp.title": "LISP をロード",
+  "icad-lisp.loadlisp.attach": "まず、このファイルをロードする前に、ホスト アプリケーションにアタッチするか、ホスト アプリケーションを起動してください。",
+  "icad-lisp.loadlisp.fileformat.win": "このファイル形式はサポートされていません。DCL、LSP、または MNL ファイルを含むウィンドウをアクティブにしてください。",
+  "icad-lisp.loadlisp.fileformat.mac": "このファイル形式はサポートされていません。DCL または LSP ファイルを含むウィンドウをアクティブにしてください。"
 }

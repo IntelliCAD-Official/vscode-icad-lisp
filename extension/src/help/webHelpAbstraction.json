@@ -7629,7 +7629,7 @@
       "id": "*push-error-using-stack*",
       "category": 4,
       "guid": "C28420C9-2210-4EEC-AA73-2962999D1BC1",
-      "description": "Error-handling function that indicates the use of variables from the AutoLISP stack within a custom *error* handler",
+      "description": "Error-handling function that indicates the use of variables from the LISP stack within a custom *error* handler",
       "platforms": "WIN|MAC"
     },
     "-": {
@@ -10024,7 +10024,7 @@
       "id": "autoload",
       "category": 4,
       "guid": "421B36DE-38EA-4161-9768-01647B5492E8",
-      "description": "Predefines command names to load an associated AutoLISP file",
+      "description": "Predefines command names to load an associated LISP file",
       "platforms": "WIN|MAC"
     },
     "boole": {
@@ -10301,7 +10301,7 @@
       "id": "cond",
       "category": 4,
       "guid": "7BA45202-D95F-4F2D-8D83-965024826074",
-      "description": "Serves as the primary conditional function for AutoLISP",
+      "description": "Serves as the primary conditional function for LISP",
       "platforms": "WIN|MAC"
     },
     "cons": {
@@ -11083,7 +11083,7 @@
       "id": "eval",
       "category": 4,
       "guid": "D9B3E6CC-A982-4040-AE6E-6FD63D6C54D0",
-      "description": "Returns the result of evaluating an AutoLISP expression",
+      "description": "Returns the result of evaluating a LISP expression",
       "platforms": "WIN|MAC"
     },
     "exit": {
@@ -11145,7 +11145,7 @@
       "id": "expand",
       "category": 4,
       "guid": "48C99C97-176D-4D9C-91E2-31B3C67D6EC9",
-      "description": "Allocates additional memory for AutoLISP",
+      "description": "Allocates additional memory for LISP",
       "platforms": "WIN|MAC"
     },
     "expt": {
@@ -12774,7 +12774,7 @@
       "id": "load",
       "category": 4,
       "guid": "F3639BAA-FD70-487C-AEB5-9E6096EC0255",
-      "description": "Evaluates the AutoLISP expressions in a file",
+      "description": "Evaluates the LISP expressions in a file",
       "platforms": "WIN|MAC"
     },
     "log": {
@@ -12946,7 +12946,7 @@
       "id": "mem",
       "category": 4,
       "guid": "F4AEB953-2117-4BF2-8056-EA1384AC3FFF",
-      "description": "Displays the current state of the AutoLISP memory",
+      "description": "Displays the current state of the LISP memory",
       "platforms": "WIN|MAC"
     },
     "member": {
@@ -13284,7 +13284,7 @@
       "id": "open",
       "category": 4,
       "guid": "089A323F-21FF-4337-99A9-375758E23BA4",
-      "description": "Opens a file for access by the AutoLISP I/O functions",
+      "description": "Opens a file for access by the LISP I/O functions",
       "platforms": "WIN|MAC"
     },
     "or": {
@@ -14805,7 +14805,7 @@
       "id": "trace",
       "category": 4,
       "guid": "87EEF5AD-2250-401D-B722-0CD122DBAE70",
-      "description": "Aids in AutoLISP debugging",
+      "description": "Aids in LISP debugging",
       "platforms": "WIN|MAC"
     },
     "trans": {
@@ -14929,7 +14929,7 @@
       "id": "ver",
       "category": 4,
       "guid": "6E5DF4E1-5386-47A2-AEF3-488AA068FA15",
-      "description": "Returns a string that contains the current AutoLISP version number",
+      "description": "Returns a string that contains the current LISP version number",
       "platforms": "WIN|MAC"
     },
     "vl-acad-defun": {
@@ -14952,7 +14952,7 @@
       "id": "vl-acad-defun",
       "category": 4,
       "guid": "D15CB87F-5B69-4BC3-B8BB-E45D57602B27",
-      "description": "Defines an AutoLISP function symbol as an external subroutine",
+      "description": "Defines a LISP function symbol as an external subroutine",
       "platforms": "WIN|MAC"
     },
     "vl-acad-undefun": {
@@ -14975,7 +14975,7 @@
       "id": "vl-acad-undefun",
       "category": 4,
       "guid": "81CEB01F-8A57-4465-A4F9-CE2E357D692B",
-      "description": "Undefines an AutoLISP function symbol so it is no longer available to ObjectARX applications",
+      "description": "Undefines a LISP function symbol so it is no longer available to ObjectARX applications",
       "platforms": "WIN|MAC"
     },
     "vl-bb-ref": {
@@ -17709,7 +17709,7 @@
       "id": "vl-load-com",
       "category": 4,
       "guid": "6C7A8632-C12F-42BD-909E-68D804863AE2",
-      "description": "Loads the extended AutoLISP functions related to ActiveX support",
+      "description": "Loads the extended LISP functions related to ActiveX support",
       "platforms": "WIN"
     },
     "vl-load-reactors": {
@@ -18668,7 +18668,7 @@
       "id": "vlax-ldata-list",
       "category": 4,
       "guid": "A124867A-FBB8-4B36-9BB0-B50D971C91A1",
-      "description": "Lists AutoLISP data in a drawing dictionary",
+      "description": "Lists LISP data in a drawing dictionary",
       "platforms": "WIN"
     },
     "vlax-ldata-put": {
@@ -19459,7 +19459,7 @@
       "id": "vlax-vla-object->ename",
       "category": 4,
       "guid": "9127B839-D275-473F-A166-59BE94AEFACB",
-      "description": "Transforms a VLA-object to an AutoLISP entity",
+      "description": "Transforms a VLA-object to a LISP entity",
       "platforms": "WIN"
     },
     "vlax-write-enabled-p": {
@@ -20847,7 +20847,7 @@
       "id": "vlisp-compile",
       "category": 4,
       "guid": "8184531C-EDE5-4949-9EAE-25CE98BFF89C",
-      "description": "Compiles AutoLISP source code into a FAS file",
+      "description": "Compiles LISP source code into a FAS file",
       "platforms": "WIN"
     },
     "vl-get-resource": {
@@ -97272,7 +97272,7 @@
       "id": "action",
       "category": 7,
       "guid": "287F6446-72D9-4F09-8B37-C2CAE9395418",
-      "description": "Specifies an AutoLISP expression to perform an action when this tile is selected. Also known as a callback.",
+      "description": "Specifies a LISP expression to perform an action when this tile is selected. Also known as a callback.",
       "platforms": "WIN|MAC"
     },
     "alignment": {
@@ -98359,7 +98359,7 @@
       "id": "BeginLISP",
       "category": 8,
       "guid": "CF0D87BB-1E41-4F82-B007-409F794EC8EB",
-      "description": "Triggered immediately after AutoCAD receives a request to evaluate an AutoLISP expression.",
+      "description": "Triggered immediately after AutoCAD receives a request to evaluate a LISP expression.",
       "platforms": "WIN"
     },
     "beginmodal": {
@@ -98457,7 +98457,7 @@
       "id": "EndLISP",
       "category": 8,
       "guid": "A6EA78E5-C0FC-4E71-9223-24E30C32E217",
-      "description": "Triggered upon completion of evaluating an AutoLISP expression.",
+      "description": "Triggered upon completion of evaluating a LISP expression.",
       "platforms": "WIN"
     },
     "endmodal": {
@@ -98506,7 +98506,7 @@
       "id": "LISPCancelled",
       "category": 8,
       "guid": "419542A9-A9EA-4786-AF23-A3C49667E822",
-      "description": "Triggered when the evaluation of a AutoLISP expression is cancelled.",
+      "description": "Triggered when the evaluation of a LISP expression is cancelled.",
       "platforms": "WIN"
     },
     "modified": {

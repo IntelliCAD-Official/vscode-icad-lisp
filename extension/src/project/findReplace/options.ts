@@ -109,7 +109,7 @@ export async function getString(title: string, hint: string) {
             quickpick.value = '';
             quickpick.ignoreFocusOut = true;
 
-            let closeTooltip = localize("autolispext.project.findreplace.optionbutton.close", "Close");
+            let closeTooltip = localize("icad-lisp.project.findreplace.optionbutton.close", "Close");
             let closeBtn = new optionButton(IconUris.closeUri(), null, true, closeTooltip, optionButton.name_Close);
             quickpick.buttons = [closeBtn];
 

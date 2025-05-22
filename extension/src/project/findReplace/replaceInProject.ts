@@ -9,19 +9,19 @@ const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
 
 export async function replaceInProject() {
     if (ProjectTreeProvider.hasProjectOpened() == false) {
-        let msg = localize("autolispext.project.findreplace.replace.openproject", "A project must be open before you can replace a text string.");
+        let msg = localize("icad-lisp.project.findreplace.replace.openproject", "A project must be open before you can replace a text string.");
         vscode.window.showInformationMessage(msg);
         return;
     }
 
     //get find options: keyword, match case, etc.
-    let title = localize("autolispext.project.findreplace.replace.title", "Replace in Project");
-    let keywordHint = localize("autolispext.project.findreplace.replace.hint.keyword", "Type a text string to find, and press Enter.");
+    let title = localize("icad-lisp.project.findreplace.replace.title", "Replace in Project");
+    let keywordHint = localize("icad-lisp.project.findreplace.replace.hint.keyword", "Type a text string to find, and press Enter.");
     let opt = await getSearchOption(title, keywordHint);
     if (opt.isKeywordProvided() == false)
         return;
 
-    let replacementHint = localize("autolispext.project.findreplace.replace.hint.replacement", "Type a text string to replace with, and press Enter.");
+    let replacementHint = localize("icad-lisp.project.findreplace.replace.hint.replacement", "Type a text string to replace with, and press Enter.");
     //get the replacment of given keyword
     let repl = await getString(title, replacementHint);
     if (repl == undefined)

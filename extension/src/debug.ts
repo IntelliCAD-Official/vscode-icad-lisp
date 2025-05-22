@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 import * as Net from 'net';
 import * as os from 'os';
+import * as cp from 'child_process';
+import * as fs from 'fs';
 
 import * as nls from 'vscode-nls';
 const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
@@ -12,49 +14,93 @@ import { ProcessPathCache } from './process/processCache';
 import { DiagnosticsCtrl } from './diagnosticsCtrl';
 import { getExtensionSettingString } from './resources';
 
-let strNoADPerr: string = localize("autolispext.debug.nodap", "doesn’t exist. Verify that the file exists in the same folder as that for the product specified in the launch.json file.");
-let strNoACADerr: string = localize("autolispext.debug.noacad", "doesn’t exist. Verify and correct the folder path to the product executable.");
-let acadPid2Attach = -1;
+let processPid2Attach = -1;
 
-const attachCfgName = 'AutoLISP Debug: Attach';
-const attachCfgType = 'attachlisp';
-const launchCfgName = 'AutoLISP Debug: Launch';
-const launchCfgType = 'launchlisp';
-const attachCfgRequest = 'attach';
+const attachCfgName = 'IntelliCAD Lisp Debug: Attach';
+const attachCfgType = 'attach-icad';
+const launchCfgName = 'IntelliCAD Lisp Debug: Launch';
+const launchCfgType = 'launch-icad';
 
-export function setDefaultAcadPid(pid: number) {
-    acadPid2Attach = pid;
-}
 const LAUNCH_PROC:string = 'debug.LaunchProgram';
 const LAUNCH_PARM:string = 'debug.LaunchParameters';
 const ATTACH_PROC:string = 'debug.AttachProcess';
 
-class LaunchDebugAdapterExecutableFactory
-  implements vscode.DebugAdapterDescriptorFactory {
-  createDebugAdapterDescriptor(
-    _session: vscode.DebugSession,
-    executable: vscode.DebugAdapterExecutable | undefined
-  ): vscode.ProviderResult<vscode.DebugAdapterDescriptor> {
-    let lispadapterpath = ProcessPathCache.globalLispAdapterPath;
-    let productStartCommand = ProcessPathCache.globalProductPath;
-    let productStartParameter = ProcessPathCache.globalParameter;
-
-    let args = ["--", productStartCommand, productStartParameter];
-    if (productStartParameter == null) args = ["--", productStartCommand];
-    return new vscode.DebugAdapterExecutable(lispadapterpath, args);
-  }
+export function setDefaultProcessPid(pid: number) {
+    processPid2Attach = pid;
 }
 
-class AttachDebugAdapterExecutableFactory
-  implements vscode.DebugAdapterDescriptorFactory {
-  createDebugAdapterDescriptor(
-    _session: vscode.DebugSession,
-    executable: vscode.DebugAdapterExecutable | undefined
-  ): vscode.ProviderResult<vscode.DebugAdapterDescriptor> {
-    let lispadapterpath = ProcessPathCache.globalLispAdapterPath;
+function getServerPipeName(pid: number): string {
+    return "\\\\.\\pipe\\itc\\dap-server-" + pid;
+}
 
-    return new vscode.DebugAdapterExecutable(lispadapterpath);
-  }
+let launchedIcads = new Map<string, cp.ChildProcessWithoutNullStreams>();
+
+
+class LaunchDebugAdapterExecutableFactory implements vscode.DebugAdapterDescriptorFactory {
+
+    async createDebugAdapterDescriptor(session: vscode.DebugSession, executable: vscode.DebugAdapterExecutable | undefined) : Promise<vscode.DebugAdapterDescriptor | undefined> {
+
+        let pid = await this.startProcess(session);
+        return new vscode.DebugAdapterNamedPipeServer(getServerPipeName(pid)); 
+    }
+
+    async startProcess(session: vscode.DebugSession): Promise<number> {
+        let launchedProcess = cp.spawn(ProcessPathCache.globalProductPath);
+        if (!launchedProcess || launchedProcess.exitCode !== null) {
+            let msg = localize("icad-lisp.debug.start.error", "Couldn't start the product.");
+            throw new Error(msg);
+        }
+
+        if (await this.waitDapServer(launchedProcess, this.getConfigTimeout())) {
+            launchedIcads.set(session.id, launchedProcess);
+            return launchedProcess.pid;
+        } else {
+            launchedProcess.kill();
+            let msg = localize("icad-lisp.debug.nodap2", "Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout.");
+            throw new Error(msg);
+        }
+    }
+
+    async waitDapServer(launchedProcess: cp.ChildProcessWithoutNullStreams, waitMs : number): Promise<boolean> {
+
+		const ticks = 50;
+        let iterations = waitMs / ticks;
+		let i = 0;
+
+        let pipeName = getServerPipeName(launchedProcess.pid);
+		while (!this.existsNamedPipe(pipeName)) {
+			i++;
+			if (i > iterations || launchedProcess.exitCode !== null) {
+                return false;
+			}
+            await new Promise((resolve) => setTimeout(resolve, ticks));
+		}
+        return true;
+    }
+
+    existsNamedPipe(pipeName: string) {
+        // pipeName is \\pipe\itc\dap-server-xxxxx
+        // shortName is itc\dap-server-xxxx
+        let pipeDir = '\\\\.\\pipe\\';
+        let shortName = pipeName.substring(pipeDir.length);
+        return fs.readdirSync(pipeDir).includes(shortName);
+    }
+
+    getConfigTimeout() : number {
+        let timeout : number = vscode.workspace.getConfiguration('icad-lisp').get('debug.LaunchTimeout');
+        if (timeout < 1 || timeout > 60) {
+            timeout = 15;
+        }
+        return timeout * 1000;
+    }
+}
+
+class AttachDebugAdapterExecutableFactory implements vscode.DebugAdapterDescriptorFactory {
+    createDebugAdapterDescriptor(_session: vscode.DebugSession, executable: vscode.DebugAdapterExecutable | undefined): vscode.ProviderResult<vscode.DebugAdapterDescriptor> {
+
+        let pipeName = getServerPipeName(ProcessPathCache.globalProductProcessId);
+        return new vscode.DebugAdapterNamedPipeServer(pipeName);
+    }
 }
 
 export function registerLispDebugProviders(context: vscode.ExtensionContext) {
@@ -68,52 +114,38 @@ export function registerLispDebugProviders(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.debug.registerDebugConfigurationProvider(attachCfgType, attachProvider));
     context.subscriptions.push(attachProvider);
 
+    // to close the launched process when the session is closed
+    vscode.debug.registerDebugAdapterTrackerFactory(launchCfgType, {
+        createDebugAdapterTracker(session: vscode.DebugSession) {
+            return {
+/*              onWillReceiveMessage: m => console.log(`> ${JSON.stringify(m, undefined, 2)}`),
+                onDidSendMessage: m => console.log(`< ${JSON.stringify(m, undefined, 2)}`),
+                onError(error: Error): void { 
+                    console.log(`> onError: ${error}`);
+                },
+                onExit(code: undefined | number, signal: undefined | string): void { 
+                    console.log(`> onExit: code=${code}, signal=${signal}`);
+                },
+*/              onWillStopSession(): void {
+				    let process = launchedIcads.get(session.id);
+				    if (process) {
+                        launchedIcads.delete(session.id);
+					    process.kill();
+				    }
+			    }
+            };
+        }
+    });
+
+
+
     //-----------------------------------------------------------
-    //4. debug adapter
+    // debug adapter
     //-----------------------------------------------------------
     const attachDapFactory = new AttachDebugAdapterExecutableFactory();
     const lauchDapFactory = new LaunchDebugAdapterExecutableFactory();
     context.subscriptions.push(vscode.debug.registerDebugAdapterDescriptorFactory(attachCfgType, attachDapFactory));
     context.subscriptions.push(vscode.debug.registerDebugAdapterDescriptorFactory(launchCfgType, lauchDapFactory));
-
-    //register attach failed custom message
-    context.subscriptions.push(vscode.debug.onDidReceiveDebugSessionCustomEvent((event) => {
-        console.log(event);
-        if (event.session && (event.session.type === launchCfgType || event.session.type === attachCfgType)) {
-            if (event.event === "runtimeerror") {
-                /*
-                    struct runtimeerror
-                    {
-                         string file;
-                         int  startline;
-                         int  startcol;
-                         int  endline;
-                         int  endcol;
-                         string message;
-                    }
-                */
-                DiagnosticsCtrl.addDocumentDiagnostics(event.body.file, event.body.message, event.body.startline, event.body.startcol, event.body.endline, event.body.endcol);
-            }
-            else if (event.event === "clearcache") {
-                setDefaultAcadPid(-1);
-            }
-            else if (event.event === "acadnosupport") {
-                let msg = localize("autolispext.debug.acad.nosupport",
-                    "This instance of AutoCAD doesn’t support debugging AutoLISP files, use a release later than AutoCAD 2020.");
-                vscode.window.showErrorMessage(msg);
-            }
-            else if (event.event === "dgbfatalerr") {
-                 /*
-                    struct dgbfatalerr
-                    {
-                         string message;
-                    }
-                */ 
-               let msg = event.body.message;
-               vscode.window.showErrorMessage(msg);
-            }
-        }
-    }));
 }
 
 class LispLaunchConfigurationProvider implements vscode.DebugConfigurationProvider {
@@ -126,64 +158,36 @@ class LispLaunchConfigurationProvider implements vscode.DebugConfigurationProvid
         newConfig.type = launchCfgType;
         newConfig.name = launchCfgName;
         newConfig.request = 'launch';
-
-        if (vscode.window.activeTextEditor)
-             newConfig.program = vscode.window.activeTextEditor.document.fileName;
-
-        if (newConfig["type"] === launchCfgType) {
-            // 1. get acad and adapter path
-            // 2. get acadRoot path
-            let productPath = getExtensionSettingString(LAUNCH_PROC);
-
-            if (!productPath) {
-                let info = localize("autolispext.debug.launchjson.path",
-                    "Specify the absolute path to the product with the Path attribute of the launch.json file.");
-                vscode.window.showInformationMessage(info);
-                let platform = os.type();
-                if (platform === 'Windows_NT') {
-                    let msg = localize("autolispext.debug.prod.path.win",
-                        "Specify the absolute path for the product. For example, C://Program Files//Autodesk//AutoCAD//acad.exe.");
-                    productPath = await vscode.window.showInputBox({ placeHolder: msg });
-                    rememberLaunchPath(productPath);
-                }
-                else if (platform === 'Darwin') {
-                    let msg = localize("autolispext.debug.prod.path.osx",
-                        "Specify the absolute path for the product. For example, /Applications/Autodesk/AutoCAD.app/Contents/MacOS/AutoCAD.");
-                    productPath = await vscode.window.showInputBox({ placeHolder: msg });
-                    rememberLaunchPath(productPath);
-                }
-                else {
-                    let msg = localize("autolispext.debug.prod.path.other", "Specify the absolute path for the product.");
-                    productPath = await vscode.window.showInputBox({ placeHolder: msg });
-                    rememberLaunchPath(productPath);
-                }
-            }
-
-            //3. get acad startup params
-            if (!existsSync(productPath)) {
-                if (!productPath || productPath.length == 0)
-                    vscode.window.showErrorMessage("AutoCAD " + strNoACADerr);
-                else
-                    vscode.window.showErrorMessage(productPath + " " + strNoACADerr);
-                ProcessPathCache.globalProductPath = "";
-                return undefined;
-            } else {
-                let params = getExtensionSettingString(LAUNCH_PARM);
-                ProcessPathCache.globalParameter = params;
-            }
-
-            //4. get debug adapter path
-            let lispadapterpath = calculateABSPathForDAP(productPath);
-            if (!existsSync(lispadapterpath)) {
-                if (!lispadapterpath || lispadapterpath.length == 0)
-                    lispadapterpath = "Debug Adapter";
-                vscode.window.showErrorMessage(lispadapterpath + " " + strNoADPerr);
-                ProcessPathCache.globalProductPath = "";
-                return undefined;
-            }
-            ProcessPathCache.globalLispAdapterPath = lispadapterpath;
-            ProcessPathCache.globalProductPath = productPath;
+        
+        if (vscode.window.activeTextEditor) {
+            newConfig.program = vscode.window.activeTextEditor.document.fileName;
         }
+
+        let productPath = getExtensionSettingString(LAUNCH_PROC);
+        if (!productPath) {
+            let msg = localize("icad-lisp.debug.prod.path.win", "Specify the absolute path for the product. For example, C://Program Files//ITC//IntelliCAD//Icad.exe.");
+            productPath = await vscode.window.showInputBox({ placeHolder: msg });
+            if (productPath) {
+                productPath = productPath.replace(/\"/gi, '');
+            }
+            rememberLaunchPath(productPath);
+        }
+
+        if (!existsSync(productPath)) {
+            let strNoACADerr: string = localize("icad-lisp.debug.nofile", "doesn’t exist. Verify and correct the folder path to the product executable.");
+            if (!productPath || productPath.length == 0) {
+                vscode.window.showErrorMessage("IntelliCAD " + strNoACADerr);
+            } else {
+                vscode.window.showErrorMessage(productPath + " " + strNoACADerr);
+            }
+            ProcessPathCache.globalProductPath = "";
+            ProcessPathCache.globalProductProcessId = -1;
+            return undefined;
+        }
+
+        ProcessPathCache.globalProductPath = productPath;
+        ProcessPathCache.globalParameter = getExtensionSettingString(LAUNCH_PARM);
+
         return newConfig;
     }
 
@@ -202,33 +206,27 @@ class LispAttachConfigurationProvider implements vscode.DebugConfigurationProvid
         var newConfig = {} as vscode.DebugConfiguration;
         newConfig.type = attachCfgType;
         newConfig.name = attachCfgName;
-        newConfig.request = attachCfgRequest;
+        newConfig.request = 'attach';
 
-        if (vscode.window.activeTextEditor)
+        if (vscode.window.activeTextEditor) {
             newConfig.program = vscode.window.activeTextEditor.document.fileName;
+        }
 
         ProcessPathCache.globalAcadNameInUserAttachConfig = '';
         let name = getExtensionSettingString(ATTACH_PROC);
-        if (name)
+        if (name) {
             ProcessPathCache.globalAcadNameInUserAttachConfig = name;
+        }
 
         ProcessPathCache.clearProductProcessPathArr();
-        let processId = await pickProcess(false, acadPid2Attach);
+        let processId = await pickProcess(false, processPid2Attach);
         if (!processId) {
-            let msg = localize("autolispext.debug.noprocess.eror", "No process for which to attach could be found.");
+            let msg = localize("icad-lisp.debug.noprocess.eror", "No process for which to attach could be found.");
             return vscode.window.showInformationMessage(msg).then(_ => {
                 return undefined;	// abort attach
             });
         }
         ProcessPathCache.chooseProductPathByPid(parseInt(processId));
-        let lispadapterpath = calculateABSPathForDAP(ProcessPathCache.globalProductPath);
-        if (!existsSync(lispadapterpath)) {
-            vscode.window.showErrorMessage(lispadapterpath + " " + strNoADPerr);
-            ProcessPathCache.globalProductPath = "";
-            return undefined;
-        }
-        ProcessPathCache.globalLispAdapterPath = lispadapterpath;
-        newConfig.processId = processId;
 
         return newConfig;
     }
@@ -242,19 +240,22 @@ class LispAttachConfigurationProvider implements vscode.DebugConfigurationProvid
 
 
 function rememberLaunchPath(path: string) {
-    if (existsSync(path) == false)
+    if (existsSync(path) == false) {
         return;
+    }
 
-    let settingGroup = vscode.workspace.getConfiguration('autolispext');
-    if (!settingGroup)
+    let settingGroup = vscode.workspace.getConfiguration('icad-lisp');
+    if (!settingGroup) {
         return null;
+    }
 
     settingGroup.update(LAUNCH_PROC, path, true).then(
         () => {
             console.log("Launch path stored in extension setting");
         },
         (err) => {
-            if(err)
+            if (err) {
                 vscode.window.showErrorMessage(err.toString());
+            }
         });
 }

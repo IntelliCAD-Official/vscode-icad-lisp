@@ -1,10 +1,9 @@
 {
-  "autolispext.debug.nodap": "no existe. Utilice una versión posterior a AutoCAD 2020. Compruebe que el archivo se encuentre en la misma carpeta con el producto que se va a depurar.",
-  "autolispext.debug.noacad": "no existe. Compruebe y corrija la ruta de carpeta al archivo ejecutable del producto.",
-  "autolispext.debug.acad.nosupport": "Este ejemplar de AutoCAD no admite la depuración de archivos de AutoLISP: utilice una versión posterior a AutoCAD 2020.",
-  "autolispext.debug.launchjson.path": "Especifique la ruta absoluta al producto con el atributo Path del archivo launch.json.",
-  "autolispext.debug.prod.path.win": "Especifique la ruta absoluta del producto. Por ejemplo, C://Archivos de programa//Autodesk//AutoCAD//acad.exe.",
-  "autolispext.debug.prod.path.osx": "Especifique la ruta absoluta del producto. Por ejemplo, /Applications/Autodesk/AutoCAD.app/Contents/MacOS/AutoCAD.",
-  "autolispext.debug.prod.path.other": "Especifique la ruta absoluta del producto.",
-  "autolispext.debug.noprocess.eror": "No se ha encontrado ningún proceso que enlazar."
+  "icad-lisp.debug.nodap": "no existe. Utilice una versión posterior a IntelliCAD 14. Compruebe que el archivo se encuentre en la misma carpeta con el producto que se va a depurar.",
+  "icad-lisp.debug.nofile": "no existe. Compruebe y corrija la ruta de carpeta al archivo ejecutable del producto.",
+  "icad-lisp.debug.product.nosupport": "Este ejemplar de IntelliCAD no admite la depuración de archivos de LISP: utilice una versión posterior a IntelliCAD 14.",
+  "icad-lisp.debug.prod.path.win": "Especifique la ruta absoluta del producto. Por ejemplo, C://Archivos de programa//ITC//IntelliCAD//Icad.exe.",
+  "icad-lisp.debug.noprocess.eror": "No se ha encontrado ningún proceso que enlazar.",
+  "icad-lisp.debug.start.error": "Couldn't start the product.",
+  "icad-lisp.debug.nodap2": "Couldn't start the product. Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout."
 }

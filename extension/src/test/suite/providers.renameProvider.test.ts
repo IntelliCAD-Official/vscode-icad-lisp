@@ -5,8 +5,8 @@ import { assert, expect } from 'chai';
 import { Position } from 'vscode';
 import { ReadonlyDocument } from '../../project/readOnlyDocument';
 import { IRootSymbolHost, SymbolManager } from '../../symbols';
-import { TDD, AutoLispExtPrepareRename, AutoLispExtProvideRenameEdits } from '../../providers/renameProvider';
-import { AutoLispExt } from '../../context';
+import { TDD, IcadExtPrepareRename, IcadExtProvideRenameEdits } from '../../providers/renameProvider';
+import { IcadExt } from '../../context';
 
 let docSymbols: IRootSymbolHost;
 
@@ -24,7 +24,7 @@ suite("RenameProvider: Tests", function () {
 	suiteSetup(() => {
 		const extRootPath = path.resolve(__dirname, '../../../');
 		const lispFileTest = path.resolve(extRootPath, "./extension/src/test/SourceFile/renaming/standards.lsp");
-		roDoc = AutoLispExt.Documents.tryGetDocument(lispFileTest);
+		roDoc = IcadExt.Documents.tryGetDocument(lispFileTest);
 		good = new Position(24, 21);
 		bad = new Position(1, 0);
 		native = new Position(51, 22);
@@ -37,9 +37,9 @@ suite("RenameProvider: Tests", function () {
 
 
 
-	test("AutoLispExtPrepareRename() Valid Atom", function () {	
+	test("IcadExtPrepareRename() Valid Atom", function () {	
 		try {
-			const prepResult = AutoLispExtPrepareRename(roDoc, good);
+			const prepResult = IcadExtPrepareRename(roDoc, good);
 			expect(prepResult.range.start.line).to.equal(24);
 			expect(prepResult.range.end.line).to.equal(24);
 			expect(prepResult.range.start.character).to.equal(10);
@@ -51,9 +51,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtPrepareRename() Invalid Atom", function () {	
+	test("IcadExtPrepareRename() Invalid Atom", function () {	
 		try {
-			expect(AutoLispExtPrepareRename(roDoc, bad)).to.equal(null);
+			expect(IcadExtPrepareRename(roDoc, bad)).to.equal(null);
 		}
 		catch (err) {
 			assert.fail("The known bad position did not error");
@@ -63,9 +63,9 @@ suite("RenameProvider: Tests", function () {
 
 
 
-	test("AutoLispExtProvideRenameEdits() Un-Hosted Atom", async function () {	
+	test("IcadExtProvideRenameEdits() Un-Hosted Atom", async function () {	
 		try {
-			const sut = AutoLispExtProvideRenameEdits(roDoc, outlier, 'anything');
+			const sut = IcadExtProvideRenameEdits(roDoc, outlier, 'anything');
 			expect(sut.entries().length).to.equal(1);
 		}
 		catch (err) {
@@ -73,9 +73,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideRenameEdits() Localized Atom", async function () {	
+	test("IcadExtProvideRenameEdits() Localized Atom", async function () {	
 		try {
-			const sut = AutoLispExtProvideRenameEdits(roDoc, localized, 'activeDOC');
+			const sut = IcadExtProvideRenameEdits(roDoc, localized, 'activeDOC');
 			expect(sut.entries().length).to.equal(1);
 		}
 		catch (err) {
@@ -83,9 +83,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideRenameEdits() Exported Defun", async function () {	
+	test("IcadExtProvideRenameEdits() Exported Defun", async function () {	
 		try {
-			const sut = AutoLispExtProvideRenameEdits(roDoc, globalDefun, 'otherFunc');
+			const sut = IcadExtProvideRenameEdits(roDoc, globalDefun, 'otherFunc');
 			expect(sut.entries().length).to.equal(3);
 		}
 		catch (err) {
@@ -93,9 +93,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideRenameEdits() Documented Local Argument", async function () {	
+	test("IcadExtProvideRenameEdits() Documented Local Argument", async function () {	
 		try {
-			const sut = AutoLispExtProvideRenameEdits(roDoc, localArg, 'dim');
+			const sut = IcadExtProvideRenameEdits(roDoc, localArg, 'dim');
 			expect(sut.entries().length).to.equal(1);
 		}
 		catch (err) {
@@ -103,9 +103,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideRenameEdits() bad user input", async function () {	
+	test("IcadExtProvideRenameEdits() bad user input", async function () {	
 		try {
-			const sut = AutoLispExtProvideRenameEdits(roDoc, good, 'a b c');
+			const sut = IcadExtProvideRenameEdits(roDoc, good, 'a b c');
 			expect(sut).to.equal(null);
 		}
 		catch (err) {
@@ -113,9 +113,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideRenameEdits() bad user target", async function () {	
+	test("IcadExtProvideRenameEdits() bad user target", async function () {	
 		try {
-			const sut = AutoLispExtProvideRenameEdits(roDoc, native, 'whatever');
+			const sut = IcadExtProvideRenameEdits(roDoc, native, 'whatever');
 			expect(sut.entries().length).to.equal(1);
 		}
 		catch (err) {
@@ -123,9 +123,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideRenameEdits() good user input", async function () {	
+	test("IcadExtProvideRenameEdits() good user input", async function () {	
 		try {
-			const sut = AutoLispExtProvideRenameEdits(roDoc, good, 'anything');			
+			const sut = IcadExtProvideRenameEdits(roDoc, good, 'anything');			
 			expect(sut.size).to.equal(2);
 			expect(sut['_edits'].length).to.equal(4);
 		}
@@ -134,9 +134,9 @@ suite("RenameProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideRenameEdits()", async function () {	
+	test("IcadExtProvideRenameEdits()", async function () {	
 		try {
-			const prepResult = AutoLispExtProvideRenameEdits(roDoc, good, 'Autoquad');
+			const prepResult = IcadExtProvideRenameEdits(roDoc, good, 'Autoquad');
 			prepResult.entries().forEach(item => {
 				item[1].forEach(edit => {
 					expect(edit.newText).to.equal('Autoquad');

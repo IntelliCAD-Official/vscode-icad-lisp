@@ -1,6 +1,6 @@
 {
-	"name": "autolisp",
-	"scopeName":"source.autolisp",
+	"name": "icad-lisp",
+	"scopeName":"source.icad-lisp",
 	"patterns": [
 		{
 			"include": "#comment"

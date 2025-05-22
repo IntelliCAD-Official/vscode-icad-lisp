@@ -1,4 +1,4 @@
 {
-  "autolispext.project.findreplace.applyreplacement.filenotexist": "파일이 존재하지 않습니다.",
-  "autolispext.project.findreplace.applyreplacement.replacetextfailed": "문자를 대치하지 못함: "
+  "icad-lisp.project.findreplace.applyreplacement.filenotexist": "파일이 존재하지 않습니다.",
+  "icad-lisp.project.findreplace.applyreplacement.replacetextfailed": "문자를 대치하지 못함: "
 }

@@ -1,10 +1,10 @@
 {
-  "autolispext.commands.dclcompletion.primitive": "Primitív",
-  "autolispext.commands.dclcompletion.primitive.dialog": "Párbeszédpanel-szerkezetet hoz létre",
-  "autolispext.commands.dclcompletion.primitive.structure": "szerkezeti primitív",
-  "autolispext.commands.dclcompletion.primitive.string": "karakterlánc-szerkezet",
-  "autolispext.commands.dclcompletion.primitive.boolean": "logikai szerkezet",
-  "autolispext.commands.dclcompletion.primitive.Enum": "Felsorolás",
-  "autolispext.commands.dclcompletion.primitive.Attribute": "Attribútum",
-  "autolispext.commands.dclcompletion.primitive.Tile": "Mozaikszerű elrendezés"
+  "icad-lisp.commands.dclcompletion.primitive": "Primitív",
+  "icad-lisp.commands.dclcompletion.primitive.dialog": "Párbeszédpanel-szerkezetet hoz létre",
+  "icad-lisp.commands.dclcompletion.primitive.structure": "szerkezeti primitív",
+  "icad-lisp.commands.dclcompletion.primitive.string": "karakterlánc-szerkezet",
+  "icad-lisp.commands.dclcompletion.primitive.boolean": "logikai szerkezet",
+  "icad-lisp.commands.dclcompletion.primitive.Enum": "Felsorolás",
+  "icad-lisp.commands.dclcompletion.primitive.Attribute": "Attribútum",
+  "icad-lisp.commands.dclcompletion.primitive.Tile": "Mozaikszerű elrendezés"
 }

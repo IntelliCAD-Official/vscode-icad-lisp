@@ -1,7 +1,7 @@
 {
-  "autolispext.loadlisp.tooltip": "Az aktuális fájl betöltése",
-  "autolispext.loadlisp.title": "LISP betöltése",
-  "autolispext.loadlisp.attach": "Először is csatoljon egy gazdaalkalmazáshoz vagy indítsa azt el a fájl betöltése előtt.",
-  "autolispext.loadlisp.fileformat.win": "Ez a fájlformátum nem támogatott. Aktiváljon egy DCL-, LSP- vagy MNL-fájlt tartalmazó ablakot.",
-  "autolispext.loadlisp.fileformat.mac": "Ez a fájlformátum nem támogatott. Aktiváljon egy DCL- vagy LSP-fájlt tartalmazó ablakot."
+  "icad-lisp.loadlisp.tooltip": "Az aktuális fájl betöltése",
+  "icad-lisp.loadlisp.title": "LISP betöltése",
+  "icad-lisp.loadlisp.attach": "Először is csatoljon egy gazdaalkalmazáshoz vagy indítsa azt el a fájl betöltése előtt.",
+  "icad-lisp.loadlisp.fileformat.win": "Ez a fájlformátum nem támogatott. Aktiváljon egy DCL-, LSP- vagy MNL-fájlt tartalmazó ablakot.",
+  "icad-lisp.loadlisp.fileformat.mac": "Ez a fájlformátum nem támogatott. Aktiváljon egy DCL- vagy LSP-fájlt tartalmazó ablakot."
 }

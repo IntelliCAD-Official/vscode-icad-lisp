@@ -1,4 +1,4 @@
 {
-  "autolispext.project.findreplace.opensearchresult.filenotexist": "A fájl nem létezik: ",
-  "autolispext.project.findreplace.opensearchresult.openfailed": "A fájlt nem lehet megnyitni: "
+  "icad-lisp.project.findreplace.opensearchresult.filenotexist": "A fájl nem létezik: ",
+  "icad-lisp.project.findreplace.opensearchresult.openfailed": "A fájlt nem lehet megnyitni: "
 }

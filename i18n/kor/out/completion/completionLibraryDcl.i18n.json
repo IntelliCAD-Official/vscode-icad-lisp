@@ -1,10 +1,10 @@
 {
-  "autolispext.commands.dclcompletion.primitive": "기본체",
-  "autolispext.commands.dclcompletion.primitive.dialog": "대화상자 구조 생성",
-  "autolispext.commands.dclcompletion.primitive.structure": "구조 기본체",
-  "autolispext.commands.dclcompletion.primitive.string": "문자열 구조",
-  "autolispext.commands.dclcompletion.primitive.boolean": "부울 구조",
-  "autolispext.commands.dclcompletion.primitive.Enum": "열거",
-  "autolispext.commands.dclcompletion.primitive.Attribute": "속성",
-  "autolispext.commands.dclcompletion.primitive.Tile": "타일"
+  "icad-lisp.commands.dclcompletion.primitive": "기본체",
+  "icad-lisp.commands.dclcompletion.primitive.dialog": "대화상자 구조 생성",
+  "icad-lisp.commands.dclcompletion.primitive.structure": "구조 기본체",
+  "icad-lisp.commands.dclcompletion.primitive.string": "문자열 구조",
+  "icad-lisp.commands.dclcompletion.primitive.boolean": "부울 구조",
+  "icad-lisp.commands.dclcompletion.primitive.Enum": "열거",
+  "icad-lisp.commands.dclcompletion.primitive.Attribute": "속성",
+  "icad-lisp.commands.dclcompletion.primitive.Tile": "타일"
 }

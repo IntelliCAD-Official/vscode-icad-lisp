@@ -1,4 +1,4 @@
 {
-  "autolispext.commands.dclcompletion.provider.Primitive": "Primitív",
-  "autolispext.commands.dclcompletion.provider.ClosesString": "Lezárja a karakterláncot"
+  "icad-lisp.commands.dclcompletion.provider.Primitive": "Primitív",
+  "icad-lisp.commands.dclcompletion.provider.ClosesString": "Lezárja a karakterláncot"
 }

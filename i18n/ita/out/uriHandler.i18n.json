@@ -1,6 +1,6 @@
 {
-  "autolispext.urihandler.invaid": "Chiamata non valida all'estensione AutoLISP di AutoCAD.",
-  "autolispext.urihandler.activeddebugcfg": "Configurazione di debug corrente: ",
-  "autolispext.urihandler.debug.start": "Dalla barra dei menu, fare clic su Esegui > Avvia debug per eseguire il debug del file di origine AutoLISP corrente.",
-  "autolispext.urihandler.debug.openfile": "Aprire un file di origine AutoLISP e fare clic su Esegui > Avvia debug dalla barra dei menu per eseguire il debug del file."
+  "icad-lisp.urihandler.invaid": "Chiamata non valida all'estensione LISP di IntelliCAD.",
+  "icad-lisp.urihandler.activeddebugcfg": "Configurazione di debug corrente: ",
+  "icad-lisp.urihandler.debug.start": "Dalla barra dei menu, fare clic su Esegui > Avvia debug per eseguire il debug del file di origine LISP corrente.",
+  "icad-lisp.urihandler.debug.openfile": "Aprire un file di origine LISP e fare clic su Esegui > Avvia debug dalla barra dei menu per eseguire il debug del file."
 }

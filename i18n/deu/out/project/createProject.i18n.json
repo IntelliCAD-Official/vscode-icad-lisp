@@ -1,6 +1,6 @@
 {
-  "autolispext.project.createproject.createlabel": "Erstellen",
-  "autolispext.project.createproject.onlyprjallowed": "Nur PRJ-Dateien sind zulässig.",
-  "autolispext.project.createproject.nospaces": "Ältere PRJ-Benennungsregeln erlauben keine Leerzeichen",
-  "autolispext.project.createproject.projectfilter": "AutoLISP-Projektdateien"
+  "icad-lisp.project.createproject.createlabel": "Erstellen",
+  "icad-lisp.project.createproject.onlyprjallowed": "Nur PRJ-Dateien sind zulässig.",
+  "icad-lisp.project.createproject.nospaces": "Ältere PRJ-Benennungsregeln erlauben keine Leerzeichen",
+  "icad-lisp.project.createproject.projectfilter": "LISP-Projektdateien"
 }

@@ -104,31 +104,31 @@ export class SummaryNode implements DisplayNode {
         let prjNameClause = '';
         let prjPathStatement = '';
         if (prjNode) {
-            let inStr = localize("autolispext.project.findreplace.searchtree.in", " in ");
-            let prjFileStr = localize("autolispext.project.findreplace.searchtree.prjfile", "\r\nProject file: ");
+            let inStr = localize("icad-lisp.project.findreplace.searchtree.in", " in ");
+            let prjFileStr = localize("icad-lisp.project.findreplace.searchtree.prjfile", "\r\nProject file: ");
             prjNameClause = inStr + `${prjNode.projectName}`;
             prjPathStatement = prjFileStr + `${prjNode.projectFilePath}`;
         }
 
         if (opt.isReplace) {
-            let replace = localize("autolispext.project.findreplace.searchtree.replace", "Replace ");
-            let withStr = localize("autolispext.project.findreplace.searchtree.with", " with ");
+            let replace = localize("icad-lisp.project.findreplace.searchtree.replace", "Replace ");
+            let withStr = localize("icad-lisp.project.findreplace.searchtree.with", " with ");
             this.tooltip = replace + `\"${opt.keyword}\"` + withStr + `\"${opt.replacement}\"${prjNameClause};`;
         }
         else {
-            let findStr = localize("autolispext.project.findreplace.searchtree.find", "Find ");
+            let findStr = localize("icad-lisp.project.findreplace.searchtree.find", "Find ");
             this.tooltip = findStr + `\"${opt.keyword}\"${prjNameClause};`;
         }
         this.tooltip += prjPathStatement;
 
         if (opt.matchCase) {
-            this.tooltip += localize("autolispext.project.findreplace.searchtree.matchcaseon", "\r\nMatch case: ON");
+            this.tooltip += localize("icad-lisp.project.findreplace.searchtree.matchcaseon", "\r\nMatch case: ON");
         }
         if (opt.matchWholeWord) {
-            this.tooltip += localize("autolispext.project.findreplace.searchtree.matchwholewordon", "\r\nMatch whole word: ON");
+            this.tooltip += localize("icad-lisp.project.findreplace.searchtree.matchwholewordon", "\r\nMatch whole word: ON");
         }
         if (opt.useRegularExpr) {
-            this.tooltip += localize("autolispext.project.findreplace.searchtree.regexpon", "\r\nUse regular expression: ON");
+            this.tooltip += localize("icad-lisp.project.findreplace.searchtree.regexpon", "\r\nUse regular expression: ON");
         }
 
         this.tooltip += "\r\n" + this.summary;
@@ -162,7 +162,7 @@ export class SummaryNode implements DisplayNode {
 
 export class SearchTreeProvider implements vscode.TreeDataProvider<DisplayNode> {
     private constructor() {
-        this.treeControl = vscode.window.createTreeView('Autolisp-FindReplaceView', { treeDataProvider: this });
+        this.treeControl = vscode.window.createTreeView('Icad-FindReplaceView', { treeDataProvider: this });
         this.treeControl.onDidCollapseElement(e => {
             e.element.setCollapsibleState(vscode.TreeItemCollapsibleState.Collapsed);
         })
@@ -172,7 +172,7 @@ export class SearchTreeProvider implements vscode.TreeDataProvider<DisplayNode> 
     }
 
     public static instance: SearchTreeProvider = new SearchTreeProvider();
-    public static showResult: string = "showSearchResult";
+    public static showResult: string = "icad.showSearchResult";
 
     private onChanged: vscode.EventEmitter<DisplayNode> = new vscode.EventEmitter<DisplayNode>();
     public readonly onDidChangeTreeData?: vscode.Event<DisplayNode> = this.onChanged.event;

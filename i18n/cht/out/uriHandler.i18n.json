@@ -1,6 +1,6 @@
 {
-  "autolispext.urihandler.invaid": "呼叫 AutoCAD AutoLISP 延伸無效。",
-  "autolispext.urihandler.activeddebugcfg": "目前的偵錯規劃: ",
-  "autolispext.urihandler.debug.start": "在功能表列按一下「執行」>「開始偵錯」，以偵錯目前的 AutoLISP 原始檔。",
-  "autolispext.urihandler.debug.openfile": "開啟 AutoLISP 原始檔，然後在功能表列按一下「執行」>「開始偵錯」以偵錯檔案。"
+  "icad-lisp.urihandler.invaid": "呼叫 IntelliCAD LISP 延伸無效。",
+  "icad-lisp.urihandler.activeddebugcfg": "目前的偵錯規劃: ",
+  "icad-lisp.urihandler.debug.start": "在功能表列按一下「執行」>「開始偵錯」，以偵錯目前的 LISP 原始檔。",
+  "icad-lisp.urihandler.debug.openfile": "開啟 LISP 原始檔，然後在功能表列按一下「執行」>「開始偵錯」以偵錯檔案。"
 }

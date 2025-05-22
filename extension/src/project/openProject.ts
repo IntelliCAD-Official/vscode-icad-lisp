@@ -3,7 +3,7 @@ import { CursorPosition, ListReader } from '../format/listreader';
 import { Sexpression } from '../astObjects/sexpression';
 import { ProjectDefinition } from './projectDefinition';
 import { CheckUnsavedChanges } from './checkUnsavedChanges';
-import { AutoLispExt } from '../context';
+import { IcadExt } from '../context';
 import * as vscode from 'vscode'
 import * as path from 'path'
 import { ReadonlyDocument } from './readOnlyDocument';
@@ -25,7 +25,7 @@ export async function OpenProject() {
 
         let prjPathUpper = prjUri.fsPath.toUpperCase();
         if (prjPathUpper.endsWith(".PRJ") == false) {
-            let msg = localize("autolispext.project.openproject.onlyprjallowed", "Only PRJ files are allowed.");
+            let msg = localize("icad-lisp.project.openproject.onlyprjallowed", "Only PRJ files are allowed.");
             return Promise.reject(msg);
         }
 
@@ -40,13 +40,13 @@ export async function OpenProject() {
 export function OpenProjectFile(prjUri: vscode.Uri): ProjectNode {
     let document = ReadonlyDocument.open(prjUri.fsPath);
     if (!document) {
-        let msg = localize("autolispext.project.openproject.readfailed", "Can't read project file: ");
+        let msg = localize("icad-lisp.project.openproject.readfailed", "Can't read project file: ");
         throw new Error(msg + prjUri.fsPath);
     }
 
     let ret = ParseProjectDocument(prjUri.fsPath, document);
     if (!ret) {
-        let msg = localize("autolispext.project.openproject.malformedfile", "Malformed project file: ");
+        let msg = localize("icad-lisp.project.openproject.malformedfile", "Malformed project file: ");
         throw new Error(msg + prjUri.fsPath);
     }
 
@@ -54,8 +54,8 @@ export function OpenProjectFile(prjUri: vscode.Uri): ProjectNode {
 }
 
 async function SelectProjectFile() {
-    let label = localize("autolispext.project.openproject.label", "Open Project");
-    const filterDesc = localize("autolispext.project.openproject.projectfilter", "AutoLISP Project Files");
+    let label = localize("icad-lisp.project.openproject.label", "Open Project");
+    const filterDesc = localize("icad-lisp.project.openproject.projectfilter", "LISP Project Files");
     const options: vscode.OpenDialogOptions = {
         canSelectMany: false,
         openLabel: label,
@@ -68,7 +68,7 @@ async function SelectProjectFile() {
         if (path.basename(fileUri[0].fsPath).indexOf(' ') === -1){
             return Promise.resolve(fileUri[0]);
         } else {
-            let msg = localize("autolispext.project.openproject.nospaces", "Legacy PRJ naming rules do not allow spaces");
+            let msg = localize("icad-lisp.project.openproject.nospaces", "Legacy PRJ naming rules do not allow spaces");
             return Promise.reject(msg);
         }
     } else {

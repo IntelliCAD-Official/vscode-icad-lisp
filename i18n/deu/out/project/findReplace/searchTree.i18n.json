@@ -1,10 +1,10 @@
 {
-  "autolispext.project.findreplace.searchtree.in": " in ",
-  "autolispext.project.findreplace.searchtree.prjfile": "\r\nProjektdatei: ",
-  "autolispext.project.findreplace.searchtree.replace": "Ersetzen",
-  "autolispext.project.findreplace.searchtree.with": " mit ",
-  "autolispext.project.findreplace.searchtree.find": "Suchen ",
-  "autolispext.project.findreplace.searchtree.matchcaseon": "\r\nGroß-/Kleinschreibung beachten: EIN",
-  "autolispext.project.findreplace.searchtree.matchwholewordon": "\r\nGanzes Wort suchen: EIN",
-  "autolispext.project.findreplace.searchtree.regexpon": "\r\nRegulären Ausdruck verwenden: EIN"
+  "icad-lisp.project.findreplace.searchtree.in": " in ",
+  "icad-lisp.project.findreplace.searchtree.prjfile": "\r\nProjektdatei: ",
+  "icad-lisp.project.findreplace.searchtree.replace": "Ersetzen",
+  "icad-lisp.project.findreplace.searchtree.with": " mit ",
+  "icad-lisp.project.findreplace.searchtree.find": "Suchen ",
+  "icad-lisp.project.findreplace.searchtree.matchcaseon": "\r\nGroß-/Kleinschreibung beachten: EIN",
+  "icad-lisp.project.findreplace.searchtree.matchwholewordon": "\r\nGanzes Wort suchen: EIN",
+  "icad-lisp.project.findreplace.searchtree.regexpon": "\r\nRegulären Ausdruck verwenden: EIN"
 }

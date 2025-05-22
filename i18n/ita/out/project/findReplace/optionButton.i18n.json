@@ -1,6 +1,6 @@
 {
-  "autolispext.project.findreplace.optionbutton.matchcase": "Maiuscole/Minuscole",
-  "autolispext.project.findreplace.optionbutton.matchwholeword": "Parola intera",
-  "autolispext.project.findreplace.optionbutton.regexp": "Usa espressione regolare",
-  "autolispext.project.findreplace.optionbutton.close": "Chiudi"
+  "icad-lisp.project.findreplace.optionbutton.matchcase": "Maiuscole/Minuscole",
+  "icad-lisp.project.findreplace.optionbutton.matchwholeword": "Parola intera",
+  "icad-lisp.project.findreplace.optionbutton.regexp": "Usa espressione regolare",
+  "icad-lisp.project.findreplace.optionbutton.close": "Chiudi"
 }

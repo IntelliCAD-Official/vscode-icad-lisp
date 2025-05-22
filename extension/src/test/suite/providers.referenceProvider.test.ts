@@ -3,7 +3,7 @@ import { suite, test } from 'mocha';
 import { assert, expect } from 'chai';
 import { ReadonlyDocument } from '../../project/readOnlyDocument';
 import { Position } from 'vscode';
-import { AutoLispExtProvideReferences } from "../../providers/referenceProvider";
+import { IcadExtProvideReferences } from "../../providers/referenceProvider";
 
 suite("ReferenceProvider: Tests", function () {
 	
@@ -22,10 +22,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known value type test #1", async function () {	
+	test("IcadExtProvideReferences() - known value type test #1", async function () {	
 		try {
 			const loc = new Position(91, 30);  // pos of a string
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut).to.equal(null);
 		}
 		catch (err) {
@@ -33,10 +33,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known value type test #2", async function () {	
+	test("IcadExtProvideReferences() - known value type test #2", async function () {	
 		try {
 			const loc = new Position(89, 20);  // pos of a comment
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut).to.equal(null);
 		}
 		catch (err) {
@@ -44,10 +44,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known value type test #3", async function () {	
+	test("IcadExtProvideReferences() - known value type test #3", async function () {	
 		try {
 			const loc = new Position(85, 87);  // pos of a number
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut).to.equal(null);
 		}
 		catch (err) {
@@ -55,10 +55,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known native test", async function () {	
+	test("IcadExtProvideReferences() - known native test", async function () {	
 		try {
 			const loc = new Position(29, 5);  // pos of 'foreach'
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut.length).to.equal(1);
 		}
 		catch (err) {
@@ -66,10 +66,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known localized test #1", async function () {	
+	test("IcadExtProvideReferences() - known localized test #1", async function () {	
 		try {
 			const loc = new Position(29 , 12);  // pos of 'rando'
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut.length).to.equal(2);
 		}
 		catch (err) {
@@ -77,10 +77,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known localized test #2", async function () {	
+	test("IcadExtProvideReferences() - known localized test #2", async function () {	
 		try {
 			const loc = new Position(43 , 20);  // pos of 'markups'
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut.length).to.equal(9);
 		}
 		catch (err) {
@@ -88,10 +88,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known localized only test", async function () {	
+	test("IcadExtProvideReferences() - known localized only test", async function () {	
 		try {
 			const loc = new Position(71, 24);  // pos of 'ptf'
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut.length).to.equal(1);
 		}
 		catch (err) {
@@ -99,10 +99,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - known non-localized function name test", async function () {	
+	test("IcadExtProvideReferences() - known non-localized function name test", async function () {	
 		try {
 			const loc = new Position(114, 30);  // pos of 'collectMarkups'
-			const sut = await AutoLispExtProvideReferences(singleDoc, loc);
+			const sut = await IcadExtProvideReferences(singleDoc, loc);
 			expect(sut.length).to.equal(2);
 		}
 		catch (err) {
@@ -110,10 +110,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - workspace known @Global test", async function () {	
+	test("IcadExtProvideReferences() - workspace known @Global test", async function () {	
 		try {
 			const loc = new Position(11, 11);  // pos of 'SetTextStyle'
-			const sut = await AutoLispExtProvideReferences(wrkspcDoc, loc);
+			const sut = await IcadExtProvideReferences(wrkspcDoc, loc);
 			// should appear in 3 documents
 			expect(new Set(sut.map(x => x.uri.fsPath)).size).to.equal(3);
 		}
@@ -122,10 +122,10 @@ suite("ReferenceProvider: Tests", function () {
 		}
 	});
 
-	test("AutoLispExtProvideReferences() - workspace known Non-@Global test", async function () {	
+	test("IcadExtProvideReferences() - workspace known Non-@Global test", async function () {	
 		try {
 			const loc = new Position(17, 11);  // pos of 'SetDimStyle'
-			const sut = await AutoLispExtProvideReferences(wrkspcDoc, loc);
+			const sut = await IcadExtProvideReferences(wrkspcDoc, loc);
 			// should appear in 1 document even though it is defined outside of this reference
 			expect(new Set(sut.map(x => x.uri.fsPath)).size).to.equal(1);
 		}

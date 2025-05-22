@@ -2,7 +2,7 @@
 /out
 vendor
 tmp
-autolispext*.zip
+icad-lisp*.zip
 package.nls.*.json
 
 .nyc_output

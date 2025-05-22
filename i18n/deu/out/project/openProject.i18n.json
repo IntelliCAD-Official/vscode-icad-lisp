@@ -1,8 +1,8 @@
 {
-  "autolispext.project.openproject.onlyprjallowed": "Nur PRJ-Dateien sind zulässig.",
-  "autolispext.project.openproject.readfailed": "Projektdatei kann nicht gelesen werden: ",
-  "autolispext.project.openproject.malformedfile": "Fehlerhafte Projektdatei: ",
-  "autolispext.project.openproject.label": "Projekt öffnen",
-  "autolispext.project.openproject.nospaces": "Ältere PRJ-Benennungsregeln erlauben keine Leerzeichen",
-  "autolispext.project.openproject.projectfilter": "AutoLISP-Projektdateien"
+  "icad-lisp.project.openproject.onlyprjallowed": "Nur PRJ-Dateien sind zulässig.",
+  "icad-lisp.project.openproject.readfailed": "Projektdatei kann nicht gelesen werden: ",
+  "icad-lisp.project.openproject.malformedfile": "Fehlerhafte Projektdatei: ",
+  "icad-lisp.project.openproject.label": "Projekt öffnen",
+  "icad-lisp.project.openproject.nospaces": "Ältere PRJ-Benennungsregeln erlauben keine Leerzeichen",
+  "icad-lisp.project.openproject.projectfilter": "LISP-Projektdateien"
 }

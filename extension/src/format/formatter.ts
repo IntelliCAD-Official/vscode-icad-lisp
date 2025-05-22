@@ -60,7 +60,7 @@ export class LispFormatter {
 
                 let formatstr = lispLists.formatting(startColumn, linefeed);
                 if (formatstr.length == 0) {
-                    let msg = localize("autolispext.formatter.errors", "It meets some errors when formatting");
+                    let msg = localize("icad-lisp.formatter.errors", "It meets some errors when formatting");
                     throw new Error(msg);
                 }
 

@@ -1,4 +1,4 @@
 {
-  "autolispext.project.findreplace.applyreplacement.filenotexist": "O arquivo não existe.",
-  "autolispext.project.findreplace.applyreplacement.replacetextfailed": "Falha ao substituir o texto: "
+  "icad-lisp.project.findreplace.applyreplacement.filenotexist": "O arquivo não existe.",
+  "icad-lisp.project.findreplace.applyreplacement.replacetextfailed": "Falha ao substituir o texto: "
 }

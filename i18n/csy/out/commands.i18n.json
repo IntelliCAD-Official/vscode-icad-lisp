@@ -1,6 +1,6 @@
 {
-  "autolispext.help.commands.openWebHelp": "Nepodařilo se načíst soubor webHelpAbstraction.json.",
-  "autolispext.commands.addFoldingRegion": "Nepodařilo se vložit fragment",
-  "autolispext.help.commands.generateDocumentation": "Nelze nalézt platný název defun.",
-  "autolispext.providers.rename.failed": "Symbol byl neplatný pro přejmenování operací"
+  "icad-lisp.help.commands.openWebHelp": "Nepodařilo se načíst soubor webHelpAbstraction.json.",
+  "icad-lisp.commands.addFoldingRegion": "Nepodařilo se vložit fragment",
+  "icad-lisp.help.commands.generateDocumentation": "Nelze nalézt platný název defun.",
+  "icad-lisp.providers.rename.failed": "Symbol byl neplatný pro přejmenování operací"
 }

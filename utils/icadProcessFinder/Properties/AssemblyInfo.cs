@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Acad Process Finder")]
+[assembly: AssemblyTitle("Icad Process Finder")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Autodesk Inc.")]
-[assembly: AssemblyProduct("Acad Process Finder")]
-[assembly: AssemblyCopyright("Copyright © Autodesk Inc. 2020")]
+[assembly: AssemblyCompany("ITC")]
+[assembly: AssemblyProduct("Icad Process Finder")]
+[assembly: AssemblyCopyright("© ITC 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fac17718-b45a-4cd1-8437-f0d31fef93a7")]
+[assembly: Guid("36EEEC65-5E63-4E64-B0C5-EC8C87D6039A")]
 
 // Version information for an assembly consists of the following four values:
 //

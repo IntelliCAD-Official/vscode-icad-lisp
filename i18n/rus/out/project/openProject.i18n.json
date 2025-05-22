@@ -1,8 +1,8 @@
 {
-  "autolispext.project.openproject.onlyprjallowed": "Разрешены только файлы PRJ.",
-  "autolispext.project.openproject.readfailed": "Не удалось прочитать файл проекта: ",
-  "autolispext.project.openproject.malformedfile": "Неверно сформированный файл проекта: ",
-  "autolispext.project.openproject.label": "Открыть проект",
-  "autolispext.project.openproject.nospaces": "В прошлых версиях правилами именования файлов PRJ не допускалось использование пробелов",
-  "autolispext.project.openproject.projectfilter": "Файлы проектов AutoLISP"
+  "icad-lisp.project.openproject.onlyprjallowed": "Разрешены только файлы PRJ.",
+  "icad-lisp.project.openproject.readfailed": "Не удалось прочитать файл проекта: ",
+  "icad-lisp.project.openproject.malformedfile": "Неверно сформированный файл проекта: ",
+  "icad-lisp.project.openproject.label": "Открыть проект",
+  "icad-lisp.project.openproject.nospaces": "В прошлых версиях правилами именования файлов PRJ не допускалось использование пробелов",
+  "icad-lisp.project.openproject.projectfilter": "Файлы проектов LISP"
 }

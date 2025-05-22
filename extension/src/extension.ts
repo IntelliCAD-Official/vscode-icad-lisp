@@ -17,7 +17,7 @@ import * as autoIndent from './format/autoIndent';
 import * as DebugProviders from "./debug";
 import { registerProjectCommands } from "./project/projectCommands";
 import { registerCommands } from "./commands";
-import { AutoLispExt } from "./context";
+import { IcadExt } from "./context";
 import * as nls from 'vscode-nls';
 
 // The example uses the file message format.
@@ -26,7 +26,7 @@ const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
 let client: LanguageClient;
 
 export function activate(context: vscode.ExtensionContext) {
-	AutoLispExt.initialize(context);	
+	IcadExt.initialize(context);	
 	//-----------------------------------------------------------
 	//1. lisp autoformat
 	//-----------------------------------------------------------
@@ -52,7 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
 	DebugProviders.registerLispDebugProviders(context);
 
  	//-----------------------------------------------------------
-    //5. register the handler to uri scheme: vscode://autodesk.autolispext?......
+    //5. register the handler to uri scheme: vscode://intellicad.icad-lisp?......
     vscode.window.registerUriHandler({
         handleUri(uri: vscode.Uri) {
             onUriRequested(uri);

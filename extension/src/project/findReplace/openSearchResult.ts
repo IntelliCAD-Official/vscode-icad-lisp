@@ -18,7 +18,7 @@ export async function openSearchResult(clickedTreeItem: FindingNode, searchOpt: 
         const exists = fs.existsSync(finding.filePath);
 
         if (exists == false) {
-            let msg = localize("autolispext.project.findreplace.opensearchresult.filenotexist", "File doesn't exist: ");
+            let msg = localize("icad-lisp.project.findreplace.opensearchresult.filenotexist", "File doesn't exist: ");
             return Promise.reject(msg + finding.filePath);
         }
 
@@ -53,7 +53,7 @@ export async function openSearchResult(clickedTreeItem: FindingNode, searchOpt: 
         if (!doc) {
             doc = ReadonlyDocument.open(finding.filePath);
             if (!doc) {
-                let msg = localize("autolispext.project.findreplace.opensearchresult.openfailed", "File couldn't be opened: ");
+                let msg = localize("icad-lisp.project.findreplace.opensearchresult.openfailed", "File couldn't be opened: ");
                 return Promise.reject(msg + finding.filePath);
             }
         }

@@ -1,7 +1,7 @@
 {
-  "autolispext.loadlisp.tooltip": "Загрузка текущего файла",
-  "autolispext.loadlisp.title": "Загрузка LISP",
-  "autolispext.loadlisp.attach": "Перед загрузкой этого файла выполните присоединение или запустите главное приложение.",
-  "autolispext.loadlisp.fileformat.win": "Этот формат файла не поддерживается. Активируйте окно, содержащее файл DCL, LSP или MNL.",
-  "autolispext.loadlisp.fileformat.mac": "Этот формат файла не поддерживается. Активируйте окно, содержащее файл DCL или LSP."
+  "icad-lisp.loadlisp.tooltip": "Загрузка текущего файла",
+  "icad-lisp.loadlisp.title": "Загрузка LISP",
+  "icad-lisp.loadlisp.attach": "Перед загрузкой этого файла выполните присоединение или запустите главное приложение.",
+  "icad-lisp.loadlisp.fileformat.win": "Этот формат файла не поддерживается. Активируйте окно, содержащее файл DCL, LSP или MNL.",
+  "icad-lisp.loadlisp.fileformat.mac": "Этот формат файла не поддерживается. Активируйте окно, содержащее файл DCL или LSP."
 }

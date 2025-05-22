@@ -1,13 +1,13 @@
 {
-  "autolispext.project.find.openproject": "Prima di poter cercare una stringa di testo, è necessario che sia aperto un progetto.",
-  "autolispext.project.find.title": "Trova nel progetto",
-  "autolispext.project.find.hint": "Digitare una stringa di testo da trovare e premere INVIO.",
-  "autolispext.project.find.supportos": "La funzione Trova e sostituisci è supportata solo su sistemi a 64 bit.",
-  "autolispext.project.find.inprogress": "In corso... ",
-  "autolispext.project.find.found": "Trovato ",
-  "autolispext.project.find.results": " risultato/i in ",
-  "autolispext.project.find.files": " file:",
-  "autolispext.project.find.stopped": "Ricerca interrotta. ",
-  "autolispext.project.find.noresults": "Nessun risultato trovato.",
-  "autolispext.project.find.exceedmaxresults": "Limite di risultati della ricerca superato. Affinare la ricerca per restringere i risultati. "
+  "icad-lisp.project.find.openproject": "Prima di poter cercare una stringa di testo, è necessario che sia aperto un progetto.",
+  "icad-lisp.project.find.title": "Trova nel progetto",
+  "icad-lisp.project.find.hint": "Digitare una stringa di testo da trovare e premere INVIO.",
+  "icad-lisp.project.find.supportos": "La funzione Trova e sostituisci è supportata solo su sistemi a 64 bit.",
+  "icad-lisp.project.find.inprogress": "In corso... ",
+  "icad-lisp.project.find.found": "Trovato ",
+  "icad-lisp.project.find.results": " risultato/i in ",
+  "icad-lisp.project.find.files": " file:",
+  "icad-lisp.project.find.stopped": "Ricerca interrotta. ",
+  "icad-lisp.project.find.noresults": "Nessun risultato trovato.",
+  "icad-lisp.project.find.exceedmaxresults": "Limite di risultati della ricerca superato. Affinare la ricerca per restringere i risultati. "
 }

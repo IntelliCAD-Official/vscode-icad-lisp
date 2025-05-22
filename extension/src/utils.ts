@@ -28,8 +28,8 @@ export function getSelectedDocRange(editor: vscode.TextEditor): vscode.Range {
 export function acitiveDocHasValidLanguageId(): Boolean {
     const editor = vscode.window.activeTextEditor;
 
-    return editor.document.languageId === 'autolisp' ||
-        editor.document.languageId === 'autolispdcl' ||
+    return editor.document.languageId === 'icad-lisp' ||
+        editor.document.languageId === 'icad-dcl' ||
         editor.document.languageId === 'lisp';
 }
 
@@ -115,7 +115,7 @@ export function escapeRegExp(string): string {
 	return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
-// en-US is forced because native AutoLisp is in english and ZXX is a 'no particular language' override
+// en-US is forced because native Lisp is in english and ZXX is a 'no particular language' override
 // https://unicode.org/reports/tr35/#BCP_47_Language_Tag_Conversion
 const collator = new Intl.Collator([vscode.env.language, 'en-US', 'zxx'], { sensitivity: 'base', });
 export function StringEqualsIgnoreCase(str1: string, str2: string): boolean {
