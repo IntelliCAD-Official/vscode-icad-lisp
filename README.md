@@ -4,7 +4,7 @@ This extension adds support for IntelliCAD Lisp source (.lsp) files to Microsoft
 
 The extension is open source and distributed under [Apache License v2.0](licence.md). See [NOTICE.md](NOTICE.md) for complete details, including software and third-party licenses and permissions.
 
-If you have feedback, please create an issue [here](https://github.com/IntelliCAD-Official/ILispExt/issues).
+If you have feedback, please create an issue [here](https://github.com/IntelliCAD-Official/vscode-icad-lisp/issues).
 
 ## Debugger Tools
 * Attach to IntelliCAD for live AutoLISP debugging
