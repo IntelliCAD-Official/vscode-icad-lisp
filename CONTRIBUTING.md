@@ -2,7 +2,7 @@
 # Reporting issues, requesting features
 Please use the one of the forms [here](../../issues/new/choose).
 
-**Please do not report security vulnerabilities through public GitHub issues.** Instead, please report them via the [Autodesk Trust Center](https://www.autodesk.com/trust/contact-us).
+**Please do not report security vulnerabilities through public GitHub issues.** Instead, please report them via the [IntelliCAD Support](https://www.intellicad.org/support).
 
 # Contributing code
 We welcome your PRs! We use a fairly standard process:

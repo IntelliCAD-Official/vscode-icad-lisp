@@ -51,24 +51,3 @@ does good stuffs for localization.
 
 ### Profile the performence issue
 For the performence issue of vscode extension, see wiki page https://github.com/microsoft/vscode-wiki/blob/master/Performance-Issues.md
-
-
-### The following steps require access to Autodesk network resources and therefore can only be done by Autodesk employees
-
-## NPM settings
-Because the mandatory local NPM setting in Autodesk, for Autodesk developer you can simply replace all the ocurrences in pacake-lock.json like:
-replace https://registry.npmjs.org/ with https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/
-
-## How to publish the extension to vscode market
-
-It needs the BRE team help to do following things by hand:
- 1. Sign the packages
- 2. Publish the package to vscode market
-
-## Notice
-
-You may encounter the failure of npm install, the error message would say:
-Error installing vscode.d.ts: Error: read ECONNRESET
-If you encounter this problem, maybe your NODE is too old, in version v10.13.0 it
-can work well.
-or run "npm cache clean -force"
