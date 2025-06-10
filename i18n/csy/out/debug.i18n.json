@@ -4,6 +4,7 @@
   "icad-lisp.debug.product.nosupport": "Tato instance aplikace IntelliCAD nepodporuje ladění souborů jazyka LISP, použijte verzi novější než IntelliCAD 14.",
   "icad-lisp.debug.prod.path.win": "Určete absolutní cestu k produktu. Například C://Program Files//ITC//IntelliCAD//Icad.exe.",
   "icad-lisp.debug.noprocess.eror": "Nebyl nalezen žádný proces, ke kterému by bylo možné připojit.",
+  "icad-lisp.debug.cannot.attach.error": "Unable to attach to the process. A debugger is already attached.",
   "icad-lisp.debug.start.error": "Couldn't start the product.",
   "icad-lisp.debug.nodap2": "Couldn't start the product. Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout."
 

@@ -4,6 +4,7 @@
   "icad-lisp.debug.product.nosupport": "此 IntelliCAD 实例不支持调试 LISP 文件，请使用高于 IntelliCAD 14 的版本。",
   "icad-lisp.debug.prod.path.win": "指定产品的绝对路径。例如，C://Program Files//ITC//IntelliCAD//Icad.exe。",
   "icad-lisp.debug.noprocess.eror": "找不到要附着的进程。",
+  "icad-lisp.debug.cannot.attach.error": "Unable to attach to the process. A debugger is already attached.",
   "icad-lisp.debug.start.error": "Couldn't start the product.",
   "icad-lisp.debug.nodap2": "Couldn't start the product. Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout."
 }

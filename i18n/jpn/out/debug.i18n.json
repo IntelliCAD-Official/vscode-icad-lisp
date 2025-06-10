@@ -4,6 +4,7 @@
   "icad-lisp.debug.product.nosupport": "IntelliCAD のこのインスタンスは LISP ファイルのデバッグをサポートしていません。IntelliCAD 14 より後のリリースを使用してください。",
   "icad-lisp.debug.prod.path.win": "製品の絶対パスを指定します。例: C://Program Files//ITC//IntelliCAD//Icad.exe",
   "icad-lisp.debug.noprocess.eror": "アタッチするプロセスが見つかりませんでした。",
+  "icad-lisp.debug.cannot.attach.error": "Unable to attach to the process. A debugger is already attached.",
   "icad-lisp.debug.start.error": "Couldn't start the product.",
   "icad-lisp.debug.nodap2": "Couldn't start the product. Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout."
 }
