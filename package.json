@@ -377,6 +377,9 @@
 					"icad-lisp",
 					"icad-dcl"
 				],
+				"configurationAttributes": {
+					"attach": {}
+				},
 				"initialConfigurations": [
 					{
 						"type": "attach-icad",
