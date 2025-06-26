@@ -2,7 +2,7 @@
 	"name": "icad-lisp",
 	"displayName": "IntelliCAD Lisp Debugger",
 	"description": "The Visual Studio Code Extension for IntelliCAD Lisp",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"bugs": {
 		"url": "https://github.com/IntelliCAD-Official/vscode-icad-lisp/issues"
