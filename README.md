@@ -57,6 +57,10 @@ Where the path is the location of the IntelliCAD application installed on your c
      * IntelliCAD Lisp Debug: Launch – Launches a new instance of the IntelliCAD application to debug the current .lsp file.
 4.  If prompted, specify the absolute path to the IntelliCAD executable file. 
 
+You can manually specify additional settings in the launch.json configuration file that is generated:
+* "program" – specifies the absolute path to the IntelliCAD executable. If specified, it is used instead of the similar setting in the extension configuration. It allows you to launch different debug configurations, for example, Std and Pro versions.
+* "cwd" – specifies the absolute path to the working directory. If not specified, the IntelliCAD path is used. This option was added to allow IntelliCAD to execute lisp regression tests correctly. These tests require the working directory to point to the "Regress" folder.
+
 If you cannot set a breakpoint in an .lsp file or use the launch/attach debug configurations, disable or uninstall all other Lisp extensions, which can cause conflicts.
 
 ## Legal

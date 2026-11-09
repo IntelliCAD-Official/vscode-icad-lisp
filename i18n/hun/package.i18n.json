@@ -17,6 +17,8 @@
   "icad-lisp.configuration.launchtimeout.desc": "The maximum amount of time to wait until a DAP connection is established.",
   "icad-lisp.debug.attachconfig.desc": "a folyamatlista szűrőparaméterének felhasználói beállításai.",
   "icad-lisp.debug.config.snippet.desc": "Egy felhasználó által kiválasztott LISP-fájl „hibakeresésének” új konfigurációja",
+  "icad-lisp.debug.config.program.desc": "Absolute path to the program",
+  "icad-lisp.debug.config.cwd.desc": "Absolute path to the the working directory",
   "icad-lisp.debug.launchconfig.desc": "az IntelliCAD elérési útjának és indítási paramétereinek felhasználói beállításai.",
   "icad-lisp.project.createproject.title": "Új projekt létrehozása",
   "icad-lisp.project.openproject.title": "Létező projekt megnyitása",

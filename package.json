@@ -406,6 +406,20 @@
 					"icad-lisp",
 					"icad-dcl"
 				],
+				"configurationAttributes": {
+					"launch": {
+						"properties": {
+							"program": {
+								"type": "string",
+								"description": "%icad-lisp.debug.config.program.desc%"
+							},
+							"cwd": {
+								"type": "string",
+								"description": "%icad-lisp.debug.config.cwd.desc%"
+							}
+						}
+					}
+				},
 				"initialConfigurations": [
 					{
 						"type": "launch-icad",

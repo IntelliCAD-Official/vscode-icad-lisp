@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 import * as Net from 'net';
-import * as os from 'os';
 import * as cp from 'child_process';
 import * as fs from 'fs';
 
@@ -46,19 +45,28 @@ class LaunchDebugAdapterExecutableFactory implements vscode.DebugAdapterDescript
 	}
 
 	async startProcess(session: vscode.DebugSession): Promise<number> {
-		let launchedProcess = cp.spawn(ProcessPathCache.globalProductPath);
-		if (!launchedProcess || launchedProcess.exitCode !== null) {
-			let msg = localize("icad-lisp.debug.start.error", "Couldn't start the product.");
-			throw new Error(msg);
+		let launchOptions = {};
+		const startError = localize("icad-lisp.debug.start.error", "Couldn't start the product.");
+		if (session.configuration.cwd) {
+			launchOptions["cwd"] = session.configuration.cwd;
+		}
+
+		let launchedProcess = cp.spawn(ProcessPathCache.globalProductPath, launchOptions);
+		if (launchedProcess.exitCode !== null) {
+			throw new Error(startError);
 		}
 
 		if (await this.waitDapServer(launchedProcess, this.getConfigTimeout())) {
 			launchedIcads.set(session.id, launchedProcess);
 			return launchedProcess.pid;
 		} else {
-			launchedProcess.kill();
-			let msg = localize("icad-lisp.debug.nodap2", "Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout.");
-			throw new Error(msg);
+			if (launchedProcess.exitCode !== null) {
+				throw new Error(startError);
+			} else {
+				launchedProcess.kill();
+				let msg = localize("icad-lisp.debug.nodap2", "Couldn't connect to DAP server. Make sure DAP server is turned on in the product settings or increase the timeout.");
+				throw new Error(msg);
+			}
 		}
 	}
 
@@ -180,12 +188,23 @@ class LispLaunchConfigurationProvider implements vscode.DebugConfigurationProvid
 		newConfig.type = launchCfgType;
 		newConfig.name = launchCfgName;
 		newConfig.request = 'launch';
-		
+
+		if (config.cwd) {
+			newConfig.cwd = config.cwd;
+		}
+
+		// config.program is the path of the exe file (product path)
+		// newConfig.program is the path of the script to debug (so, it is a misnomer, but cannot be changed)
+		// sorry for the confusion
 		if (vscode.window.activeTextEditor) {
 			newConfig.program = vscode.window.activeTextEditor.document.fileName;
 		}
 
-		let productPath = getExtensionSettingString(LAUNCH_PROC);
+		// the product path can be either from launch.json (has priority) or the extension configuration
+		let productPath = config.program;
+		if (!productPath) {
+			productPath = getExtensionSettingString(LAUNCH_PROC);
+		}
 		if (!productPath) {
 			let msg = localize("icad-lisp.debug.prod.path.win", "Specify the absolute path for the product. For example, C://Program Files//ITC//IntelliCAD//Icad.exe.");
 			productPath = await vscode.window.showInputBox({ placeHolder: msg });

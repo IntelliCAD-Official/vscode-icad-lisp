@@ -17,6 +17,8 @@
   "icad-lisp.configuration.launchtimeout.desc": "The maximum amount of time to wait until a DAP connection is established.",
   "icad-lisp.debug.attachconfig.desc": "paramètres utilisateur pour le paramètre de traitement des filtres de liste.",
   "icad-lisp.debug.config.snippet.desc": "Une nouvelle configuration pour \"déboguer\" un fichier LISP sélectionné par l'utilisateur",
+  "icad-lisp.debug.config.program.desc": "Absolute path to the program",
+  "icad-lisp.debug.config.cwd.desc": "Absolute path to the the working directory",
   "icad-lisp.debug.launchconfig.desc": "paramètres utilisateur pour le chemin d'accès et les paramètres de démarrage d'IntelliCAD.",
   "icad-lisp.project.createproject.title": "Créer un projet",
   "icad-lisp.project.openproject.title": "Ouvrir un projet existant",

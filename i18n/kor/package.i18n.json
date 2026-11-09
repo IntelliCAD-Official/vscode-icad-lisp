@@ -17,6 +17,8 @@
   "icad-lisp.configuration.launchtimeout.desc": "The maximum amount of time to wait until a DAP connection is established.",
   "icad-lisp.debug.attachconfig.desc": "프로세스 리스트 필터 매개변수에 대한 사용자 설정입니다.",
   "icad-lisp.debug.config.snippet.desc": "사용자 선택 lisp 파일 '디버깅'을 위한 새 구성입니다.",
+  "icad-lisp.debug.config.program.desc": "Absolute path to the program",
+  "icad-lisp.debug.config.cwd.desc": "Absolute path to the the working directory",
   "icad-lisp.debug.launchconfig.desc": "IntelliCAD 경로 및 시작 매개변수에 대한 사용자 설정입니다.",
   "icad-lisp.project.createproject.title": "새 프로젝트 작성",
   "icad-lisp.project.openproject.title": "기존 프로젝트 열기",
