@@ -1,5 +1,5 @@
 # IntelliCAD Lisp Debugger
-Copyright © 2025 The IntelliCAD Technology Consortium. All rights reserved.
+Copyright © 2025-2026 The IntelliCAD Technology Consortium. All rights reserved.
 
 IntelliCAD Lisp Debugger is licensed under the Apache License, Version 2.0.
 

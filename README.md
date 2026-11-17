@@ -64,7 +64,7 @@ You can manually specify additional settings in the launch.json configuration fi
 If you cannot set a breakpoint in an .lsp file or use the launch/attach debug configurations, disable or uninstall all other Lisp extensions, which can cause conflicts.
 
 ## Legal
-IntelliCAD® Lisp Debugger © 2025 The IntelliCAD Technology Consortium. All rights reserved.
+IntelliCAD® Lisp Debugger © 2025-2026 The IntelliCAD Technology Consortium. All rights reserved.
 
 See [The IntelliCAD Technology Consortium Privacy Policy](https://www.intellicad.org/privacy-policy) for details about the privacy policy of the The IntelliCAD Technology Consortium.
 
